@@ -1,0 +1,257 @@
+.buttons {
+  display: flex;
+  gap: 60px;
+}
+.close {
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+.back {
+  transition: $transition;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 40px;
+  z-index: 999;
+  display: inline-block;
+  text-align: center;
+  padding: 0 120px;
+  max-width: $max-width;
+  width: fit-content;
+  .btn-arrow {
+    position: absolute !important;
+    right: unset !important;
+    left: -25px;
+    bottom: 1.5px !important;
+    @include transform(rotate(180deg));
+  }
+  .black {
+    color: $black;
+  }
+}
+.anchor {
+  .btn-arrow {
+    @include transform(rotate(90deg))
+  }
+}
+.red .back {
+  .btn {
+    color: $white;
+  }
+}
+.hover {
+  transition: $transition;
+  &:hover {
+    opacity: .5;
+    @include transform(translate3d(0,-1px,0));
+  }
+}
+.btn {
+  padding: 18px 30px;
+  background: $red;
+  border-radius: $btn-radius;
+  gap: 40px;
+  width: fit-content;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer !important;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $white;
+  transition: $transition;
+  border: none;
+  white-space: nowrap;
+  &.icon {
+    @include flex-center;
+  }
+  // arrows that are to the right of text on all buttons
+  .btn-arrow {
+    position: relative;
+    bottom: -.5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @include transform(rotate(-45deg));
+    svg {
+      position: absolute;
+      transition: $transition-medium;
+      will-change: transform;
+      &:first-of-type {
+          @include transform(
+              translate3d(0, 0, 0)
+          );
+      }
+      &:last-of-type {
+          @include transform(
+              translate3d(-120%, 0, 0)
+          );
+      }
+      * {
+        stroke: $white;
+      }
+      &.red-arrow * {
+        stroke: $red;
+      }
+      &.white-arrow * {
+        stroke: $white;
+      }
+      &.black-arrow * {
+        stroke: $black;
+      }
+    }
+  }
+  &:hover {
+    svg {
+      &:first-of-type {
+        @include transform(
+              translate3d(115%, 0, 0)
+          );
+      }
+      &:last-of-type {
+        @include transform(
+              translate3d(0, 0, 0)
+          );
+      }
+    }
+  }
+}
+.nav .btn-arrow svg:first-of-type * {
+  fill: $red;
+  stroke: unset;
+}
+.nav .btn-arrow svg:last-of-type * {
+  fill: $black;
+  stroke: unset;
+}
+.magnify .btn-arrow svg:first-of-type {
+  g, circle:first-of-type {
+    stroke: unset !important;
+  }
+  circle:last-of-type,
+  path {
+    stroke: $red;
+  }
+}
+.magnify .btn-arrow svg:last-of-type {
+  g, circle:first-of-type {
+    stroke: unset !important;
+  }
+  circle:last-of-type,
+  path {
+    stroke: $black;
+  }
+}
+
+// arrows that are used for carousels
+.arrows {
+  border-radius: $btn-radius;
+  display: flex;
+  .arrow-prev {
+    border-radius: $btn-radius 0 0 $btn-radius;
+  }
+  .arrow-next {
+    border-radius: 0 $btn-radius $btn-radius 0;
+  }
+}
+.arrow {
+  .btn-arrow {
+      right: unset;
+      bottom: unset;
+  }
+  &.dark {
+    background-color: $white;
+    svg {
+      fill: $red;
+    }
+  }
+  &.arrow-prev svg {
+      &:first-of-type {
+          @include transform(
+              translate3d(0, 0, 0),
+              rotate(180deg)
+          );
+      }
+      &:last-of-type {
+          @include transform(
+              translate3d(115%, 0, 0),
+              rotate(180deg)
+          );
+      }
+  }
+  &.arrow-next svg {
+      &:first-of-type {
+          @include transform(
+              translate3d(0, 0, 0)
+          );
+      }
+      &:last-of-type {
+          @include transform(
+              translate3d(-115%, 0, 0)
+          );
+      }
+  }
+  &:hover {
+      &.arrow-prev svg {
+          &:first-of-type {
+              @include transform(
+                  translate3d(-115%, 0, 0),
+                  rotate(180deg)
+              );
+          }
+          &:last-of-type {
+              @include transform(
+                  translate3d(0, 0, 0),
+                  rotate(180deg)
+              );
+          }
+      }
+      &.arrow-next svg {
+          &:first-of-type {
+              @include transform(
+                  translate3d(115%, 0, 0)
+              );
+          }
+          &:last-of-type {
+              @include transform(
+                  translate3d(0, 0, 0)
+              );
+          }
+      }
+  }
+  &.disabled {
+    opacity: 0;
+  }
+}
+
+@include respond-to-max($desktop) {
+  .btn {
+    &.icon {
+      padding: 17px;
+      &:not(.arrow) {
+        margin: 0 -.5px;
+      }
+    }
+
+  }
+  .buttons {
+    gap: 40px;
+  }
+}
+@include respond-to-max($tablet) {
+  .btn {
+    font-size: .85rem;
+  }
+}
+@include respond-to-max($mobile) {
+  .back {
+    display: none !important;
+  }
+}

@@ -1,0 +1,19 @@
+ <div class="slide career {% if height is defined %}{{ height }}{% endif %}">
+    <div class="text">
+        <div>
+            <span>
+                <h4>{{ slide.title }}</h4>
+                <h4>{{ slide.office.label }}</h4>
+            </span>
+            {% set count = 175 %}
+            {{ slide.description|replace({'<p>': '<p class="thin">'})|slice(0, count)|raw }}{% if slide.description|striptags|length > count - 5 %}...{% endif %}
+        </div>
+        {% include '_includes/_blocks/button' with {
+            link: slide.url,
+            label: 'See Position',
+            firstArrow: 'red-arrow',
+            secondArrow: 'black-arrow',
+            fadeIn: false
+        } %}
+    </div>
+</div>

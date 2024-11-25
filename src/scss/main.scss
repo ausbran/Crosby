@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "globals/mixins";
+@import "globals/variables";
+@import "globals/global";
+@import "globals/typography";
+@import "globals/navigation";
+@import "globals/footer";
+@import "globals/columns";
+@import "pages/story";
+@import "pages/contact";
+@import "pages/projectCategory";
+@import "pages/project";
+@import "pages/press";
+@import "pages/career";
+@import "blocks/landing";
+@import "blocks/slider";
+@import "blocks/banner";
+@import "blocks/text";
+@import "blocks/form";
+@import "blocks/buttons";
+@import "blocks/load";
+
+/* Your custom SCSS below */
+body {
+  @apply bg-gray-100 text-gray-900;
+}

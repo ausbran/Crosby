@@ -1,0 +1,11 @@
+<div class="slider">
+    <ul class="slider-inner">
+        <li class="slide"></li>
+    </ul>
+    <div class="slider-nav">
+        {{ block.description }}
+        {% if block.children | length > 1 %}
+            {% include "_includes/arrows" %}
+        {% endif %}
+    </div>
+</div>

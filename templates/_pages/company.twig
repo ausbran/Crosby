@@ -1,0 +1,31 @@
+{% extends "index" %}
+
+{% block content %}
+    {% include '_includes/_blocks/bannerText' with {
+        block: entry,
+        marginTop: entry.marginTop,
+        maxWidth: entry.maxWidth,
+        class: 'anchor'
+    } %}
+
+    {% set press = craft.entries.section('press').all() %}
+    {% include '_includes/_blocks/slider' with { 
+        slides: press,
+        height: 'medium', 
+        slideHeader: 'Awards & Press',
+        visibleCards: 3, 
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slidePress' 
+    } %}
+
+    {% set jobs = craft.entries.section('careers').all() %}
+    {% include '_includes/_blocks/slider' with { 
+        slides: jobs,
+        class: 'careers',
+        height: 'medium',
+        slideHeader: 'Careers',
+        visibleCards: 2, 
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideCareer' 
+    } %}
+{% endblock %}

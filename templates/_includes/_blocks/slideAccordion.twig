@@ -1,0 +1,38 @@
+<div class="slide accordion-slide margin-bottom-sm bw">
+    <div class="image gradient {% if height is defined %}{{ height }}{% endif %}">
+        {% if slide.staffImage is defined %}
+            {% set asset = slide.staffImage.one() %}
+            {% if asset %}
+                {% include '_includes/_blocks/asset' with {
+                    ratio:'1:1'
+                } %}
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="text">
+        <div>
+            <h2 class="name h4 highlight">{{ slide.title }}</h2>
+            <h2 class="position h4">{{ slide.position }}</h2>
+        </div>
+        {% include '_includes/_blocks/button' with {
+            link: '#',
+            label: 'Read More',
+            firstArrow: 'white-arrow',
+            secondArrow: 'white-arrow',
+            class: 'accordion-trigger'
+        } %}
+    </div>
+    <aside class="slide-out {% if height is defined %}{{ height }}{% endif %}">
+        <div class="inner">
+            {% include '_includes/_icons/close' %}
+            <div>
+                <div class="inner-header">
+                    <h2 class="name">{{ slide.title }}</h2>
+                    <h2 class="position">{{ slide.position }}</h2>
+                </div>
+                {{ slide.bio|replace({'<p>': '<p class="thin">'})|raw }}
+            </div>
+        </div>
+    </aside>
+</div>
+

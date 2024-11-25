@@ -1,0 +1,33 @@
+{% extends "index" %}
+
+{% block content %}
+    {% if entry.asset|length %}
+        {% include '_includes/_blocks/landingImages' with {
+            block: entry,
+            maxWidth: entry.topMaxWidth
+        } %}
+    {% else %}
+        <p class="error-text">No images selected.</p>
+    {% endif %}
+
+    {# this block is if we'd like to use the landingFeatured section that was developed to cycle through projects
+    {% set featuredProject = entry.featuredProject.one() %}
+    {% if featuredProject %}
+        {% include '_includes/_blocks/landingImages' with {
+            block: entry,
+            maxWidth: entry.topMaxWidth
+        } %}
+    {% else %}
+        <p class="error-text">No featured project selected.</p>
+    {% endif %} #}
+
+    {% include '_includes/_blocks/banner' with {
+        block: entry,
+        handle: 'bannerText',
+        marginTop: '',
+        marginBottom: '',
+        link: entry.bannerLink,
+        label: entry.bannerLabel,
+        maxWidth: entry.bottomMaxWidth
+    } %}
+{% endblock %}

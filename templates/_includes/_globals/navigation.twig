@@ -1,0 +1,33 @@
+{% set navigation = craft.entries()
+    .section('navigation')
+    .level(1)
+    .all() %}
+
+<nav>
+    <a href="{{ currentSite.baseUrl }}" class="logo">
+        {% include '_includes/_svg/logo-horizontal.svg' %}
+    </a>
+
+    <ul class="primary-links">
+        {% for primary in navigation %}
+        <li>
+            <a href="{{ primary.linkUrl }}">{{ primary.title }}</a>
+            {% if primary.hasDescendants %}
+            <ul class="secondary-links">
+                {% for secondary in primary.getDescendants().level(2) %}
+                <li>
+                    <a href="{{ secondary.linkUrl }}">{{ secondary.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="icons">
+        {% include '_includes/_icons/magnify' %}
+        {% include '_includes/_icons/close' %}
+    </div>
+
+</nav>

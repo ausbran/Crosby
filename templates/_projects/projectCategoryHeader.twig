@@ -1,0 +1,5 @@
+<aside class="back">
+    <a class="{% if craft.app.request.getSegment(2) == 'all' %}active{% endif %} hover" href="/projects/all">All Projects</a>
+    <a class="{% if craft.app.request.getSegment(2) == 'new-builds' or (entry is defined and entry.getParent() and entry.getParent().slug == 'new-builds') %}active{% endif %} hover" href="/projects/new-builds">New Builds</a>
+    <a class="{% if craft.app.request.getSegment(2) == 'remodels' or (entry is defined and entry.getParent() and entry.getParent().slug == 'remodels') %}active{% endif %} hover" href="/projects/remodels">Remodels</a>
+</aside>

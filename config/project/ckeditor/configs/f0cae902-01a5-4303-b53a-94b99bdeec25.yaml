@@ -1,0 +1,24 @@
+css: ".ck.ck-content .h1 {\r\n    font-size: 6.25rem;\r\n}\r\n.ck.ck-content .h2 {\r\n    font-size: 2.5rem;\r\n}\r\n.ck.ck-content .h3 {\r\n    font-size: 1.875rem;\r\n}\r\n.ck.ck-content .h4 {\r\n    font-size: 1.375rem;\r\n}"
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+js: "return {\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'center',\r\n      'right',\r\n    ],\r\n  },\r\n  style: {\r\n    definitions: [\r\n      {\r\n        name: 'h1',\r\n        element: 'h1',\r\n        classes: [\r\n          'h1',\r\n        ],\r\n      },\r\n      {\r\n        name: 'h2',\r\n        element: 'h1',\r\n        classes: [\r\n          'h2',\r\n        ],\r\n      },\r\n      {\r\n        name: 'h3',\r\n        element: 'h1',\r\n        classes: [\r\n          'h3',\r\n        ],\r\n      },\r\n      {\r\n        name: 'h4',\r\n        element: 'h1',\r\n        classes: [\r\n          'h4',\r\n        ],\r\n      },\r\n      {\r\n        name: 'Large Body Copy',\r\n        element: 'p',\r\n        classes: [\r\n          'h3',\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n}"
+name: Simple
+toolbar:
+  - heading
+  - '|'
+  - alignment
+  - bold
+  - underline
+  - italic
+  - fontColor
+  - link
+  - insertImage
+  - mediaEmbed
+  - bulletedList
+  - numberedList
+  - style

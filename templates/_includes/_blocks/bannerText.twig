@@ -1,0 +1,29 @@
+{% set heading = block.heading ?? null %}
+{% set text = block.text ?? null %}
+{% set maxWidth = maxWidth ?? null %}
+{% set marginTop = marginTop ?? 'margin-top' %}
+{% set marginBottom = marginBottom ?? 'margin-bottom' %}
+{% set class = class ?? null %}
+
+{% set plainText = text|striptags %}
+{% set textClass = plainText|length > 250 ? 'long' : '' %}
+
+<div class="banner text {{ block.textAlignment }} {{ marginTop }} {{ marginBottom }} {{ textClass }} fade-in" data-cascade>
+    <h1>{{ heading }}</h1>
+    <div class="inner">
+        {% include '_includes/_blocks/text' %}
+        <div class="buttons">
+            {% if block.buttons|length %}
+                {% for button in block.buttons.all() %}
+                        {% include '_includes/_blocks/button' with {
+                            link: button.buttonLink,
+                            label: button.buttonLabel,
+                            firstArrow: 'red-arrow',
+                            secondArrow: 'black-arrow',
+                            class: class
+                        } %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,309 @@
+// individual project page
+.project {
+    &.landing {
+        transition: opacity $transition-long;
+    }
+    .slider-outer {
+        position: fixed;
+    }
+    .arrow.disabled {
+        opacity: 1;
+    }
+    .back {
+        * {
+            color: $white;
+        }
+        .hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+    }
+    .inner {
+        padding: unset !important;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: unset;
+        max-width: $max-width;
+        font-size: 1em;
+        .arrows,
+        .magnify,
+        .project-info,
+        .project-buttons,
+        h3 {
+            transition: $transition-medium !important;
+        }
+        &.active {
+            h3 {
+                color: $black;
+                &:first-of-type {
+                    color: $red;
+                }
+            }
+            .arrows,
+            .magnify {
+                border: 1px solid $grey;
+            }
+            .project-info {
+                @include transform(
+                    translate3d(0, 3px, 0)
+                );
+            }
+            .project-buttons {
+                @include transform(
+                    translate3d(0, 15px, 0)
+                );
+            }
+        }
+    }
+    .project-info,
+    .project-buttons {
+        display: flex;
+        position: relative;
+        gap: $gap;
+    }
+    .project-info {
+        flex-wrap: wrap;
+        gap: 10px $gap;
+        &.h4 {
+            gap: $gap-medium;
+        }
+        * {
+            line-height: 1em;
+        }
+    }
+    .project-buttons {
+        gap: $gap-medium;
+    }
+    .spacer {
+        width: 20px;
+        background: $white;
+    }
+    .background.gradient {
+        background-size: cover;
+        background-position: center;
+        picture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity $transition-medium;
+            &.active {
+                opacity: 1;
+                z-index: 1;
+            }
+            &.previous {
+                opacity: 0;
+                z-index: 0;
+            }
+            .portrait {
+                object-fit: contain;
+            }
+        }
+    }
+    .slider-container {
+        display: none;
+        opacity: 0;
+        transition: opacity .5s;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        width: 100%;
+        height: calc(100svh - 350px);
+    }
+    .slider {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        height: inherit;
+        position: relative;
+        // The white corner graphics for the project image slider
+        // &:after,
+        // &:before {
+        //     content: url(/uploads/general/corner.svg);
+        //     width: 20px;
+        //     position: absolute;
+        //     z-index: 2;
+        //     right: 0;
+        // }
+        // &:after {
+        //     top: 0;
+        // }
+        // &:before {
+        //     bottom: 0;
+        //     @include transform(rotate(90deg));
+        // }
+        .slide {
+            width: 100%;
+            height: calc((100svh - 350px) / 2);
+            picture {
+                cursor: pointer;
+                height: 100% !important;
+                width: 100% !important;
+                overflow: hidden;
+                max-width: 775px;
+                img {
+                    transition: $transition-medium;
+                    height: 100%;
+                }
+            }
+            &:hover {
+                opacity: .9;
+    
+                img {
+                    @include transform(scale(1.02));
+                }
+            }
+            &:nth-child(odd) {
+                grid-row: 1; // Place odd-numbered items in the first column
+            }
+            &:nth-child(even) {
+                grid-row: 2; // Place even-numbered items in the second column
+            }
+            &:first-of-type picture {
+                border-radius: $box-radius 0 0 0;
+            }
+            &:nth-of-type(2) picture {
+                border-radius: 0 0 0 $box-radius;
+            }
+            // &:nth-last-child(odd):nth-last-of-type(1) {
+            //     picture {
+            //         border-radius: 0 $box-radius 0 0;
+            //     }
+            // }
+            // &:nth-last-child(even):nth-last-of-type(1) {
+            //     picture {
+            //         border-radius: 0 0 $box-radius 0;
+            //     }
+            // }
+        }
+    }
+    @include respond-to-max($desktop) {
+        .inner {
+            // flex-direction: column;
+            // justify-content: flex-end;
+            // align-items: flex-start;
+            // gap: $gap-medium;
+        }
+        .slider-container {
+            bottom: unset;
+            top: 100px;
+            height: calc(100svh - 250px);
+            .slider .slide {
+                height: calc((100svh - 250px) / 2);
+                width: calc(100vw - 100px) !important;
+                max-width: 775px;
+                img {
+                   width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+        .inner.active .project-info {
+            @include transform(translate3d(0,15px,0));
+        }
+    }
+    @include respond-to-max($tablet) {
+        .background.gradient picture .portrait {
+            object-fit: cover;
+        }
+    }
+    @include respond-to-max($mobile) {
+        .slider-container {
+            top: 90px;
+            height: calc(100svh - 190px);
+            .slider .slide {
+                width: calc(100vw - 50px) !important;
+                height: calc((100svh - 190px) / 2);
+            }
+        }
+        // padding-bottom: 25px !important;
+        // .project-info h3:last-of-type,
+        .project-info h3:nth-of-type(2),
+        span.label {
+            display: none;
+        }
+        .inner {
+            position: relative;
+            .project-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+        .project-buttons {
+            gap: 15px;
+            position: absolute;
+            top: 0;
+            border: 0;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .icons {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .arrows {
+                width: 100vw;
+                height: 70vh;
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                margin-left: -25px;
+                .spacer {
+                    display: none;
+                }
+                .icon {
+                    background: transparent;
+                    padding: 25px;
+                    svg * {
+                        stroke: $white !important;
+                    }
+                }
+                .arrow-next:after,
+                .arrow-prev:after {
+                    content: '';
+                    width: 100px;
+                    height: 40px;
+                    background: black;
+                    position: absolute;
+                    z-index: -1;
+                    border-radius: 50%;
+                    filter: blur(40px);
+                }
+                .arrow-next:after {
+                    right: -50px;
+                }
+                .arrow-prev:after {
+                    left: -50px;
+                }
+            }
+        }
+        .inner.active{
+            .project-buttons,
+            .project-info {
+                @include transform(translate3d(0,0,0));
+                .arrows {
+                    display: none;
+                }
+            }
+            .slider-outer {
+                z-index: 2;
+            }
+        }
+    }
+    @include respond-to-max-height(600px) {
+        .slider-container {
+            .slider .slide {
+                height: calc((250px / 2));
+            }
+            height: 250px;
+        }
+    }
+}
+

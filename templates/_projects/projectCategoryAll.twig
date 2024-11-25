@@ -1,0 +1,16 @@
+{% extends "index" %}
+
+{% block content %}
+
+<div class="projects">
+    {% include '_projects/projectCategoryHeader' %}
+    <div class="fade-in">
+        {% set projects = craft.entries()
+            .section('projects')
+            .type('project')
+            .all() %}
+        {% include '_projects/projectCategoryInner' with { projects: projects } %}
+    </div>
+</div>
+
+{% endblock %}
