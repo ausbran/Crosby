@@ -1,7 +1,21 @@
-{% if maxWidth %}
-    <div class="description-wrapper" style="max-width:{{ maxWidth }}px;">
-        {{ text|raw }}
-    </div>
-{% else %}
-    {{ text|raw }}
-{% endif %}
+{% set h1Class = h1Class ?? 'col-span-10' %}
+{% set h2Class = h2Class ?? 'col-span-10' %}
+{% set h3Class = h3Class ?? 'col-span-10' %}
+{% set h4Class = h4Class ?? 'col-span-10' %}
+{% set pClass = pClass ?? 'col-span-6 text-lg' %}
+{% set figureClass = figureClass ?? 'col-span-4' %}
+
+{% set text = text ?? (entry.text is defined ? entry.text|raw : '') %}
+
+{% set updatedText = text 
+    | replace({
+        '<h1>': '<h1 class="' ~ h1Class ~ ' text-8xl">',
+        '<h2>': '<h2 class="' ~ h2Class ~ ' text-6xl">',
+        '<h3>': '<h3 class="' ~ h3Class ~ ' text-3xl">',
+        '<h4>': '<h4 class="' ~ h4Class ~ ' text-2xl">',
+        '<p>': '<p class="' ~ pClass ~ '">',
+        '<figure': '<figure class="' ~ figureClass ~ '"',
+    }) 
+%}
+
+{{ updatedText|raw }}

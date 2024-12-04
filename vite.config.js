@@ -1,16 +1,12 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: './src', // Points Vite to your source folder
+  root: './src',
   build: {
-    outDir: '../web/assets/js', // Outputs compiled JS to your public directory
+    outDir: '../web/assets/js',
     emptyOutDir: true,
-    rollupOptions: {
-      input: './src/js/main.js', // Specify the entry point for your JavaScript
-    },
   },
   server: {
-    open: true, // Automatically opens the browser on localhost
-    port: 3000, // Development server runs on port 3000
+    open: true,
   },
 });

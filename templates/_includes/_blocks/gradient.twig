@@ -1,0 +1,11 @@
+{% set direction = direction ?? 't' %}
+{% set opacity = opacity ?? '60' %}
+{% set height = height ?? '4/5' %}
+{% set zIndex = zIndex ?? 1 %}
+
+<div class="w-full absolute bottom-0 pointer-events-none
+            bg-gradient-to-{{ direction }}
+            from-black/{{ opacity }} to-transparent
+            h-{{ height }}
+            z-{{ zIndex }}">
+</div>

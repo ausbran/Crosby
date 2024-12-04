@@ -6,7 +6,6 @@
 {% set mode = mode ?? 'crop' %}
 {% set overlay = overlay ?? null %}
 {% set isPortrait = asset.height > asset.width %}
-{% set orientationClass = (isPortrait and (ratio is not defined or ratio == null)) ? 'portrait' : 'landscape' %}
 
 {# Aspect ratio variables #}
 {% if isPortrait and (ratio is not defined or ratio == null) %}
@@ -38,7 +37,7 @@
 
 {% if asset %}
     {% if asset.kind == 'video' %}
-        <video autoplay {{ loopVideo ? 'loop' }} muted preload="metadata" playsinline webkit-playsinline class="{{ orientationClass }}">
+        <video autoplay {{ loopVideo ? 'loop' }} muted preload="metadata" playsinline webkit-playsinline">
             <source src="{{ asset.url }}" type="{{ asset.mimeType }}" media="(min-width: 768px)">
             {% if assetMobile %}
                 <source src="{{ assetMobile.url }}" type="{{ assetMobile.mimeType }}" media="(max-width: 767px)">
@@ -81,8 +80,7 @@
         ] %}
 
         {% set commonTransformSettings = {
-            quality: quality,
-            class: orientationClass
+            quality: quality
         } %}
 
         {{ craft.images.pictureMultiple(settings, commonTransformSettings) }}

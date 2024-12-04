@@ -2,28 +2,151 @@
 @tailwind components;
 @tailwind utilities;
 
+// globals
 @import "globals/mixins";
 @import "globals/variables";
 @import "globals/global";
 @import "globals/typography";
 @import "globals/navigation";
 @import "globals/footer";
-@import "globals/columns";
+@import "globals/grid";
+
+// pages
 @import "pages/story";
 @import "pages/contact";
-@import "pages/projectCategory";
 @import "pages/project";
-@import "pages/press";
 @import "pages/career";
+
+// blocks
 @import "blocks/landing";
 @import "blocks/slider";
 @import "blocks/banner";
 @import "blocks/text";
 @import "blocks/form";
 @import "blocks/buttons";
-@import "blocks/load";
+@import "blocks/testimonials";
+@import "blocks/services";
 
-/* Your custom SCSS below */
-body {
-  @apply bg-gray-100 text-gray-900;
+.grid {
+  row-gap: 0;
+  column-gap: 1.5em;
+}
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  .text-sm {
+    @apply font-medium;
+    letter-spacing: -0.045em;
+    position: relative;
+    left: -0.07em;
+  }
+}
+.bg-yellow-dark {
+  background-color: #DB8815;
+}
+.bg-red-dark {
+  background-color: #B7171C;
+}
+
+// red
+body.red {
+  .testimonials,
+  .fui-submit,
+  .form-side {
+    @apply bg-red;
+  }
+}
+.tab-btn.active {
+  @apply text-red border-red;
+}
+
+// yellow
+body.yellow {
+  .btn,
+  nav .inner,
+  footer,
+  .testimonials,
+  *::selection,
+  .fui-submit,
+  .form-side {
+    @apply bg-yellow;
+  }
+  .tab-btn.active {
+    @apply text-yellow border-yellow;
+  }
+}
+
+// green
+body.green {
+  @apply bg-green;
+  nav .inner,
+  footer,
+  .form-side {
+    @apply bg-green;
+  }
+  *::selection {
+    @apply bg-green-dark;
+  }
+  footer svg * {
+    @apply fill-white;
+  }
+}
+body.green-light {
+  @apply bg-green-light;
+  nav .inner,
+  footer,
+  .form-side {
+    @apply bg-green-light;
+  }
+  *::selection {
+    @apply bg-green;
+  }
+  footer svg * {
+    @apply fill-white;
+  }
+}
+body.green-dark {
+  @apply bg-green-dark;
+
+  nav .inner,
+  footer,
+  .form-side {
+    @apply bg-green-dark;
+  }
+  *::selection {
+    @apply bg-green-light;
+  }
+  footer svg * {
+    @apply fill-white;
+  }
+}
+
+// landing
+.progress-bar {
+  @apply h-3;
+}
+.landing.entry-type-land {
+  @apply bg-transparent flex-col h-auto pt-[200px] pb-0;
+  .background {
+    @apply container h-svh;
+  }
+  .carousel {
+    @apply rounded-xl overflow-hidden;
+  }
+  .background,
+  .carousel,
+  .carousel img {
+    @apply relative;
+  }
+}
+
+// slider {
+.slider {
+  img,
+  picture {
+    @apply h-full w-full object-cover;
+  }
+
 }

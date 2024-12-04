@@ -13,10 +13,10 @@
     {% css "/assets/css/styles.css" %}
 </head>
 {# {% set bodyClass = class ?? null %} #}
-<body data-barba="wrapper" {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
+<body data-barba="wrapper" class="overflow-x-hidden {% if bodyClass is defined %}{{ bodyClass }}{% endif %}">
     {# {% include '_includes/_globals/load' %} #}
     {% include '_includes/_globals/navigation' %}
-    <main data-barba="container" {% if entry.type is defined %}data-barba-namespace="{{ entry.type }}"{% else %}data-barba-namespace="projectCategory"{% endif %}>
+    <main class="space-y-20" data-barba="container" {% if entry.type is defined %}data-barba-namespace="{{ entry.type }}"{% else %}data-barba-namespace="projectCategory"{% endif %}>
         {% block content %}{% endblock %}
     </main>
     {% include '_includes/_globals/footer' %}

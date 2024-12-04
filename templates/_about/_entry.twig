@@ -1,0 +1,7 @@
+{% extends "index" %}
+
+{% block content %}
+    {% include [
+        '_about/' ~ entry.type
+    ] %}
+{% endblock %}

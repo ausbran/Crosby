@@ -3,11 +3,11 @@
   "prefer-stable": true,
   "require": {
     "craftcms/ckeditor": "4.4.0",
-    "craftcms/cms": "5.5.2",
+    "craftcms/cms": "5.5.5",
     "craftsnippets/craft-image-toolbox": "3.0.1",
     "nystudio107/craft-seomatic": "5.1.7",
     "vaersaagod/dospaces": "3.0.0",
-    "verbb/formie": "3.0.12",
+    "verbb/formie": "3.0.14",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

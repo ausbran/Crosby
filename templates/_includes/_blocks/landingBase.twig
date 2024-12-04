@@ -17,10 +17,9 @@
     {% set maxChildMaxWidth = entry.maxWidth %}
 {% endif %}
 
-<div class="landing {{ entry.slug }}">
-    <div class="inner {{ textAlignment }}">
-        <div class="text fade-in" data-cascade>
-        {# <div class="text fade-in" data-cascade {% if maxChildMaxWidth is not null %}style="max-width: {{ maxChildMaxWidth }}px;"{% endif %}> #}
+<div class="landing {{ 'entry-type-' ~ entry.type }} {{ entry.slug }} py-28">
+    <div class="container inner items-end {{ textAlignment }}">
+        <div class="text fade-in grid grid-cols-12" data-cascade>
             {% block content %}
                 {# Default content, can be overridden in child templates #}
             {% endblock %}

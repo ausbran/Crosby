@@ -7,18 +7,11 @@ body {
   margin: 0;
   transition: background-color $transition-long;
   &.red {
-    background-color: $red;
     *::selection {
       background-color: $grey;
     }
-    footer {
-      background-color: transparent;
-      * {
-        color: $white;
-      }
-      .social-link svg * {
-        fill: $white;
-      }
+    .testimonials-content * {
+      color: $white;
     }
   }
 }
@@ -98,9 +91,6 @@ figure {
   -ms-user-drag: none;
   user-drag: none;
 }
-.red {
-  background-color: $red;
-}
 .scroll {
   overflow: scroll;
 }
@@ -116,6 +106,20 @@ figure {
   margin: $margin auto;
   width: $width;
   max-width: $max-width;
+}
+.progress-bar {
+  // height: 10px;
+  // background: $grey;
+  z-index: 4;
+  border-radius: 20px;
+
+  .progress {
+    border-radius: 20px;
+    will-change: width;
+    width: 0%;
+    height: 100%;
+    // background-color: $red;
+  }
 }
 .gradient:before,
 .gradient-top:after {
@@ -272,7 +276,7 @@ figure {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity .8s, transform .8s !important;
+  transition: .8s;
 }
 
 .fade-in.visible {

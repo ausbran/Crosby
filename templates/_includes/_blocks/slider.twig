@@ -1,6 +1,6 @@
 {# {% set height = height ?? 'medium' %} #}
 {% set slides = slides ?? block.slides.all() %}
-{% set visibleCards = visibleCards ?? '2' %}
+{% set slidesVisible = slidesVisible ?? '2' %}
 {% set class = class ?? null %}
 {% set slideHeader = slideHeader ?? null %}
 {% set arrows = arrows ?? true %}
@@ -13,7 +13,7 @@
         <h3 class="slider-header margin-bottom-sm">{{ slideHeader }}</h3>
     {% endif %}
     <div class="slider-container">
-        <div class="slider {{ class }} visible-cards-{{ visibleCards }}">
+        <div class="slider {{ class }} grid grid-cols-12 slides-visible-{{ slidesVisible }}">
             {% block slides %}
                 {% for slide in slides %}
                     {% include slideTemplate with {
@@ -23,14 +23,8 @@
             {% endblock %}
         </div>
         {% if arrows %}
-            {% include '_includes/_icons/arrowPrev' with {
-                firstArrow: 'red-arrow',
-                secondArrow: 'black-arrow'
-            } %}
-            {% include '_includes/_icons/arrowNext' with {
-                firstArrow: 'red-arrow',
-                secondArrow: 'black-arrow'
-            } %}
+            {% include '_includes/_icons/arrowPrev' %}
+            {% include '_includes/_icons/arrowNext' %}
         {% endif %}
     </div>
 </div>

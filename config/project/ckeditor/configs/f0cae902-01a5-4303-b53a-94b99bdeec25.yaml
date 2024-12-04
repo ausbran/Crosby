@@ -6,8 +6,50 @@ headingLevels:
   - 4
   - 5
   - 6
-js: "return {\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'center',\r\n      'right',\r\n    ],\r\n  },\r\n  style: {\r\n    definitions: [\r\n      {\r\n        name: 'h1',\r\n        element: 'h1',\r\n        classes: [\r\n          'h1',\r\n        ],\r\n      },\r\n      {\r\n        name: 'h2',\r\n        element: 'h1',\r\n        classes: [\r\n          'h2',\r\n        ],\r\n      },\r\n      {\r\n        name: 'h3',\r\n        element: 'h1',\r\n        classes: [\r\n          'h3',\r\n        ],\r\n      },\r\n      {\r\n        name: 'h4',\r\n        element: 'h1',\r\n        classes: [\r\n          'h4',\r\n        ],\r\n      },\r\n      {\r\n        name: 'Large Body Copy',\r\n        element: 'p',\r\n        classes: [\r\n          'h3',\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n}"
 name: Simple
+options:
+  alignment:
+    options:
+      - left
+      - center
+      - right
+  style:
+    definitions:
+      -
+        classes:
+          - h1
+        element: h1
+        name: h1
+      -
+        classes:
+          - h2
+        element: h1
+        name: h2
+      -
+        classes:
+          - h3
+        element: h1
+        name: h3
+      -
+        classes:
+          - h4
+        element: h1
+        name: h4
+      -
+        attributes:
+          class: col-span-1
+        element:
+          - p
+          - h1
+          - h2
+          - h3
+          - h4
+          - h5
+          - h6
+          - a
+          - img
+          - figure
+        name: 'Column Span 1'
 toolbar:
   - heading
   - '|'

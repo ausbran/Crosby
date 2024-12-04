@@ -1,0 +1,16 @@
+<div class="slide company">
+    <div class="image {% if height is defined %}{{ height }}{% endif %}">
+        {% if slide.asset is defined %}
+            {% set asset = slide.asset.one() %}
+            {% if asset %}
+                {% include '_includes/_blocks/asset' with {
+                    ratio:'4:5'
+                } %}
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="text">
+        <h4>{{ slide.title }}</h4>
+        {{ slide.text }}
+    </div>
+</div>

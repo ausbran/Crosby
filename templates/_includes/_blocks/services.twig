@@ -1,0 +1,40 @@
+<div id="services" class="service-slider container grid grid-cols-12">
+    <h4 class="row-start-1 col-span-2 text-2xl fade-in" data-cascade>
+        {{ entry.servicesSubHead }}
+    </h4>
+    <h2 class="row-start-2 text-6xl mt-4 mb-10 col-span-5 fade-in" data-cascade>
+        {{ entry.servicesHead }}
+    </h2>
+    <!-- Service Tabs with Right Overflow -->
+    <div class="service-tabs-wrapper mb-8 row-start-3 w-screen -ml-[calc((100%-1600px)/2))]">
+        <div 
+            class="service-tabs flex gap-4 whitespace-nowrap overflow-x-scroll">
+            {% for service in entry.services.all() %}
+                <button 
+                    class="tracking-tighter fade-in mb-6 tab-btn whitespace-nowrap text-xl font-medium px-6 pt-3.5 pb-3 border text-gray-300 border-gray-300 rounded-md cursor-pointer transition duration-300 hover:text-gray-500 {% if loop.first %}active{% endif %}" 
+                    data-service="{{ service.id }}" data-cascade>
+                    {{ service.title }}
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Service Slides -->
+    <div class="row-start-4 service-slides grid grid-cols-subgrid col-span-12">
+        <h3 class="col-span-3 text-3xl fade-in" data-cascade>{{ entry.servicesBody }}</h3>
+        <div class="service-slides-wrapper col-span-9 overflow-x-auto grid grid-cols-subgrid pb-4">
+            {% for service in entry.services.all() %}
+                <div 
+                    class="slides-container col-start-2 flex gap-4 {% if not loop.first %}hidden{% endif %}" 
+                    data-service="{{ service.id }}">
+                    {% for slide in service.slides.all() %}
+                        <div class="slide min-w-[240px] fade-in" data-cascade>
+                            <h4 class="mb-3 text-2xl">{{ slide.title }}</h4>
+                            {{ slide.text }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

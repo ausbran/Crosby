@@ -3,31 +3,34 @@
     .level(1)
     .all() %}
 
-<nav>
-    <a href="{{ currentSite.baseUrl }}" class="logo">
-        {% include '_includes/_svg/logo-horizontal.svg' %}
-    </a>
+<nav class="fixed top-0 left-0 right-0 z-10 transform transition-transform duration-300 ease-in-out">
+    <div class="container grid grid-cols-12">
+        <div class="inner col-span-6">
+            <a href="{{ currentSite.baseUrl }}" class="logo">
+                {% include '_includes/_svg/logo-horizontal.svg' %}
+            </a>
 
-    <ul class="primary-links">
-        {% for primary in navigation %}
-        <li>
-            <a href="{{ primary.linkUrl }}">{{ primary.title }}</a>
-            {% if primary.hasDescendants %}
-            <ul class="secondary-links">
-                {% for secondary in primary.getDescendants().level(2) %}
-                <li>
-                    <a href="{{ secondary.linkUrl }}">{{ secondary.title }}</a>
+            <ul class="primary-links">
+                {% for primary in navigation %}
+                <li class="relative">
+                    <a class="tracking-tighter" href="{{ primary.linkUrl }}">{{ primary.title }}</a>
+                    {% if primary.hasDescendants %}
+                    <ul class="secondary-links absolute opacity-0 transition-opacity duration-300 ease-in-out">
+                        {% for secondary in primary.getDescendants().level(2) %}
+                        <li class="tracking-tighter text-6xl">
+                            <a href="{{ secondary.linkUrl }}">{{ secondary.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
-            {% endif %}
-        </li>
-        {% endfor %}
-    </ul>
 
-    <div class="icons">
-        {% include '_includes/_icons/magnify' %}
-        {% include '_includes/_icons/close' %}
+            <div class="icons">
+                {% include '_includes/_icons/magnify' %}
+                {% include '_includes/_icons/close' %}
+            </div>
+        </div>
     </div>
-
 </nav>

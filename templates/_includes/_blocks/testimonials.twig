@@ -1,0 +1,26 @@
+{% set color = entry.color ?? '' %}
+
+<div class="bg-texture testimonials container grid grid-cols-12 py-20 {{ 'bg-' ~ color }}">
+    <div class="testimonials-content self-center col-span-4 col-start-3 grid grid-cols-subgrid">
+        <h4 class="row-start-1 col-span-4 testimonials-subhead">{{ entry.testimonialsSubHead }}</h4>
+        <h2 class="row-start-2 text-6xl col-span-4 mt-4 mb-10 pr-10 testimonials-head">{{ entry.testimonialsHead }}</h2>
+        <div class="row-start-3 col-span-1 progress-bar {{ 'bg-' ~ color ~ '-dark' }}">
+            <div class="progress bg-white"></div>
+        </div>
+    </div>
+    <div class="carousel col-span-4 col-start-7" data-slide-time="{{ entry.slideTime ?? 15 }}">
+        {% for testimonial in entry.testimonials.all() %}
+            <div class="border border-white carousel-item testimonial-card relative text-white p-12 rounded-lg overflow-hidden">
+                <blockquote class="text-3xl mb-28">
+                    {{ testimonial.quote | striptags }}
+                </blockquote>
+                <span class="block testimonial-name text-2xl">
+                    {{ testimonial.title }}
+                </span>
+                <span class="block testimonial-role text-2xl">
+                    {{ testimonial.role }}
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+</div>

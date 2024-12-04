@@ -1,0 +1,11 @@
+{% set class = class ?? null %}
+
+<div id="form" class="form grid grid-cols-12 {{ class }}">
+    <div class="form-side bg-texture col-span-4 rounded-tr-xl rounded-br-xl"></div>
+    <div class="form-inner col-span-4">
+        {{ craft.formie.renderForm(formHandle) }}
+        {{ craft.formie.renderFormJs(formHandle) }}
+        {{ craft.formie.renderFormCss(formHandle) }}
+    </div>
+    <div class="form-side bg-texture col-span-4 rounded-tl-xl rounded-bl-xl"></div>
+</div>

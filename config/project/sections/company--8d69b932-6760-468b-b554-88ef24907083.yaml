@@ -12,16 +12,19 @@ previewTargets:
         - label
         - 'Primary entry page'
       -
-        - refresh
-        - '1'
-      -
         - urlFormat
         - '{url}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   6974ec26-6de3-4cbe-87a2-c5363298442b: # Crosby
     enabledByDefault: true
     hasUrls: true
     template: _pages/company
-    uriFormat: company
-type: single
+    uriFormat: 'company/{slug}'
+structure:
+  maxLevels: null
+  uid: 2f5d1dec-c069-45f7-8a54-e11ab3f67584
+type: structure

@@ -1,53 +1,26 @@
 color: null
 fieldLayouts:
   a4f13285-ed14-44a6-af74-2478bd72c71c:
+    cardView:
+      - 'layoutElement:d8a8501a-e52a-4044-928c-27a4ab046612'
+      - 'layoutElement:8085fcfa-8e71-4bff-8880-643e4a50ada8'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-08-08T00:18:52+00:00'
-            disabled: false
+            dateAdded: '2024-11-26T04:35:25+00:00'
             elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: a6396540-21f4-4095-ba2d-e3a9d5aff31f
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-08-08T00:24:00+00:00'
-            elementCondition: null
-            fieldUid: 1cc8dda7-e3e2-4988-abfd-d613509a99cd # Image
-            handle: slideImage
-            includeInCards: false
+            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
+            handle: null
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 456b7fde-1642-45a0-b85f-ace54a724f30
+            uid: d8a8501a-e52a-4044-928c-27a4ab046612
             userCondition: null
             warning: null
             width: 100
@@ -55,10 +28,10 @@ fieldLayouts:
             dateAdded: '2024-08-08T00:24:00+00:00'
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
-            handle: null
-            includeInCards: false
+            handle: caption
+            includeInCards: true
             instructions: null
-            label: null
+            label: Caption
             providesThumbs: false
             required: false
             tip: null
@@ -90,9 +63,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-08-08T00:21:27+00:00'
+            dateAdded: '2024-12-04T06:45:46+00:00'
             elementCondition: null
-            fieldUid: 8a78e2ab-5ef3-4b0b-8141-22b9b95d4928 # Visible Cards
+            fieldUid: 91106ad6-75bd-4491-b0ee-b0a60f514c1a # Column Span
             handle: null
             includeInCards: false
             instructions: null
@@ -101,7 +74,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3572e404-d995-4601-8885-30eb7612ccc2
+            uid: 8f1fee78-5e88-4c07-b799-f61f4008596b
             userCondition: null
             warning: null
             width: 100
@@ -109,13 +82,13 @@ fieldLayouts:
         uid: a5a8e8ec-1574-4d7c-a54a-ab4b7f8ffb4d
         userCondition: null
 handle: slide
-hasTitleField: true
-icon: null
+hasTitleField: false
+icon: ''
 name: Slide
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

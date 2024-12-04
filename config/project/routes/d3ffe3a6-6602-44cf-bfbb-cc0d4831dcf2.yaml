@@ -1,6 +1,0 @@
-siteUid: null
-sortOrder: 1
-template: _projects/projectCategoryAll
-uriParts:
-  - projects/all
-uriPattern: projects/all

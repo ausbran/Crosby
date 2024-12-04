@@ -1,0 +1,81 @@
+{% block content %}
+    <div class="container mx-auto space-y-16 grid grid-cols-12 pt-[200px]">
+        {% for block in entry.historyBlocks.all() %}
+            {% switch block.type.handle %}
+                {% case 'headerBlock' %}
+                    {% set color = block.color ?? 'red' %}
+                    <div class="grid grid-cols-subgrid col-span-10 col-start-3 relative">
+                        <div class="bg-{{ color }} h-[calc(100%+200px)] w-[300%] -left-[100%] -top-[200px] absolute -z-1"></div>
+                        <h1 class="text-white text-8xl col-span-5">{{ block.title }}</h1>
+                        <div class="grid grid-cols-subgrid col-span-4 col-start-7">
+                            <h2 class="text-white mb-6 col-span-3 row-start-1 text-3xl mt-4">{{ block.subHead }}</h2>
+                            {% include '_includes/_blocks/text' with {
+                                text: block.text,
+                                pClass: 'text-base col-span-4 row-start-2 text-white'
+                            } %}
+                        </div>
+                    </div>
+                {% case 'sliderBlock' %}
+                    {% set color = block.color ?? 'red' %}
+                    <div class="bg-{{ color }} slider relative grid grid-cols-subgrid col-span-10 col-start-3">
+    <!-- Background Layer -->
+    <div class="absolute inset-0 bg-{{ color }} h-[calc(100%+200px)] w-[300%] -left-[100%] -top-[200px] -z-1"></div>
+
+    <!-- Slider Wrapper -->
+    <div class="col-span-10 overflow-x-auto">
+        <div class="flex gap-6">
+            {% for slide in block.slides %}
+                <!-- Slide Container -->
+                {% set columnSpan = slide.columnSpan ?? 4 %} {# Default to col-span-4 #}
+                <div class="flex-none" style="flex: 0 0 calc((100% / 10 * {{ columnSpan }}) - ((1.5em) / 10));">
+                    <div class="rounded-xl overflow-hidden mb-6 h-[600px]">
+                        <!-- Image -->
+                        {% include '_includes/_blocks/asset' with {
+                            asset: slide.asset.one()
+                        } %}
+                    </div>
+                    <div class="mt-4 grid grid-cols-{{ columnSpan }}">
+                        <!-- Caption -->
+                        {% include '_includes/_blocks/text' with {
+                            text: slide.caption,
+                            pClass: 'text-base text-white col-span-2'
+                        } %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+                {% case 'largeImageBlock' %}
+                    {% set color = block.color ?? 'red' %}
+                    <div class="bg-{{ color }} grid grid-cols-subgrid col-span-10 col-start-3 relative">
+                        {% include '_includes/_blocks/asset' with {
+                            ratio: '1:1',
+                            asset: block.asset.one()
+                        } %}
+                        {% include '_includes/_blocks/text' with {
+                            text: block.caption,
+                            pClass: 'text-base col-span-2'
+                        } %}
+                    </div>
+                {% case 'pullQuoteBlock' %}
+                    {% set color = block.color ?? 'red' %}
+                    <blockquote class="bg-{{ color }} grid grid-cols-subgrid col-span-10 col-start-3 text-3xl italic text-center my-12">
+                        "{{ block.text }}"
+                    </blockquote>
+                {% case 'masonryGridBlock' %}
+                    {% set color = block.color ?? 'red' %}
+                    <div class="bg-{{ color }} grid grid-cols-subgrid col-span-10 col-start-3 gap-4">
+                        {% for asset in block.asset.all() %}
+                            <div>
+                                {% include '_includes/_blocks/asset' with {
+                                    ratio: '1:1',
+                                    asset: block.asset.one()
+                                } %}
+                            </div>
+                        {% endfor %}
+                    </div>
+            {% endswitch %}
+        {% endfor %}
+    </div>
+{% endblock %}

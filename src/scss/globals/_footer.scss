@@ -1,4 +1,5 @@
 footer {
+  background: $red;
   margin: auto;
   position: relative;
   text-align: center;
@@ -6,18 +7,16 @@ footer {
   justify-content: space-between;
   align-items: flex-end;
   gap: $gap-large;
-  max-width: $max-width;
-  background: $white;
-  color: $black;
-  height: 240px;
-  padding: $padding;
-  border-radius: $box-radius;
+  color: $white;
+  padding: 170px 0 50px 0;
   overflow: hidden;
-  box-sizing: content-box;
   .logo {
     height: 100%;
     a, img, svg {
       height: inherit;
+    }
+    svg * {
+      fill: $white;
     }
     a {
       transition: $transition-medium;

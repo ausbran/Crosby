@@ -1,21 +1,21 @@
-<footer class="footer bg-red-600 text-white py-8">
-	<div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-		<div class="footer-links">
+<footer class="footer bg-texture mt-20">
+	<div class="container grid grid-cols-12">
+		<div class="logo fade-in col-span-2">
+			<a href="{{ currentSite.baseUrl }}">
+				{% include '_includes/_svg/logo-horizontal.svg' %}
+			</a>
+		</div>
+		<div class="col-span-10 list-none flex items-end justify-end gap-10">
 			{% set primaryLinks = footer.primaryLinks.all() %}
 			{% for link in primaryLinks %}
-				<a href="{{ link.getUrl() }}" class="link">
+				<a href="{{ link.getUrl() }}" class="text-md font-medium">
 					{{ link.title }}
 				</a>
 			{% endfor %}
 			<a class="social-link" href="" target="_blank" rel="noopener noreferrer">
 				{% include '_includes/_svg/instagram.svg' %}
 			</a>
-			<p class="copyright">&copy;{{ 'now' | date('Y') }} {{ siteName }}. All Rights Reserved.</p>
-		</div>
-		<div class="logo fade-in">
-			<a href="{{ currentSite.baseUrl }}">
-				{% include '_includes/_svg/logo-horizontal.svg' %}
-			</a>
+			{# <p class="copyright">&copy;{{ 'now' | date('Y') }} {{ siteName }}. All Rights Reserved.</p> #}
 		</div>
 	</div>
 </footer>

@@ -10,7 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-08-22T22:07:57+00:00'
+            dateAdded: '2024-12-03T20:44:54+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,158 +31,16 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 7d1fc154-11ae-4a01-bf79-b32398a014df
+            uid: 6f5c15c8-28ab-4e64-8e7d-2a6806fc42c1
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2024-08-22T22:13:32+00:00'
-            elementCondition: null
-            heading: 'Jackson Office'
-            type: craft\fieldlayoutelements\Heading
-            uid: 0c4147e3-ab98-429a-9f76-201cc91daf10
-            userCondition: null
-          -
-            dateAdded: '2024-08-22T23:02:21+00:00'
-            elementCondition: null
-            fieldUid: 4e18f1d5-2eaa-4991-92ac-5b50d48d27c7 # Location
-            handle: jacksonLocation
-            includeInCards: false
-            instructions: null
-            label: 'Jackson Location'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 6358a5b6-0f7e-4dae-b35e-0e1ee19db797
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T22:13:32+00:00'
-            elementCondition: null
-            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
-            handle: jacksonImage
-            includeInCards: false
-            instructions: null
-            label: 'Jackson Image'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7b34c552-6c21-4ae1-9d0e-202c8c8375b8
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T23:46:18+00:00'
-            elementCondition: null
-            fieldUid: 5590a4d0-6aea-460c-af02-904f547f51d8 # Google Maps Link
-            handle: jacksonGoogle
-            includeInCards: false
-            instructions: null
-            label: 'Jackson Google Maps Link'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ba4fa3a4-82b2-42ee-ad8a-74960f0134f3
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T23:06:41+00:00'
-            elementCondition: null
-            fieldUid: a13e25fc-5eb6-46ae-a677-3b785baa9288 # Phone Number
-            handle: jacksonPhone
-            includeInCards: false
-            instructions: null
-            label: 'Jackson Phone'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7c59275b-d395-4fe0-b02c-3a8677631346
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T22:13:32+00:00'
-            elementCondition: null
-            heading: 'Teton Valley Office'
-            type: craft\fieldlayoutelements\Heading
-            uid: 13ef2433-3530-45b3-82ac-136c5c6978ad
-            userCondition: null
-          -
-            dateAdded: '2024-08-22T23:02:21+00:00'
-            elementCondition: null
-            fieldUid: a0ea378e-9a4f-431f-990c-2e021a25849f # Teton Valley Location
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 1c83940f-5d66-4e29-b61b-8977d15f6bf6
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T22:13:32+00:00'
-            elementCondition: null
-            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
-            handle: tetonImage
-            includeInCards: false
-            instructions: null
-            label: 'Teton Valley Image'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8b0426d9-e355-4b90-8d37-87a4040d8eab
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T23:46:18+00:00'
-            elementCondition: null
-            fieldUid: 5590a4d0-6aea-460c-af02-904f547f51d8 # Google Maps Link
-            handle: tetonGoogle
-            includeInCards: false
-            instructions: null
-            label: 'Teton Valley Google Maps Link'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ec78400a-e999-4bda-8aa0-16f3b6f73a18
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-08-22T23:06:41+00:00'
-            elementCondition: null
-            fieldUid: a13e25fc-5eb6-46ae-a677-3b785baa9288 # Phone Number
-            handle: tetonPhone
-            includeInCards: false
-            instructions: null
-            label: 'Teton Valley Phone'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 16c7da53-f5f6-4fc0-bb90-476af1fa2be4
-            userCondition: null
-            warning: null
-            width: 50
         name: Content
         uid: e673e1d7-05a8-4eb2-bae4-bb60b18816e0
         userCondition: null
 handle: contact
-hasTitleField: false
-icon: null
+hasTitleField: true
+icon: ''
 name: Contact
 showSlugField: true
 showStatusField: true

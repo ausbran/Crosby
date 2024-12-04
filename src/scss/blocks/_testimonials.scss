@@ -1,0 +1,24 @@
+.testimonials {
+    border-radius: $box-radius;
+    .testimonials-content,
+    .carousel {
+        // width: 33%;
+    }
+    .carousel {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .carousel-item {
+            display: none;
+            &.active {
+                display: block;
+            }
+            .testimonial-card {
+                border: 1px solid $white;
+                border-radius: $box-radius;
+                padding: 2rem;
+            }
+        }
+    }
+}

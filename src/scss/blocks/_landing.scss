@@ -6,9 +6,7 @@
   @include flex-center;
   overflow: hidden;
   background: $white;
-  padding: 75px;
   .inner {
-    max-width: $max-width;
     display: flex;
     width: 100%;
     height: 100%;
@@ -18,21 +16,9 @@
     font-size: 1em;
     .text {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: $gap;
-      img {
-        width:80%;
-        max-width:450px;
-      }
     }
     * {
       color: $white;
-    }
-    p {
-      max-width: 1000px;
-      font-size: 1.25rem;
-      line-height: 1.5em;
     }
     .description-wrapper,
     .iframe-wrapper {
@@ -67,20 +53,6 @@
       }
     }
   }
-  .progress-bar {
-    width: 100px;
-    height: 10px;
-    background: $grey;
-    z-index: 4;
-    border-radius: 20px;
-    .progress {
-      border-radius: 20px;
-      will-change: width;
-      width: 0%;
-      height: 100%;
-      background-color: $red;
-    }
-  }
   .overlay {
     position: absolute;
     top: 0;
@@ -90,9 +62,6 @@
     background-color: #000;
     opacity: 0;
     z-index: 1;
-  }
-  &.project {
-    background: $white;
   }
   @include respond-to-max($desktop-xlarge) {
     padding: 50px;

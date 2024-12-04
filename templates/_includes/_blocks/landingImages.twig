@@ -1,25 +1,30 @@
 {% extends '_includes/_blocks/landingBase' %}
 
 {% block content %}
-    <div class="progress-bar">
-        <div class="progress"></div>
+    <div class="progress-bar bg-white lg:col-span-1 md:col-span-2 col-span-3 row-start-1 {% if entry.asset|length == 1 %}hidden{% endif %}">
+        <div class="progress bg-red"></div>
     </div>
-    {{ entry.text }}
-    <div class="buttons wrapper mobile-slider-spacer">
-        {% if entry.buttons|length %}
+    <div class="space-y-4 col-span-12 row-start-2 mt-12 mb-8 self-end grid grid-cols-subgrid">
+        {% include '_includes/_blocks/text' %}
+    </div>
+    {% if entry.buttons|length %}
+        <div class="buttons flex gap-6 row-start-3">
             {% for button in entry.buttons.all() %}
                 {% include '_includes/_blocks/button' with {
                     link: button.buttonLink,
                     label: button.buttonLabel
                 } %}
             {% endfor %}
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block background %}
     {% if entry.asset|length %}
-        <div class="carousel gradient" data-slide-time="{{ entry.slideTime ?? 15 }}">
+        <div class="carousel" data-slide-time="{{ entry.slideTime ?? 15 }}">
+            {% include '_includes/_blocks/gradient.twig' with {
+                zIndex: '4'
+            } %}
             {% for asset in entry.asset.all() %}
                 <div class="carousel-item">
                     {% include '_includes/_blocks/asset' %}

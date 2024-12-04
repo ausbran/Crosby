@@ -32,19 +32,19 @@
         overflow-y: hidden;
         padding-bottom: 1px; // for descenders of letters getting cut off
         padding-right: $scroll-padding;
-        &.visible-cards-1 .slide {
+        &.slides-visible-1 .slide {
             width: 100%;
         }
         
-        &.visible-cards-2 .slide {
+        &.slides-visible-2 .slide {
             width: 50%;
         }
         
-        &.visible-cards-3 .slide {
+        &.slides-visible-3 .slide {
             width: 33.33%;
         }
         
-        &.visible-cards-4 .slide {
+        &.slides-visible-4 .slide {
             width: 25%;
         }
         &.accordion {
@@ -395,7 +395,7 @@
 
 @include respond-to-max(1300px) {
     .slider-container .slider {
-        &.visible-cards-3 .slide {
+        &.slides-visible-3 .slide {
             width: 50%;
             max-width: unset;
         }
