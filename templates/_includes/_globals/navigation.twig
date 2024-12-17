@@ -3,34 +3,42 @@
     .level(1)
     .all() %}
 
-<nav class="fixed top-0 left-0 right-0 z-10 transform transition-transform duration-300 ease-in-out">
-    <div class="container grid grid-cols-12">
-        <div class="inner col-span-6">
-            <a href="{{ currentSite.baseUrl }}" class="logo">
-                {% include '_includes/_svg/logo-horizontal.svg' %}
-            </a>
+<nav id="main-nav" class="md:page top-0 md:top-8 grid grid-cols-12 fixed left-0 right-0 z-10 transform transition-transform duration-300 ease-in-out">
 
-            <ul class="primary-links">
-                {% for primary in navigation %}
-                <li class="relative">
-                    <a class="tracking-tighter" href="{{ primary.linkUrl }}">{{ primary.title }}</a>
-                    {% if primary.hasDescendants %}
-                    <ul class="secondary-links absolute opacity-0 transition-opacity duration-300 ease-in-out">
-                        {% for secondary in primary.getDescendants().level(2) %}
-                        <li class="tracking-tighter text-6xl">
-                            <a href="{{ secondary.linkUrl }}">{{ secondary.title }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
 
-            <div class="icons">
-                {% include '_includes/_icons/magnify' %}
-                {% include '_includes/_icons/close' %}
-            </div>
-        </div>
-    </div>
+	<div class="inner relative p-8 grid grid-cols-subgrid col-span-12 xl:col-span-8 justify-between items-center text-center text-base bg-red text-white md:rounded-xl z-[9999]">
+
+		<a href="{{ currentSite.baseUrl }}" class="relative z-2  col-span-2 xl:col-span-1 xl:min-w-[100px] max-w-[100px] transition-all duration-300 hover:opacity-60 cursor-pointer">
+
+			{% include '_includes/_svg/logo-horizontal.svg' %}
+		</a>
+
+		<ul class="highlight col-start-4 xl:col-start-3 col-span-7 xl:col-span-4 justify-between primary-links flex flex-row">
+			{% for primary in navigation %}
+				<li class="group font-medium z-10">
+					<span class="relative z-3 tracking-tighter">{{ primary.title }}</span>
+					{% if primary.hasDescendants %}
+						<ul class="secondary-links z-2 w-full text-left rounded-md absolute left-0 invisible transition-all duration-300 ease-in-out transform">
+							<div class="color-banner duration-500 z-1 col-span-8 rounded-br-xl rounded-bl-xl bg-red absolute w-full h-full"></div>
+							<div class="z-2 p-16 pt-40 space-y-10">
+								{% for secondary in primary.getDescendants().level(2) %}
+									<li class="opacity-0 tracking-tighter text-nav hover:opacity-60 transition-all duration-300">
+										<a href="{{ secondary.linkUrl }}">{{ secondary.title }}</a>
+									</li>
+								{% endfor %}
+							</div>
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+
+		<div class="icons col-span-1 col-start-12 xl:col-start-8 h-4">
+
+			{% include '_includes/_icons/magnify' with {
+				class: '!bg-transparent'
+			}%}
+			{% include '_includes/_icons/close' %}
+		</div>
+	</div>
 </nav>

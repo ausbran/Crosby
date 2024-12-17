@@ -1,69 +1,34 @@
 .banner {
-    padding: $padding 75px;
-    box-sizing: content-box;
-    &.text {
-        gap: $gap-xlarge;
-        max-width: $max-width;
-        margin-right: auto;
-        margin-left: auto;
-        display: flex;
-        h1 {
-            color: $red;
-            white-space: nowrap;
-        }
-         p {
-            padding-top: 26px;
-         }
-         .inner {
-            gap: $gap;
-            display: flex;
-            flex-direction: column;
-         }
+  position: relative;
+  height: 100svh;
+  width: 100vw;
+  min-height: 600px;
+  @include flex-center;
+  overflow: hidden;
+  background: $white;
+  .background,
+  .carousel {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .carousel {
+    &.gradient:before {
+      z-index: 4;
     }
-    &.box {
-        background-color: $red;
-        height: 400px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        .inner {
-            display: flex;
-            flex-direction: column;
-            gap: $gap;
-            max-width: $max-width;
-            margin: 0 auto;
-            width: 100%;
-        }
-        * {
-            color: $white;
-        }
+    .carousel-item {
+      height: inherit;
+      width: inherit;
+      position: inherit;
+      z-index: 2;
+      opacity: 0;
+      transition: $transition;
+      &.active {
+        z-index: 3;
+        opacity: 1;
+      }
     }
-    @include respond-to-max($desktop-xlarge) {
-        padding: 50px;
-    }
-    @include respond-to-max(1300px) {
-        &.text.long {
-            flex-direction: column;
-            gap: $gap !important;
-            max-width: 800px;
-            margin-left: unset;
-            p {
-                padding-top: unset;
-            }
-        }
-    }
-    @include respond-to-max($desktop) {
-        &.text {
-            flex-direction: column;
-            gap: $gap-medium;
-            max-width: 800px;
-            margin-left: unset;
-            p {
-                padding-top: unset;
-            }
-        }
-    }
-    @include respond-to-max($mobile) {
-        padding: 45px 25px;
-    }
-}
+  }
+} // end landing

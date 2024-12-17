@@ -1,11 +1,17 @@
-<div class="slider">
-    <ul class="slider-inner">
-        <li class="slide"></li>
-    </ul>
+<div class="page pt-80 grid grid-cols-12">
     <div class="slider-nav">
-        {{ block.description }}
+        <h1 class="col-span-12 text-3xl mb-6">Slider Example</h1>
         {% if block.children | length > 1 %}
-            {% include "_includes/arrows" %}
+            {% include "_includes/_icons/arrows" %}
         {% endif %}
+    </div>
+    <div class="col-span-12 mx-auto slider-wrapper">
+        <div class="flex overflow-x-auto h-40 slider">
+            <div class="slide flex-span-2 bg-red-200">Slide 1</div>
+            <div class="slide flex-span-3 bg-red-300">Slide 2</div>
+            <div class="slide flex-span-4 bg-red-400">Slide 3</div>
+            <div class="slide flex-span-4 bg-red-500">Slide 4</div>
+            <div class="slide flex-span-4 bg-red-500">Slide 5</div>
+        </div>
     </div>
 </div>

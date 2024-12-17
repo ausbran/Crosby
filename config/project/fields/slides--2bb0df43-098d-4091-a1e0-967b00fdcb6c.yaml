@@ -7,7 +7,8 @@ settings:
   createButtonLabel: 'New Slide'
   defaultIndexViewMode: cards
   entryTypes:
-    - 29b40ffa-789b-4a79-92c0-9e36437ed3d8 # Slide
+    - 29b40ffa-789b-4a79-92c0-9e36437ed3d8 # Asset and Caption Slide
+    - a2e75282-0b5f-4e05-9669-37d9d961dbb6 # Text Slide
   includeTableView: false
   maxEntries: null
   minEntries: null

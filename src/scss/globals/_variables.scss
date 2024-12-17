@@ -1,16 +1,16 @@
 // color---------------------------------------
-$red: #EB2127;
-$orange: #F37321;
-$yellow: #F99C1C;
-$green: #5A6D46;
+$red: #eb2127;
+$orange: #f37321;
+$yellow: #f99c1c;
+$green: #5a6d46;
 $black: #333333;
-$grey: #E5E5E5;
-$white: #FFFFFF;
+$grey: #e5e5e5;
+$white: #ffffff;
 
 // Convert SCSS variable to CSS variable
 :root {
-    --red: #{$red};
-    --grey: #{$grey};
+  --red: #{$red};
+  --grey: #{$grey};
 }
 
 // sizing---------------------------------------
@@ -25,17 +25,17 @@ $radius: 15px;
 
 // transitions----------------------------------
 $ease: cubic-bezier(0.23, 1, 0.32, 1);
-$transition-short: .1s $ease;
-$transition: .28s $ease;
-$transition-medium: .5s $ease;
-$transition-long: .8s $ease;
+$transition-short: 0.1s $ease;
+$transition: 0.28s $ease;
+$transition-medium: 0.5s $ease;
+$transition-long: 0.8s $ease;
 
 // type-----------------------------------------
-$base: 'F37 Blanka', helvetica, sans-serif !important;
+$base: "F37 Blanka", helvetica, sans-serif !important;
 
 // shadows--------------------------------------
-$text-shadow: 0px 1px 2px rgba($black, .1);
-$box-shadow: 0px 5px 30px rgba($black, .1);
+$text-shadow: 0px 1px 2px rgba($black, 0.1);
+$box-shadow: 0px 5px 30px rgba($black, 0.1);
 
 // spacing-----------------------------------------
 $margin-xlarge: 200px;
@@ -77,21 +77,19 @@ $desktop-xxxlarge: 2200px;
 $scroll-padding-border: 1750px;
 
 // fonts--------------------------------------
-$h1: 8.5rem;  // 90px
-$h2: 2.5rem;   // 40px
+$h1: 8.5rem; // 90px
+$h2: 2.5rem; // 40px
 $h3: 1.625rem; // 26px
 $h4: 1.2rem; // 22px
-$p: 1rem;   // 16px
+$p: 1rem; // 16px
 
-
-$h1-desktop: 4rem;  // 56px
-$h2-desktop: 2.5rem;  // 40px
-$h3-desktop: 1rem;    // 16px
+$h1-desktop: 4rem; // 56px
+$h2-desktop: 2.5rem; // 40px
+$h3-desktop: 1rem; // 16px
 $h4-desktop: 1.125rem; // 18px
 
-
-$h1-mobile: 3.25rem;  // 44px
-$h2-mobile: 2.25rem;     // 32px
+$h1-mobile: 3.25rem; // 44px
+$h2-mobile: 2.25rem; // 32px
 $h3-mobile: 1.25rem; // 14px
-$h4-mobile: 1.15rem;     // 16px
-$p-mobile: .9rem;   // 16px
+$h4-mobile: 1.15rem; // 16px
+$p-mobile: 0.9rem; // 16px

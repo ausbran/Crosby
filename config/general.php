@@ -24,4 +24,7 @@ return GeneralConfig::create()
     ->aliases([
         '@webroot' => dirname(__DIR__) . '/web',
     ])
+    ->extraAllowedFileExtensions([
+        'shp', 'shx', 'dbf', 'prj', 'prj4', 'ids', 'idx', 'geojson' // Adding shapefiles for maps
+    ])
 ;

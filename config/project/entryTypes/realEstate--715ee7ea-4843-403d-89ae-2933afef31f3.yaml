@@ -1,0 +1,73 @@
+color: null
+fieldLayouts:
+  24fe678f-1c37-402a-ae14-0f83240d9391:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-06T04:25:55+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 077938c7-c50c-44c8-b69e-e36012a8c332
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-06T04:27:16+00:00'
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2094f8f-21e4-47cd-878d-603272fea893
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-06T05:03:23+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 064cca3e-41f4-4dca-b639-ff842e19895e
+            userCondition: null
+        name: Content
+        uid: 797ae5a1-b3c7-4230-860b-972e469b7b2d
+        userCondition: null
+handle: realEstate
+hasTitleField: true
+icon: ''
+name: 'Real Estate'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,12 @@
+<div class="page grid grid-cols-12 pt-[180px] !mt-0">
+	<div class="col-span-6 grid grid-cols-6 space-y-6 content-start justify-center">
+		<h2 class="text-6xl font-medium col-span-6 row-start-1">{{ entry.title }}</h2>
+		<div class="text-lg xl:col-span-4 col-span-6 row-start-2">{{ entry.text|raw }}</div>
+		{% block left %}{% endblock %}
+
+	</div>
+	<!-- Right Content: Map -->
+	<div id="map" class="z-3 rounded-xl sticky h-[calc(100svh-250px)] max-h-[750px] top-[180px] col-span-6 bg-gray-200 p-6"></div>
+</div>
+
+{% block modal %}{% endblock %}

@@ -1,0 +1,156 @@
+{% extends '_land/map' %}
+{% set footerClass = '!mt-0' %}
+{% set listings = craft.entries()
+                    .section('realEstate')
+                    .all() %}
+
+
+{% block left %}
+	<!-- Listings Section -->
+	<h2 class="text-3xl col-span-6 !mt-16">{{ listings|length }}
+		Listings</h2>
+
+	<div class="z-1 col-span-6 grid grid-cols-6 !gap-y-6">
+		{% for listing in listings %}
+			<div class="xl:col-span-3 col-span-6 relative bg-white space-y-4">
+				{% if listing.asset.one() %}
+					<div data-id="{{listing.id}}" class="image-button outline-hover h-60 object-cover rounded-xl overflow-hidden w-full">
+						{% include '_includes/_blocks/asset' with {
+							asset: listing.asset.one(),
+							class: "w-full h-full object-cover"
+						} %}
+					</div>
+				{% endif %}
+				<div class="group">
+					<h3 class="text-3xl font-medium">
+						{{ listing.title }}
+					</h3>
+					<div class="flex flex-wrap justify-between pr-4">
+						<div class="group gap-6 mr-6 flex text-base">
+							{% if listing.address is defined %}
+								{% set address = listing.address.one() %}
+								{% if address %}
+									<h4 class="font-normal">{{ address.locality }},
+										{{ address.administrativeArea }}</h4>
+								{% endif %}
+							{% endif %}
+							<h4 class="font-normal">
+								{{ listing.acreage }}
+								Acres
+							</h4>
+						</div>
+						{% include '_includes/_blocks/button' with {
+                                    link: '#',
+                                    label: 'View',
+                                    class: 'btn-inline view-button',
+                                    firstArrow: 'red-arrow',
+                                    secondArrow: 'black-arrow',
+                                    attributes: {
+                                        'data-id': listing.id
+                                    }
+                                } %}
+
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<!-- Pass Listings to JavaScript -->
+	{% set companyPhone = '+1-800-555-1234' %}
+	{# Default company phone number #}
+
+	<script>
+		// Define mapData globally
+window.mapData = {
+listings: [{% for listing in listings %}{
+id: "{{ listing.id }}",
+title: "{{ listing.title }}",
+description: "{{ listing.text|striptags }}",
+address: {
+locality: "{{ listing.address.one() ? listing.address.one().locality : '' }}",
+administrativeArea: "{{ listing.address.one() ? listing.address.one().administrativeArea : '' }}"
+},
+price: "{{ listing.price|default('') }}",
+acreage: "{{ listing.acreage|default('') }}",
+features: [{% for feature in listing.features.all() %}{
+title: "{{ feature.title|default('') }}",
+text: "{{ feature.text|striptags }}"
+}
+{% if not loop.last %},{% endif %}{% endfor %}],
+phone: "{{ listing.staffContact.one() ? listing.staffContact.one().phone : companyPhone }}",
+images: [{% for image in listing.asset.all() %}`{% include '_includes/_blocks/asset' with {
+				asset: image,
+				class: "w-full rounded-xl"
+			} %}`{% if not loop.last %},{% endif %}{% endfor %}],
+shapefile: [{% for file in listing.shapeFile.all() %}"{{ file.url }}"{% if not loop.last %},{% endif %}{% endfor %}]
+}
+{% if not loop.last %},{% endif %}{% endfor %}]
+};
+	</script>
+{% endblock %}
+
+{% block modal %}
+	<!-- Content Modal -->
+	<div id="modal" class="page overflow-y-scroll z-2 bg-white grid grid-cols-12 fixed inset-0 flex items-start justify-center !mt-0 pt-[180px] pb-14">
+
+		<div class="bg-white grid grid-cols-subgrid relative col-span-6">
+
+			{% include '_includes/_icons/close' with {
+				class: 'content-modal-close !absolute z-2 top-0 right-0 modal-close'
+            } %}
+			<h2 id="modal-title" class="text-6xl col-span-5 mb-4"></h2>
+			<div class="flex gap-10 col-span-6 mb-8">
+				<p id="modal-price" class="text-2xl"></p>
+				<p id="modal-address" class="text-2xl"></p>
+				<p id="modal-acreage" class="text-2xl"></p>
+			</div>
+			<div id="modal-description" class="col-span-5"></div>
+			<div id="modal-features" class="mt-8 col-span-6 grid grid-cols-subgrid">
+				<ul class="list-none !gap-y-4 col-span-6 grid grid-cols-subgrid"></ul>
+			</div>
+			<div class="col-span-6 flex gap-6">
+				{% include '_includes/_blocks/button' with {
+                    link: '#',
+                    label: 'Get in touch',
+                    class: 'email-button'
+                } %}
+				{% include '_includes/_blocks/button' with {
+                    link: '#',
+                    label: 'Call',
+                    class: 'call-button'
+                } %}
+			</div>
+
+			<div class="slider-shadow mt-8 grid grid-cols-subgrid flex col-span-6 overflow-x-scroll gap-6 !-mr-0 slider-wrapper snap-x">
+				<div
+					id="modal-image-container" class="slider col-span-6 !pr-0"><!-- hover:opacity-70; snap-start;scroll-ml-16 -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Photo Modal -->
+	<div id="photo-modal" class="page grid grid-cols-12 !mt-0 z-50 bg-white fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+
+		{% include '_includes/_icons/close' with {
+			class: 'photo-modal-close !absolute z-2 top-6 right-6 modal-close'
+		} %}
+		<div
+			id="photo-modal-image-container" class="relative col-span-12 grid grid-cols-subgrid h-full items-center justify-center">
+			<!-- Images will be populated here dynamically -->
+			<button class="absolute left-0 text-white text-2xl arrow" id="photo-modal-prev">❮</button>
+			<button class="absolute right-0 text-white text-2xl arrow" id="photo-modal-next">❯</button>
+		</div>
+	</div>
+
+	<!-- Contact Modal -->
+	<div id="contact-modal" class="grid grid-cols-12 fixed inset-0 z-50 bg-red flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+		{% include '_includes/_icons/close' with {
+			class: 'contact-modal-close !absolute z-2 top-0 right-0 modal-close'
+		} %}
+		<div class="bg-red col-span-6 rounded-xl p-8 shadow-lg">
+			<h2 id="contact-modal-title" class="text-2xl mb-4">Get in touch</h2>
+		</div>
+	</div>
+{% endblock %}

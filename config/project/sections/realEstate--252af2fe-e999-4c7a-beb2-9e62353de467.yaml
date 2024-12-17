@@ -1,0 +1,30 @@
+defaultPlacement: beginning
+enableVersioning: true
+entryTypes:
+  - 8eaea240-f35d-4b49-a8bf-c7b1ae70979a # Real Estate Listing
+handle: realEstate
+maxAuthors: 1
+name: 'Real Estate'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  6974ec26-6de3-4cbe-87a2-c5363298442b: # Crosby
+    enabledByDefault: true
+    hasUrls: true
+    template: land/real-estate-listing.twig
+    uriFormat: 'land-minerals/real-estate/{slug}'
+structure:
+  maxLevels: 1
+  uid: b7c772fd-ed3e-43c6-b0e3-12362f16a555
+type: structure

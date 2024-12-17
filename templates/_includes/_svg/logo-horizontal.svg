@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 211.7 61">
-  <!-- Generator: Adobe Illustrator 29.0.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 192)  -->
+
+<svg {% if class is defined %}class="{{ class }}"{% endif %} version="1.1" viewBox="0 0 211.7 61">
   <defs>
     <style>
       .st0 {
-        fill: #333;
+        fill: #fff;
       }
     </style>
   </defs>

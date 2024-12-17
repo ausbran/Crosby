@@ -1,9 +1,9 @@
-{% set h1Class = h1Class ?? 'col-span-10' %}
-{% set h2Class = h2Class ?? 'col-span-10' %}
-{% set h3Class = h3Class ?? 'col-span-10' %}
-{% set h4Class = h4Class ?? 'col-span-10' %}
-{% set pClass = pClass ?? 'col-span-6 text-lg' %}
-{% set figureClass = figureClass ?? 'col-span-4' %}
+{% set h1Class = h1Class ?? 'col-span-12 lg:col-span-8 xl:col-span-12' %}
+{% set h2Class = h2Class ?? 'col-span-12 lg:col-span-8 xl:col-span-6' %}
+{% set h3Class = h3Class ?? 'col-span-12 lg:col-span-8 xl:col-span-6' %}
+{% set h4Class = h4Class ?? 'col-span-12 lg:col-span-8 xl:col-span-6' %}
+{% set pClass = pClass ?? 'col-span-12 lg:col-span-8 xl:col-span-6 text-lg' %}
+{% set figureClass = figureClass ?? 'col-span-4 sm:col-span-3 lg:col-span-2' %}
 
 {% set text = text ?? (entry.text is defined ? entry.text|raw : '') %}
 

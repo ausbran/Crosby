@@ -1,88 +1,98 @@
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-Bold.woff2') format('woff2'),
-    url('../fonts/F37Blanka-Bold.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-Bold.woff2") format("woff2"),
+    url("../fonts/F37Blanka-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-BoldItalic.woff2') format('woff2'),
-    url('../fonts/F37Blanka-BoldItalic.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-BoldItalic.woff2") format("woff2"),
+    url("../fonts/F37Blanka-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-LightItalic.woff2') format('woff2'),
-    url('../fonts/F37Blanka-LightItalic.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-LightItalic.woff2") format("woff2"),
+    url("../fonts/F37Blanka-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-MediumItalic.woff2') format('woff2'),
-    url('../fonts/F37Blanka-MediumItalic.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-MediumItalic.woff2") format("woff2"),
+    url("../fonts/F37Blanka-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-Medium.woff2') format('woff2'),
-    url('../fonts/F37Blanka-Medium.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-Medium.woff2") format("woff2"),
+    url("../fonts/F37Blanka-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-Light.woff2') format('woff2'),
-    url('../fonts/F37Blanka-Light.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-Light.woff2") format("woff2"),
+    url("../fonts/F37Blanka-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-SemiBold.woff2') format('woff2'),
-    url('../fonts/F37Blanka-SemiBold.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-SemiBold.woff2") format("woff2"),
+    url("../fonts/F37Blanka-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-Regular.woff2') format('woff2'),
-    url('../fonts/F37Blanka-Regular.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-Regular.woff2") format("woff2"),
+    url("../fonts/F37Blanka-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-SemiBoldItalic.woff2') format('woff2'),
-    url('../fonts/F37Blanka-SemiBoldItalic.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-SemiBoldItalic.woff2") format("woff2"),
+    url("../fonts/F37Blanka-SemiBoldItalic.woff") format("woff");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'F37 Blanka';
-  src: url('../fonts/F37Blanka-RegularItalic.woff2') format('woff2'),
-    url('../fonts/F37Blanka-RegularItalic.woff') format('woff');
+  font-family: "F37 Blanka";
+  src:
+    url("../fonts/F37Blanka-RegularItalic.woff2") format("woff2"),
+    url("../fonts/F37Blanka-RegularItalic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -162,18 +172,18 @@ html {
 }
 @include respond-to-max($desktop) {
   .landing-section {
-  .top-left,
-  .top-center,
-  .top-right {
+    .top-left,
+    .top-center,
+    .top-right {
       padding-top: calc($padding-large * 1.5) !important;
     }
   }
 }
 @include respond-to-max($tablet) {
   .landing-section {
-  .top-left,
-  .top-center,
-  .top-right {
+    .top-left,
+    .top-center,
+    .top-right {
       padding-top: calc($padding-large) !important;
     }
   }

@@ -1,0 +1,46 @@
+{% extends '_land/map' %}
+
+{% block left %}
+	<!-- Blocks Section -->
+	<div class="z-1 col-span-6 grid grid-cols-6 space-y-6">
+
+		{% set blocks = entry.landBlocks.all() %}
+		{% for block in blocks %}
+			{% set color = block.color ?? '' %}
+
+			<div class="col-span-6 relative color-hover rounded-xl overflow-hidden">
+				<div class="w-full z-3 absolute p-8 bottom-0 text-white flex flex-col space-y-4">
+					<h3 class="text-6xl max-w-40 w-fit leading-[.8em]">
+						{{ block.title }}
+					</h3>
+					<div class="max-w-64">
+						{{ block.text }}
+					</div>
+				</div>
+				<div class="relative h-80 object-cover w-full -z-1">
+					<div class="z-2 absolute background transition-all duration-300  h-full w-full {{ 'bg-' ~ color }}"></div>
+
+					{% include '_includes/_blocks/gradient.twig' with {
+                        height: '2/3',
+                        opacity: 0,
+                        zIndex: 1,
+                        class: 'transition-all duration-300'
+                    }%}
+					{% include '_includes/_blocks/asset' with {
+                        asset: block.asset.one(),
+                        class: "w-full h-full object-cover"
+                    } %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<script>
+		// Define mapData globally
+window.mapData = {
+shapefiles: [{% for file in entry.shapeFile.all() %}"{{ file.url }}"{% if not loop.last %},{% endif %}{% endfor %}]
+};
+	</script>
+
+
+{% endblock %}

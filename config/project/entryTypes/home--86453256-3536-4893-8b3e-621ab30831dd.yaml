@@ -62,6 +62,45 @@ fieldLayouts:
             uid: 197a7621-8dfc-43be-b510-db0c3404f198
             userCondition: null
           -
+            dateAdded: '2024-12-16T20:03:45+00:00'
+            elementCondition: null
+            heading: 'First Slider'
+            type: craft\fieldlayoutelements\Heading
+            uid: 2c7a48e1-34f9-49cb-8204-5feff4771579
+            userCondition: null
+          -
+            dateAdded: '2024-11-26T04:53:33+00:00'
+            elementCondition: null
+            fieldUid: 8b656877-6f15-45aa-87d7-feb1d95ce5c2 # Plain Text
+            handle: sliderHeader
+            includeInCards: false
+            instructions: null
+            label: 'Slider Header'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4a16dfe-0e7c-415b-897d-54ec75de7a03
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-14T02:16:49+00:00'
+            elementCondition: null
+            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
+            handle: fixedSlideAsset
+            includeInCards: false
+            instructions: null
+            label: 'Fixed Slide Asset'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e7a23981-db13-4a4a-83c6-7630fda02f58
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-11-26T04:53:33+00:00'
             elementCondition: null
             fieldUid: 2bb0df43-098d-4091-a1e0-967b00fdcb6c # Slides
@@ -78,25 +117,67 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-26T04:53:33+00:00'
+            dateAdded: '2024-12-16T19:35:55+00:00'
             elementCondition: null
-            fieldUid: 8b656877-6f15-45aa-87d7-feb1d95ce5c2 # Plain Text
-            handle: slideHeader
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 193eb1c2-e46d-448b-a090-6033a6c94d20
+            userCondition: null
+          -
+            dateAdded: '2024-12-16T21:17:18+00:00'
+            elementCondition: null
+            heading: 'Video Between Sliders'
+            type: craft\fieldlayoutelements\Heading
+            uid: bc9d0095-a86d-46b5-9a9a-037511ad8f7b
+            userCondition: null
+          -
+            dateAdded: '2024-12-16T21:17:18+00:00'
+            elementCondition: null
+            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
+            handle: middleAsset
             includeInCards: false
             instructions: null
-            label: 'Slide Header'
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b4a16dfe-0e7c-415b-897d-54ec75de7a03
+            uid: 67e763d2-1b4c-4e07-a34c-010561d25d4d
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-26T04:53:33+00:00'
+            dateAdded: '2024-12-16T21:17:18+00:00'
             elementCondition: null
-            fieldUid: 8a78e2ab-5ef3-4b0b-8141-22b9b95d4928 # Slides Visible
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 995f2e02-6fa9-4dd7-8aa6-2c37ce09d4a5
+            userCondition: null
+          -
+            dateAdded: '2024-12-16T20:03:45+00:00'
+            elementCondition: null
+            heading: 'Second Slider'
+            type: craft\fieldlayoutelements\Heading
+            uid: 97d17538-1d68-43c5-b50f-e9064dcac50c
+            userCondition: null
+          -
+            dateAdded: '2024-12-16T19:35:55+00:00'
+            elementCondition: null
+            fieldUid: 8b656877-6f15-45aa-87d7-feb1d95ce5c2 # Plain Text
+            handle: sliderHeader2
+            includeInCards: false
+            instructions: null
+            label: 'Slider Header'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 819137dc-1bae-4d14-881f-4950a716063f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-16T20:03:45+00:00'
+            elementCondition: null
+            fieldUid: 62c3a695-96b4-43f5-ac43-eb27a6cfc3f9 # Slides
             handle: null
             includeInCards: false
             instructions: null
@@ -105,23 +186,52 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a6744849-77d8-4caa-9309-4f038d0725f7
+            uid: ae713bfb-59e1-4b17-a42b-9cdd8214e74f
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-26T04:53:33+00:00'
+            dateAdded: '2024-12-16T22:04:31+00:00'
             elementCondition: null
-            fieldUid: f6704256-c578-402a-ab33-5ac9687059bb # Height
-            handle: slideHeight
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 44cc4ae3-e373-461f-ae2b-0d4032e7a617
+            userCondition: null
+          -
+            dateAdded: '2024-12-16T22:04:31+00:00'
+            elementCondition: null
+            heading: 'Bottom Banner'
+            type: craft\fieldlayoutelements\Heading
+            uid: 3594c168-2ee1-4b24-9d2a-91b733158ab5
+            userCondition: null
+          -
+            dateAdded: '2024-12-16T22:12:59+00:00'
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: text2
             includeInCards: false
             instructions: null
-            label: 'Slide Height'
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 873b5482-dcdf-4f8b-892d-c0f13b396986
+            uid: b3aa162f-ab06-4ad3-8572-04cdf29668c7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-16T22:12:59+00:00'
+            elementCondition: null
+            fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
+            handle: asset2
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da55ec2b-bffe-43ff-88e0-462e5731924f
             userCondition: null
             warning: null
             width: 100
@@ -150,38 +260,6 @@ fieldLayouts:
           -
             dateAdded: '2024-08-21T23:18:05+00:00'
             elementCondition: null
-            fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
-            handle: topMaxWidth
-            includeInCards: false
-            instructions: null
-            label: 'Top Banner Max Width'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: bcf01f2e-1625-49a8-89ae-3c62601301f6
-            userCondition: null
-            warning: null
-            width: 25
-          -
-            dateAdded: '2024-08-23T05:37:06+00:00'
-            elementCondition: null
-            fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
-            handle: bottomMaxWidth
-            includeInCards: false
-            instructions: null
-            label: 'Bottom Banner Max Width'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: cc04b9dc-d641-4166-aedc-9d3c4a513ad0
-            userCondition: null
-            warning: null
-            width: 25
-          -
-            dateAdded: '2024-08-21T23:18:05+00:00'
-            elementCondition: null
             fieldUid: bda53640-24b3-44f4-8c8b-ee991f1addba # Text Alignment
             handle: null
             includeInCards: false
@@ -206,6 +284,6 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
