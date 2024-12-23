@@ -10,13 +10,16 @@
 
 	{# first slider #}
 	<div
-		class="page grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 fade-in" data-cascade>
+		class="page grid grid-cols-12 fade-in slider-button-js" data-cascade>
+
 		<!-- Main Slide -->
-		<div class="main-slide col-span-8 relative overflow-hidden bg-cover rounded-xl z-2">
+		<div class="main-slide col-span-6 lg:col-span-7 xl:col-span-8 relative overflow-hidden bg-cover rounded-xl z-2">
 			<div class="z-2 w-full h-full content absolute p-12 text-white flex justify-between items-end">
 				<h2 class="text-6xl">{{ entry.sliderHeader }}</h2>
 				{% include '_includes/_icons/arrowNext'  with {
-                    class: '!bg-white *:fill-charcoal'
+					nextArrowClass: '!bg-white',
+                    firstArrow: 'black-arrow',
+					secondArrow: 'black-arrow'
                 }%}
 			</div>
 			{% if entry.fixedSlideAsset|length %}
@@ -30,21 +33,14 @@
 		</div>
 
 		<!-- Secondary Slides -->
-		<div class="col-span-4">
-			<div class="slider-wrapper">
-				<div class="slider">
-					{% for slide in entry.slides.all() %}
-						<div class="slide flex-none w-full h-[600px] p-10 text-white rounded-xl transition-transform transform bg-{{slide.color}}" data-slider-slide>
-
-							{% include '_includes/_blocks/text' with {
-                                text: slide.text,
-                                pClass: 'font-sm',
-                                figureClass: 'mb-8 w-3/4'
-                            } %}
-						</div>
-					{% endfor %}
-				</div>
-			</div>
+		<div class="col-span-6 lg:col-span-5 xl:col-span-4">
+			{% include '_includes/_blocks/slider' with { 
+				slides: entry.slides.all(),
+				fadeIn: true,
+				slideTemplate: '_includes/_blocks/slideMatrix',
+				arrows: false,
+				slideClass: '!w-full !max-w-full'
+			} %}
 		</div>
 	</div>
 
@@ -72,8 +68,14 @@
 
 	{# second slider #}
 	<div class="page grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 fade-in" data-cascade>
-		<h2 class="text-6xl col-span-12 mb-8">{{ entry.sliderHeader2 }}</h2>
 		<div class="slider-wrapper col-span-12 grid grid-cols-subgrid">
+			<div class="page col-span-12 flex justify-between mb-8">
+				<h2 class="text-6xl">{{ entry.sliderHeader2 }}</h2>
+				{% include '_includes/_icons/arrows' with {
+					nextArrowClass: '!bg-charcoal',
+					prevArrowClass: '!bg-charcoal'
+				} %}
+			</div>
 			<div class="slider col-span-12">
 				{% for block in entry.slidesLand.all() %}
 					{% set columnSpan = block.columnSpan ?? 4 %}
@@ -82,7 +84,7 @@
 					{% switch block.type.handle %}
 						{% case 'singleSlide' %}
 							{# Default columnSpan to 4 #}
-							<div class="flex-none slide" style="width: calc(100% * ({{ columnSpan }}/10) - 1rem); max-width: calc(100% * ({{ columnSpan }}/10) - 1rem);">
+							<div class="flex-none slide" style="width: calc(100% * ({{ columnSpan }}/12) - 1rem); max-width: calc(100% * ({{ columnSpan }}/12) - 1rem);">
 								<div class="rounded-xl overflow-hidden h-[600px] relative bg-{{ color }}">
 									{% if block.asset|length %}
 										{% include '_includes/_blocks/gradient' with {
@@ -100,7 +102,7 @@
 										{% if block.text|length %}
 											{% include '_includes/_blocks/text' with {
                                                 text: block.text,
-                                                pClass: 'text-base max-w-[275px]'
+                                                pClass: 'col-span-12 text-base max-w-[275px]'
                                             } %}
 										{% endif %}
 										{% if block.buttonLink|length %}
@@ -116,7 +118,7 @@
 
 						{% case 'doubleSlide' %}
 							{# Default columnSpan to 4 #}
-							<div class="flex-none slide h-[600px] flex flex-col gap-y-6" style="width: calc(100% * ({{ columnSpan }}/10) - 1rem); max-width: calc(100% * ({{ columnSpan }}/10) - 1rem);">
+							<div class="flex-none slide h-[600px] flex flex-col gap-y-6" style="width: calc(100% * ({{ columnSpan }}/12) - 1rem); max-width: calc(100% * ({{ columnSpan }}/12) - 1rem);">
 								<div class="rounded-xl overflow-hidden relative h-1/2 bg-{{ color }}">
 
 									{% if block.asset|length %}
@@ -136,7 +138,7 @@
 										{% if block.text|length %}
 											{% include '_includes/_blocks/text' with {
                                                 text: block.text,
-                                                pClass: 'text-base max-w-[275px]'
+                                                pClass: 'col-span-12 text-base max-w-[275px]'
                                             } %}
 										{% endif %}
 										{% if block.buttonLink|length %}
@@ -165,7 +167,7 @@
 										{% if block.text2|length %}
 											{% include '_includes/_blocks/text' with {
                                                 text: block.text2,
-                                                pClass: 'text-base max-w-[275px]'
+                                                pClass: 'col-span-12 text-base max-w-[275px]'
                                             } %}
 										{% endif %}
 										{% if block.buttonLink2|length %}

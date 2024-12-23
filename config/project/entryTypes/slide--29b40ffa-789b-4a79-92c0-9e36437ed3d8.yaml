@@ -1,4 +1,4 @@
-color: null
+color: yellow
 fieldLayouts:
   a4f13285-ed14-44a6-af74-2478bd72c71c:
     cardView:
@@ -67,7 +67,7 @@ fieldLayouts:
         userCondition: null
 handle: slide
 hasTitleField: false
-icon: null
+icon: image-landscape
 name: 'Asset and Caption Slide'
 showSlugField: true
 showStatusField: true

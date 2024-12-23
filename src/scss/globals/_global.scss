@@ -31,21 +31,6 @@ body {
 .no-scroll {
   overflow: hidden;
 }
-.visible {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-}
-.error-text {
-  margin: 100px;
-  text-align: center;
-  font-size: 2em;
-  font-weight: 600;
-  @include flex-center;
-}
 .no-footer footer {
   display: none;
 }
@@ -102,12 +87,6 @@ figure {
   opacity: 1;
   visibility: visible;
 }
-.outer {
-  box-sizing: content-box;
-  margin: $margin auto;
-  width: $width;
-  max-width: $max-width;
-}
 .progress-bar {
   // height: 10px;
   // background: $grey;
@@ -133,25 +112,25 @@ figure {
     left: 0;
   }
 }
-.icons {
-  @include flex-center;
-  overflow: hidden;
-  position: relative;
-  .icon {
-    &.close {
-      height: 100%;
-      width: 100%;
-      z-index: 2;
-      background: $red;
-      position: absolute;
-      top: 0;
-      @include transform(translate3d(-100.2%, 0, 0));
-      * {
-        stroke: $white;
-      }
-    }
-  }
-}
+// .icons {
+//   @include flex-center;
+//   overflow: hidden;
+//   position: relative;
+//   .icon {
+//     &.close {
+//       height: 100%;
+//       width: 100%;
+//       z-index: 2;
+//       background: $red;
+//       position: absolute;
+//       top: 0;
+//       @include transform(translate3d(-100.2%, 0, 0));
+//       * {
+//         stroke: $white;
+//       }
+//     }
+//   }
+// }
 
 // scroll fade in animation
 .fade-in {

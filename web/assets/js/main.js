@@ -1,9 +1,10 @@
 import { initNavigation } from "./navigation.js";
 import { initSlider } from "./slider.js";
-import { initLanding } from "./landing.js";
+import { initBanner } from "./banner.js";
 import { initScroll } from "./scroll.js";
 import { initTestimonials } from "./testimonials.js";
 import { initContact } from "./contact.js";
+import { initScale } from "./scale.js";
 import { initServices } from "./services.js";
 import { initAnchor } from "./anchor.js";
 import { initMap } from "./map.js";
@@ -22,16 +23,25 @@ function initializeComponents(container, namespace) {
     video.play();
   }
   switch (namespace) {
-    case "story":
+    case "home":
+      initSlider();
+      initBanner(".carousel", ".progress-bar .progress");
+      break;
+    case "history":
       initSlider();
       break;
     case "contact":
+      initSlider();
       initContact();
       break;
+    case "landServices":
+      initScale();
+      initBanner(".carousel", ".progress-bar .progress", ".background");
     case "company":
       initAnchor();
       initServices();
-      initLanding(".carousel", ".progress-bar .progress");
+      initSlider();
+      initBanner(".carousel", ".progress-bar .progress");
       initTestimonials(".carousel", ".progress-bar .progress");
       break;
     case "blog":
@@ -47,7 +57,7 @@ function initializeComponents(container, namespace) {
       const carousel = container.querySelector(".carousel");
       const slider = container.querySelector(".slider");
       if (carousel) {
-        initLanding(".carousel", ".progress-bar .progress");
+        initBanner(".carousel", ".progress-bar .progress");
       }
       if (slider) {
         initSlider();

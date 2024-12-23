@@ -1,14 +1,14 @@
 {% set footerClass = footerClass ?? null %}
 
-<footer class="footer bg-texture mt-20 {{ footerClass }}">
+<footer class="footer bg-texture bg-red mt-20 pt-32 lg:pt-60 pb-16 lg:pb-20 {{ footerClass }}">
 	<div class="page grid grid-cols-12">
-		<div class="logo fade-in col-span-2">
+		<div class="logo fade-in mb-8 lg:mb-0 col-span-6 md:col-span-5 lg:col-span-2">
 			<a href="{{ currentSite.baseUrl }}">
 				{% include '_includes/_svg/logo-horizontal.svg' %}</a>
 		</div>
-		<div class="col-span-10 list-none flex items-end justify-end gap-10">{% set primaryLinks = footer.primaryLinks.all() %}
+		<div class="col-span-12 lg:col-span-10 list-none flex items-end justify-start lg:justify-end gap-10">{% set primaryLinks = footer.primaryLinks.all() %}
 			{% for link in primaryLinks %}
-				<a href="{{ link.getUrl() }}" class="text-md font-medium">
+				<a href="{{ link.getUrl() }}" class="text-md tracking-tighter text-white font-medium">
 					{{ link.title }}
 				</a>
 			{% endfor %}

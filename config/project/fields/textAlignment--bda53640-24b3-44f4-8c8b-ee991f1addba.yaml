@@ -13,7 +13,7 @@ settings:
           - 'Top Left'
         -
           - value
-          - top-left
+          - 'justify-start items-start'
         -
           - default
           - ''
@@ -79,7 +79,7 @@ settings:
           - 'Bottom Left'
         -
           - value
-          - bottom-left
+          - 'justify-start items-end'
         -
           - default
           - '1'

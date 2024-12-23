@@ -26,18 +26,18 @@
 						{{ listing.title }}
 					</h3>
 					<div class="flex flex-wrap justify-between pr-4">
-						<div class="group gap-6 mr-6 flex text-base">
+						<div class="group gap-6 mr-6 flex text-base tracking-tight">
 							{% if listing.address is defined %}
 								{% set address = listing.address.one() %}
 								{% if address %}
-									<h4 class="font-normal">{{ address.locality }},
-										{{ address.administrativeArea }}</h4>
+									<span class="font-normal">{{ address.locality }},
+										{{ address.administrativeArea }}</span>
 								{% endif %}
 							{% endif %}
-							<h4 class="font-normal">
+							<span class="font-normal">
 								{{ listing.acreage }}
 								Acres
-							</h4>
+							</span>
 						</div>
 						{% include '_includes/_blocks/button' with {
                                     link: '#',
@@ -105,23 +105,32 @@ shapefile: [{% for file in listing.shapeFile.all() %}"{{ file.url }}"{% if not l
 				<p id="modal-acreage" class="text-2xl"></p>
 			</div>
 			<div id="modal-description" class="col-span-5"></div>
-			<div id="modal-features" class="mt-8 col-span-6 grid grid-cols-subgrid">
+			<div id="modal-features" class="mt-8 mb-4 col-span-6 grid grid-cols-subgrid text-[14px] xl:text-base">
 				<ul class="list-none !gap-y-4 col-span-6 grid grid-cols-subgrid"></ul>
 			</div>
 			<div class="col-span-6 flex gap-6">
 				{% include '_includes/_blocks/button' with {
                     link: '#',
                     label: 'Get in touch',
-                    class: 'email-button'
+                    class: 'email-button text-white',
+					attributes: {
+						'data-id': ''
+					}
                 } %}
 				{% include '_includes/_blocks/button' with {
                     link: '#',
                     label: 'Call',
-                    class: 'call-button'
+					class: 'call-button text-white'
                 } %}
 			</div>
 
 			<div class="slider-shadow mt-8 grid grid-cols-subgrid flex col-span-6 overflow-x-scroll gap-6 !-mr-0 slider-wrapper snap-x">
+				<div class="z-2 flex absolute right-8 top-0 bottom-0 m-auto items-center">
+
+					{% include '_includes/_icons/arrowNext' with {
+						nextArrowClass: ''
+					} %}
+				</div>
 				<div
 					id="modal-image-container" class="slider col-span-6 !pr-0"><!-- hover:opacity-70; snap-start;scroll-ml-16 -->
 
@@ -145,12 +154,25 @@ shapefile: [{% for file in listing.shapeFile.all() %}"{{ file.url }}"{% if not l
 	</div>
 
 	<!-- Contact Modal -->
-	<div id="contact-modal" class="grid grid-cols-12 fixed inset-0 z-50 bg-red flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
-		{% include '_includes/_icons/close' with {
-			class: 'contact-modal-close !absolute z-2 top-0 right-0 modal-close'
-		} %}
-		<div class="bg-red col-span-6 rounded-xl p-8 shadow-lg">
-			<h2 id="contact-modal-title" class="text-2xl mb-4">Get in touch</h2>
+	{% for listing in listings %}
+		<div id="contact-modal-{{ listing.id }}" class="!mt-0 fixed translate-y-full inset-0 z-50 bg-red flex items-center justify-center pointer-events-none transition-all duration-300">
+			<div class="page grid grid-cols-12">
+				{% include '_includes/_icons/close' with {
+					class: 'contact-modal-close !bg-white !absolute z-2 top-6 right-6 modal-close'
+				} %}
+				<div class="text-white px-4 sm:px-0 form-inner col-start-1 sm:col-start-3 lg:col-start-4 xl:col-start-5 col-span-12 sm:col-span-8 lg:col-span-6 xl:col-span-4">
+					{% set staffEmail = listing.staffContact.one().email ?? 'default@example.com' %}
+					{% set form = craft.formie.forms({ handle: 'contactRealEstate' }).one() %}
+					{% do craft.formie.populateFormValues(form, {
+						staffEmail: staffEmail
+					}) %}
+					{{ craft.formie.renderForm(form, {
+						class: 'p8'
+					}) }}
+				</div>
+			</div>
+
 		</div>
-	</div>
+	{% endfor %}
+
 {% endblock %}

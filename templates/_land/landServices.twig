@@ -3,10 +3,9 @@
 {% block content %}
 	{% if entry.asset|length %}
 		{% include '_includes/_blocks/bannerSlides' with {
-            block: entry
+            block: entry,
+            backgroundClass: 'scale-up transform-all duration-100'
         } %}
-	{% else %}
-		<p class="error-text">No images selected.</p>
 	{% endif %}
 
 	{% include '_includes/_blocks/stickyBlocks' with {
@@ -15,6 +14,6 @@
 
 	{% include '_includes/_blocks/form' with {
         formHandle: 'contactCRM',
-        class: 'bg-white py-20'
+        class: 'bg-white py-8 md:py-12 lg:py-16 xl:py-20'
     } %}
 {% endblock %}

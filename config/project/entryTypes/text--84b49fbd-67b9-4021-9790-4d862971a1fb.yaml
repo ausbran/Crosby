@@ -1,46 +1,18 @@
 color: lime
 fieldLayouts:
   a328e28b-a3c0-4a62-995f-884d38e2bc78:
+    cardView:
+      - 'layoutElement:dc24a613-fcc8-4e01-b714-d730f6b73517'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-11-21T18:14:44-07:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: cd1971e7-2775-4d8f-ae2e-be42b0f1bd74
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-11-21T18:14:44-07:00'
+            dateAdded: '2024-11-22T01:14:44+00:00'
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -53,44 +25,6 @@ fieldLayouts:
             width: 100
         name: Content
         uid: 1e660abe-8dbe-4c37-b77c-5db1baa5d954
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2024-11-21T18:14:44-07:00'
-            elementCondition: null
-            fieldUid: bda53640-24b3-44f4-8c8b-ee991f1addba # Text Alignment
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: c6f2d9ac-ee26-483b-ba9c-e7e76364750f
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-11-21T18:14:44-07:00'
-            elementCondition: null
-            fieldUid: 4986ae78-9ffa-41e9-ab3b-91e866576fd5 # Max Width
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8a3221d7-9934-4862-8a46-debc52be3657
-            userCondition: null
-            warning: null
-            width: 100
-        name: Settings
-        uid: 1ec94ca8-50f1-4f2f-9ca2-43c5aa5bed3d
         userCondition: null
 handle: text
 hasTitleField: false

@@ -1,46 +1,19 @@
 color: null
 fieldLayouts:
   96460d80-e1d9-419c-9c2d-7329e4bda218:
+    cardView:
+      - 'layoutElement:17b60cc2-60cf-466c-89c0-841caf8816a6'
+      - 'layoutElement:57c724a3-1f72-4977-b9fc-9fc65ce3352e'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-09-05T04:32:09+00:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: __blank__
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: a7225539-898e-4815-bb24-10d3df8bd34d
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-09-05T04:32:09+00:00'
             elementCondition: null
             fieldUid: b7977904-1581-4bf1-a440-242e4c34840a # Button Label
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -56,7 +29,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 26fa7b55-e9e5-4fbb-a5e1-0cc31f223c1e # Button Link
             handle: buttonLink
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false

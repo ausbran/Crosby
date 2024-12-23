@@ -1,8 +1,10 @@
-color: null
+color: green
 fieldLayouts:
   db6d1415-be17-49e1-a280-84b36568f7c3:
     cardView:
       - 'layoutElement:cc5229c4-c916-47b2-9b9c-b50081153315'
+      - 'layoutElement:57b7f278-3247-4cc1-9bf0-ae89880ff0a4'
+      - 'layoutElement:ffeb33aa-22cb-45a6-998e-1a84d644168b'
     tabs:
       -
         elementCondition: null
@@ -42,7 +44,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -128,7 +130,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 451ebed9-368d-4404-a7f4-1c565c0dfc4a # Color
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -144,7 +146,7 @@ fieldLayouts:
         userCondition: null
 handle: singleSlide
 hasTitleField: true
-icon: null
+icon: rectangle
 name: 'Single Slide'
 showSlugField: true
 showStatusField: true

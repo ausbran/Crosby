@@ -1,48 +1,67 @@
 export function initSlider() {
-    const sliders = document.querySelectorAll('.slider');
+  const sliders = document.querySelectorAll(".slider");
 
-    // sliders.forEach(slider => {
-    //     const slides = slider.querySelectorAll('.slide');
-    //     const arrowPrev = slider.closest('.slider-container').querySelector('.arrow-prev');
-    //     const arrowNext = slider.closest('.slider-container').querySelector('.arrow-next');
+  sliders.forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll(".slide")); // Get slides
+    const sliderWrapper = slider.closest(".slider-wrapper");
+    const parentContainer =
+      sliderWrapper.closest(".slider-button-js") || sliderWrapper;
 
-    //     function scrollSlider(offset) {
-    //         const currentScrollLeft = slider.scrollLeft + offset;
-    //         slider.scrollTo({
-    //             left: currentScrollLeft,
-    //             behavior: 'smooth'
-    //         });
-    //         toggleArrows();
-    //     }
+    // Safely find the arrows
+    const nextButton = parentContainer.querySelector(".arrow-next");
+    const prevButton = parentContainer.querySelector(".arrow-prev");
+    console.log(slides);
+    if (!slides.length) return; // Skip if no slides
 
-    //     function toggleArrows() {
-    //         const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    //         const nearStart = slider.scrollLeft <= 1;
-    //         const nearEnd = slider.scrollLeft >= (maxScrollLeft - 1);
+    const scrollToSlide = (direction) => {
+      const sliderRect = slider.getBoundingClientRect();
+      const scrollLeft = slider.scrollLeft;
+      let targetSlide = null;
 
-    //         if (arrowPrev && arrowNext) {
-    //             arrowPrev.classList.toggle('disabled', nearStart);
-    //             arrowNext.classList.toggle('disabled', nearEnd);
-    //         }
-    //     }
+      if (direction === "next") {
+        for (let slide of slides) {
+          const slideRect = slide.getBoundingClientRect();
+          const isFullyVisible =
+            slideRect.left >= sliderRect.left &&
+            slideRect.right <= sliderRect.right;
 
-    //     if (arrowPrev && arrowNext) {
-    //         arrowPrev.addEventListener('click', () => {
-    //             if (!arrowPrev.classList.contains('disabled')) {
-    //                 scrollSlider(-1 * slider.clientWidth);
-    //             }
-    //         });
+          if (!isFullyVisible && slide.offsetLeft > scrollLeft) {
+            targetSlide = slide;
+            break;
+          }
+        }
+      } else if (direction === "prev") {
+        for (let i = slides.length - 1; i >= 0; i--) {
+          const slide = slides[i];
+          if (slide.offsetLeft < scrollLeft) {
+            targetSlide = slide;
+            break;
+          }
+        }
+      }
 
-    //         arrowNext.addEventListener('click', () => {
-    //             if (!arrowNext.classList.contains('disabled')) {
-    //                 scrollSlider(1 * slider.clientWidth);
-    //             }
-    //         });
+      // Scroll to the target slide
+      if (targetSlide) {
+        slider.scrollTo({
+          left: targetSlide.offsetLeft,
+          behavior: "smooth",
+        });
+      } else {
+        // Handle looping
+        slider.scrollTo({
+          left: direction === "next" ? 0 : slider.scrollWidth,
+          behavior: "smooth",
+        });
+      }
+    };
 
-    //         toggleArrows();
-    //     }
+    // Add event listeners for the arrows
+    if (nextButton) {
+      nextButton.addEventListener("click", () => scrollToSlide("next"));
+    }
 
-    //     slider.addEventListener('scroll', toggleArrows);
-    //     window.addEventListener('resize', toggleArrows);
-    // });
+    if (prevButton) {
+      prevButton.addEventListener("click", () => scrollToSlide("prev"));
+    }
+  });
 }

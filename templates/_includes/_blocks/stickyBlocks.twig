@@ -1,30 +1,33 @@
-<div class="page mx-auto grid grid-cols-12 relative space-y-10">
-	{% if entry.stickyBlocksHeader %}
-		<div class="w-fit absolute 2xl:left-28 xl:left-24 left-8 top-[50px] border border-white inline text-md font-medium tracking-tighter text-white px-4 py-4 rounded-md mb-12">
+{% if entry.stickyBlocksHeader %}
+	<div class="page">
+		<div class="absolute border border-white inline text-md font-medium tracking-tighter text-white px-4 py-4 rounded-md mb-12">
 			{{ entry.stickyBlocksHeader }}
 		</div>
-	{% endif %}
+	</div>
+{% endif %}
+<div class="sticky-blocks page mx-auto grid grid-cols-12 relative">
 	{% for block in entry.stickyBlocks.all() %}
 		<!-- Text Container -->
-		<div class="grid col-span-6 grid-cols-subgrid">
-			<div class="col-span-6 grid grid-cols-subgrid text-white self-center">
-				<span class="col-span-6 row-start-1 text-xl font-medium mb-2 tracking-tighter">
+		<div class="grid col-span-12 lg:col-span-6 grid-cols-subgrid">
+			<div class="grid col-span-12 lg:col-span-6 grid-cols-subgrid text-white self-center">
+				<span class="col-span-12 md:col-span-6 row-start-1 text-xl font-medium mb-2 tracking-tighter">
 					0{{ loop.index }}
 				</span>
-				<h2 class="col-span-6 row-start-2 text-6xl mb-8">
+				<h2 class="col-span-12 md:col-span-8 lg:col-span-4 row-start-2 mb-4 lg:mb-8">
+
 					{{ block.title }}
 				</h2>
-				<h3 class="col-span-3 row-start-3 text-3xl mb-4">
+				<h3 class="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-4 row-start-3 mb-4">
 					{{ block.subtitle }}
 				</h3>
-				<div class="col-span-4">
+				<div class="col-span-12 md:col-span-8  lg:col-span-6 xl:col-span-5">
 					{{ block.text }}
 				</div>
 			</div>
 		</div>
 
 		<!-- Image Container -->
-		<div class="col-span-6 sticky-image sticky top-40">
+		<div class="col-span-12 lg:col-span-6 static lg:sticky top-40 mb-10">
 			<div class="image-container rounded-xl overflow-hidden">
 				{% if block.asset|length %}
 					{% include '_includes/_blocks/asset' with {

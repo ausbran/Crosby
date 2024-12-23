@@ -1,4 +1,4 @@
-export function initLanding(carouselSelector, progressBarSelector) {
+export function initBanner(carouselSelector, progressBarSelector) {
   const carousel = document.querySelector(carouselSelector);
   const progressBar = document.querySelector(progressBarSelector);
   if (!carousel || !progressBar) return;
@@ -35,32 +35,4 @@ export function initLanding(carouselSelector, progressBarSelector) {
   progressBar.style.width = "100%";
 
   startCarousel();
-
-  const backgroundContainer = document.querySelector(".background");
-
-  const animateBackground = () => {
-    const containerRect = backgroundContainer.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-
-    // Calculate progress based on scroll position
-    const progress = Math.min(
-      Math.max(1 - containerRect.top / viewportHeight, 0),
-      1
-    );
-
-    // Interpolate width from current width to 100vw
-    const interpolatedWidth = progress * (window.innerWidth - 1600) + 1600;
-
-    // Apply width dynamically
-    backgroundContainer.style.maxWidth = `${interpolatedWidth}px`;
-    backgroundContainer.style.paddingLeft = `${(1 - progress) * 16}px`; // Adjust padding as needed
-    backgroundContainer.style.paddingRight = `${(1 - progress) * 16}px`;
-  };
-
-  const handleScroll = () => {
-    requestAnimationFrame(animateBackground);
-  };
-
-  // Trigger animation on scroll
-  window.addEventListener("scroll", handleScroll);
 }

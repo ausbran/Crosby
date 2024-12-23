@@ -1,4 +1,4 @@
-dateModified: 1734387179
+dateModified: 1734718221
 elementSources:
   craft\elements\Asset:
     -
@@ -167,6 +167,41 @@ elementSources:
         - authors
         - link
       type: native
+  verbb\formie\elements\Form:
+    -
+      key: '*'
+      type: native
+    -
+      heading: Templates
+      type: heading
+    -
+      defaultSort:
+        - id
+        - asc
+      defaultViewMode: ''
+      disabled: true
+      key: 'template:2'
+      tableAttributes:
+        - title
+        - handle
+        - template
+        - dateCreated
+        - dateUpdated
+      type: native
+    -
+      defaultSort:
+        - id
+        - asc
+      defaultViewMode: ''
+      disabled: true
+      key: 'template:1'
+      tableAttributes:
+        - title
+        - handle
+        - template
+        - dateCreated
+        - dateUpdated
+      type: native
 email:
   fromEmail: ausbranham@gmail.com
   fromName: 'JH Builders'
@@ -214,6 +249,7 @@ meta:
     29cb3264-eccf-4606-a645-a6951efb3d58: 'Real Estate' # Real Estate
     34eabfa9-2dfb-43ea-9fa1-466ad575a728: iFrame # iFrame
     42d902fc-110b-469b-9510-c2d1cebc50cc: 'Public Schema' # Public Schema
+    48e5995c-750c-4886-986e-6d886dd4e850: Slide # Slide
     48f6a218-2886-43f7-80cc-13633d3687a6: 'History Blocks' # History Blocks
     51a4a281-be82-4754-a5cb-d65d99aa9bfc: 'Large Image Block' # Large Image Block
     62c3a695-96b4-43f5-ac43-eb27a6cfc3f9: Slides # Slides
@@ -224,6 +260,7 @@ meta:
     84b49fbd-67b9-4021-9790-4d862971a1fb: Text # Text
     092b44b6-4a5a-4487-af2a-9caa7dbff37d: 'Double Slide' # Double Slide
     94cb9947-273b-4b08-994c-6ef6402b164b: 'Featured Project' # Featured Project
+    97a3b2ae-581c-4a96-bac9-554887f73578: Slide # Slide
     252af2fe-e999-4c7a-beb2-9e62353de467: 'Real Estate' # Real Estate
     287c975f-b8da-4431-b851-9fdd69430935: History # History
     451ebed9-368d-4404-a7f4-1c565c0dfc4a: Color # Color
@@ -283,6 +320,7 @@ meta:
     f0cae902-01a5-4303-b53a-94b99bdeec25: Simple # Simple
     f6c3037a-a389-45dc-a0cd-c448e9e6223e: 'Staff Contact' # Staff Contact
     f9c5fde4-c87c-45b1-8052-613600b09751: 'Land Services' # Land Services
+    f51bd3ce-5a3a-4094-b3b0-9304dfe18b7d: Caption # Caption
     f80c270d-499c-47df-990c-8e0b690c6f00: Pages # Pages
     f4540b83-421e-4a47-b91d-c09c70b4e12a: 'Margin Top' # Margin Top
     f1650635-37ef-4b3f-8fbd-494ada630a65: 'Content Blocks' # Content Blocks
@@ -319,7 +357,7 @@ plugins:
                   - verbb\formie\integrations\captchas\Recaptcha
                 -
                   - enabled
-                  - '1'
+                  - '0'
                 -
                   - saveSpam
                   - true
@@ -412,6 +450,9 @@ plugins:
                       3:
                         - language
                         - en
+                      4:
+                        - startMode
+                        - none
           -
             - turnstile
             -
@@ -493,7 +534,7 @@ plugins:
                   - verbb\formie\integrations\captchas\Javascript
                 -
                   - enabled
-                  - '0'
+                  - '1'
                 -
                   - saveSpam
                   - true
@@ -535,9 +576,7 @@ plugins:
       spamEmailNotifications: false
       spamKeywords: ''
       spamLimit: 500
-      submissionsBehaviour:
-        - incomplete
-        - spam
+      submissionsBehaviour: all
       useCssLayers: false
       useQueueForIntegrations: true
       useQueueForNotifications: true

@@ -3,7 +3,6 @@
   height: 100svh;
   width: 100vw;
   min-height: 600px;
-  @include flex-center;
   overflow: hidden;
   background: $white;
   .background,

@@ -1,6 +1,12 @@
-color: null
+color: red
 fieldLayouts:
   ded33f9f-8882-4b84-98af-1701cbee6b9f:
+    cardView:
+      - 'layoutElement:85d4a578-59be-415b-a829-ea433f53f009'
+      - 'layoutElement:ac87debb-c122-44d8-b6e4-12d67323104e'
+      - 'layoutElement:a356b00a-c808-497c-912f-0f65711c8c47'
+      - 'layoutElement:9148a127-1b95-4b49-830d-07cec78151ca'
+      - 'layoutElement:add37424-5d8a-4ce6-9948-c1d68d3203be'
     tabs:
       -
         elementCondition: null
@@ -47,7 +53,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -63,7 +69,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -140,7 +146,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
             handle: text2
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -156,7 +162,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7fe80a9d-2822-4ed3-8d83-f89f27f75731 # Asset
             handle: asset2
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -226,7 +232,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 451ebed9-368d-4404-a7f4-1c565c0dfc4a # Color
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -242,7 +248,7 @@ fieldLayouts:
         userCondition: null
 handle: doubleSlide
 hasTitleField: true
-icon: null
+icon: rectangle-history
 name: 'Double Slide'
 showSlugField: true
 showStatusField: true

@@ -1,31 +1,20 @@
-{# {% set height = height ?? 'medium' %} #}
 {% set slides = slides ?? block.slides.all() %}
-{% set slidesVisible = slidesVisible ?? '2' %}
-{% set class = class ?? null %}
-{% set slideHeader = slideHeader ?? null %}
+{% set sliderWrapperClass = sliderWrapperClass ?? null %}
+{% set sliderClass = sliderClass ?? null %}
 {% set arrows = arrows ?? true %}
-{% set marginTop = marginTop ?? 'margin-top' %}
-{% set marginBottom = marginBottom ?? 'margin-bottom' %}
 {% set fadeIn = fadeIn is defined ? 'fade-in' : '' %}
 
-<div id="{{ slideHeader|kebab }}" class="slider-outer {{ marginTop }} {{ marginBottom }} {{ fadeIn }}" data-cascade>
-    {% if slideHeader %}
-        <h3 class="slider-header margin-bottom-sm">{{ slideHeader }}</h3>
-    {% endif %}
-    <div class="slider-container">
-        <div class="slider {{ class }} grid grid-cols-12 slides-visible-{{ slidesVisible }}">
-            {% block slides %}
-                {% for slide in slides %}
-                    {% include slideTemplate with {
+<div class="slider-wrapper {{ sliderWrapperClass }} {{ fadeIn }}" data-cascade>
+	<div class="slider {{ sliderClass }}">
+		{% block slides %}
+			{% for slide in slides %}
+				{% include slideTemplate with {
                         slide: slide
                     } %}
-                {% endfor %}
-            {% endblock %}
-        </div>
-        {% if arrows %}
-            {% include '_includes/_icons/arrowPrev' %}
-            {% include '_includes/_icons/arrowNext' %}
-        {% endif %}
-    </div>
+			{% endfor %}
+		{% endblock %}
+	</div>
+	{% if arrows %}
+		{% include '_includes/_icons/arrows' %}
+	{% endif %}
 </div>
-

@@ -28,10 +28,9 @@
 							</h1>
 							<div class="grid grid-cols-subgrid col-span-4 col-start-7 fade-in" data-cascade>
 								<h2 class="mb-6 col-span-3 max-w-[300px] row-start-1 text-3xl mt-4">{{ block.subHead }}</h2>
-								{% include '_includes/_blocks/text' with {
-                                    text: block.text,
-                                    pClass: 'text-base col-span-4 row-start-2'
-                                } %}
+								<div class="text-base col-span-12 row-start-2">
+									{{ block.text }}
+								</div>
 							</div>
 						</div>
 
@@ -39,32 +38,15 @@
 						<div class="relative grid grid-cols-subgrid col-span-10">
 							{{ bg|raw }}
 							<!-- Slider Wrapper -->
-							<div class="slider-wrapper history grid grid-cols-subgrid col-span-10 fade-in" data-cascade>
-								<div class="slider col-span-10">
-									{% for slide in block.slides %}
-										<!-- Slide Container -->
-										{% set columnSpan = slide.columnSpan ?? 4 %}
-										{# Default columnSpan to 4 #}
-										<div class="flex-none slide" style=" width: calc(100% * ({{ columnSpan }}/12) - 1rem); max-width: calc(100% * ({{ columnSpan }}/12) - 1rem);">
-											<div
-												class="rounded-xl overflow-hidden h-[600px]">
-												<!-- Image -->
-												{% include '_includes/_blocks/asset' with {
-                                                    asset: slide.asset.one()
-                                                } %}
-											</div>
-											<div
-												class="mt-4 grid grid-cols-{{ columnSpan }}">
-												<!-- Caption -->
-												{% include '_includes/_blocks/text' with {
-                                                    text: slide.caption,
-                                                    pClass: 'text-base col-span-3 fade-in'
-                                                } %}
-											</div>
-										</div>
-									{% endfor %}
-								</div>
-							</div>
+							{% include '_includes/_blocks/slider' with { 
+								slides: block.slides.all(),
+								sliderWrapperClass: 'history grid grid-cols-subgrid col-span-10',
+								sliderClass: 'col-span-10',
+								fadeIn: true,
+								slideTemplate: '_includes/_blocks/slideMatrix',
+								arrows: true,
+								gridSpan: 10
+							} %}
 						</div>
 
 					{% case 'largeImageBlock' %}
@@ -76,10 +58,9 @@
                                 } %}
 							</div>
 							<div class="mt-4 col-span-3 fade-in" data-cascade>
-								{% include '_includes/_blocks/text' with {
-                                    text: block.caption,
-                                    pClass: 'text-base col-span-2'
-                                } %}
+								<div class="text-base">
+									{{ block.caption }}
+								</div>
 							</div>
 						</div>
 
@@ -88,8 +69,8 @@
 							{{ bg|raw }}
 							<div class="fade-in grid grid-cols-subgrid col-span-10">
 								{% include '_includes/_blocks/text' with {
-                                text: block.text
-                            } %}
+									text: block.text
+								} %}
 							</div>
 						</blockquote>
 
@@ -99,8 +80,8 @@
 							{% for key, asset in block.asset.all() %}
 								<div class="rounded-xl overflow-hidden fade-in {% if key == 0 %} col-span-3 row-span-1 one{% endif %}{% if key == 1 %} col-span-4 row-span-2 two {% endif %}{% if key == 2 %} col-span-3 row-span-1 three{% endif %}{% if key == 3 %} col-span-3 row-span-2 four{% endif %}{% if key == 4 %} col-span-4 row-span-1 five{% endif %}{% if key == 5 %} col-span-3 row-span-2 six{% endif %}" data-cascade>
 									{% include '_includes/_blocks/asset' with {
-                                            class: 'h-full object-cover'
-                                        } %}
+										class: 'h-full object-cover'
+									} %}
 								</div>
 							{% endfor %}
 						</div>

@@ -52,11 +52,20 @@ module.exports = {
           "8.75rem",
           { lineHeight: ".9", fontWeight: "500", letterSpacing: "-0.05em" },
         ], // 130px
+        // H1-smaller
+        "7xl": [
+          "6rem",
+          { lineHeight: ".9", fontWeight: "500", letterSpacing: "-0.05em" },
+        ],
         // H2
         "6xl": [
           "3.75rem",
           { lineHeight: ".9", fontWeight: "500", letterSpacing: "-0.05em" },
         ], // 60px
+        "5xl": [
+          "3rem",
+          { lineHeight: ".9", fontWeight: "500", letterSpacing: "-0.045em" },
+        ],
         "4xl": [
           "2rem",
           { lineHeight: "1.1", fontWeight: "500", letterSpacing: "-0.045em" },
@@ -151,8 +160,22 @@ module.exports = {
     "hover:opacity-70",
     "opacity-70",
 
+    // display
+    "block",
+    "hidden",
+    "md:hidden",
+
     //  border-radius
     "rounded-full",
+
+    // js safe
+    "translate-x-full",
+    "translate-x-0",
+    "hidden",
+    "absolute",
+    "top-0",
+    "left-0",
+    "h-[60px]",
 
     // gradient directions
     "bg-gradient-to-b",
@@ -170,6 +193,14 @@ module.exports = {
     "bg-red",
     "bg-green",
     "bg-transparent",
+
+    // Alignment
+    "justify-start",
+    "justify-center",
+    "justify-end", // Horizontal alignment
+    "items-start",
+    "items-center",
+    "items-end", // Vertical alignment
 
     // text colors
     "text-charcoal",

@@ -4,12 +4,14 @@
 {% set slideTime = entry.slideTime ?? null %}
 
 {% block content %}
-	<div class="progress-bar bg-white lg:col-span-1 md:col-span-2 col-span-3 row-start-1 {% if assets|length == 1 %}hidden{% endif %}">
+	{# {% if assets|length > 2 %} #}
+	<div class="progress-bar bg-white lg:col-span-1 md:col-span-2 col-span-3 row-start-1">
 		<div class="progress bg-red"></div>
 	</div>
-	<div class="space-y-4 col-span-12 row-start-2 mt-12 mb-8 self-end grid grid-cols-subgrid">
+	{# {% endif %} #}
+	<div class="col-span-12 row-start-2 mt-12 mb-8 self-end grid grid-cols-subgrid auto-rows-min">
 		{% include '_includes/_blocks/text'  with {
-			figureClass: 'col-span-4'
+			figureClass: 'col-span-10 sm:col-span-8 md:col-span-6 lg:col-span-5 xl:col-span-4'
 		} %}
 	</div>
 	{% if buttons|length %}

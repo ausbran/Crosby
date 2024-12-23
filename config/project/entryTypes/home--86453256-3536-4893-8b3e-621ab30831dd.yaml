@@ -8,6 +8,13 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-12-18T18:36:16+00:00'
+            elementCondition: null
+            heading: 'Top Banner'
+            type: craft\fieldlayoutelements\Heading
+            uid: c465d0b0-dff1-461e-8595-aabd66b99140
+            userCondition: null
+          -
             dateAdded: '2024-08-21T23:09:01+00:00'
             elementCondition: null
             fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
@@ -56,12 +63,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-08-21T23:11:49+00:00'
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 197a7621-8dfc-43be-b510-db0c3404f198
-            userCondition: null
-          -
             dateAdded: '2024-12-16T20:03:45+00:00'
             elementCondition: null
             heading: 'First Slider'
@@ -91,7 +92,7 @@ fieldLayouts:
             handle: fixedSlideAsset
             includeInCards: false
             instructions: null
-            label: 'Fixed Slide Asset'
+            label: __blank__
             providesThumbs: false
             required: false
             tip: null
@@ -117,12 +118,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-12-16T19:35:55+00:00'
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 193eb1c2-e46d-448b-a090-6033a6c94d20
-            userCondition: null
-          -
             dateAdded: '2024-12-16T21:17:18+00:00'
             elementCondition: null
             heading: 'Video Between Sliders'
@@ -145,12 +140,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2024-12-16T21:17:18+00:00'
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 995f2e02-6fa9-4dd7-8aa6-2c37ce09d4a5
-            userCondition: null
           -
             dateAdded: '2024-12-16T20:03:45+00:00'
             elementCondition: null
@@ -175,6 +164,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-12-18T18:36:16+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Add a double slide to have two blocks stack on top of one another. Add a single slide for full height.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 924adf0f-12f8-4934-919f-8bc23f11b0d6
+            userCondition: null
+          -
             dateAdded: '2024-12-16T20:03:45+00:00'
             elementCondition: null
             fieldUid: 62c3a695-96b4-43f5-ac43-eb27a6cfc3f9 # Slides
@@ -190,12 +188,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2024-12-16T22:04:31+00:00'
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 44cc4ae3-e373-461f-ae2b-0d4032e7a617
-            userCondition: null
           -
             dateAdded: '2024-12-16T22:04:31+00:00'
             elementCondition: null

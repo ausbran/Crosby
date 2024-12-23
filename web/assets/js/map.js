@@ -1,4 +1,5 @@
 import { body } from "./globals.js";
+import { initSlider } from "./slider.js";
 
 export function initMap() {
   const map = L.map("map").setView([30.8461, -93.2893], 13);
@@ -12,9 +13,9 @@ export function initMap() {
   zoomControl.onAdd = function (map) {
     const div = L.DomUtil.create("div", "custom-zoom-controls");
     div.innerHTML = `
-    <button id="zoom-in" class="btn icon rounded-full text-xl custom-zoom-btn">+</button>
-    <button id="zoom-out" class="btn icon rounded-full text-xl custom-zoom-btn">−</button>
-  `;
+      <button id="zoom-in" class="text-white h-[60px] btn icon rounded-full text-xl custom-zoom-btn">+</button>
+      <button id="zoom-out" class="text-white h-[60px] btn icon rounded-full text-xl custom-zoom-btn">−</button>
+    `;
     L.DomEvent.disableClickPropagation(div);
     return div;
   };
@@ -63,7 +64,7 @@ export function initMap() {
     featuresList.innerHTML = ""; // Clear existing features
     listing.features.forEach((feature) => {
       const li = document.createElement("li");
-      li.classList.add("col-span-2");
+      li.classList.add("col-span-3", "lg:col-span-2");
       li.innerHTML = `<span class="font-medium">${feature.title}:</span> ${feature.text}`;
       featuresList.appendChild(li);
     });
@@ -89,11 +90,19 @@ export function initMap() {
         openPhotoModal(listing, listing.images.indexOf(imageHtml))
       );
       modalImageContainer.appendChild(imageDiv);
+      // call slider script whenever a modal opens so that it works with new modal
+      initSlider();
     });
 
     // Update "Call" button with phone number
     const callButton = document.querySelector(".call-button");
-    callButton.href = `tel:${listing.phone}`;
+    callButton.href = `${listing.phone}`;
+
+    // Set data-id for the email button
+    const emailButton = document.querySelector(".email-button");
+    if (emailButton) {
+      emailButton.setAttribute("data-id", listingId);
+    }
 
     const modal = document.getElementById("modal");
     modal.classList.add("show");
@@ -170,7 +179,6 @@ export function initMap() {
   const mapLayers = {}; // Store layers for each listing by ID
 
   const processShapefile = (shapefileUrl, listingId = null) => {
-    console.log("Fetching shapefile:", shapefileUrl);
     fetch(shapefileUrl)
       .then((response) => {
         if (!response.ok) {
@@ -179,11 +187,9 @@ export function initMap() {
         return response.arrayBuffer();
       })
       .then((arrayBuffer) => {
-        console.log("Shapefile fetched successfully:", shapefileUrl);
         return shapefile.open(arrayBuffer).then((source) => {
           source.read().then(function log(result) {
             if (result.done) {
-              console.log("Finished reading shapefile:", shapefileUrl);
               map.fitBounds(allBounds.getBounds()); // Initial view
               return;
             }
@@ -201,20 +207,16 @@ export function initMap() {
                   ? mapData.listings.find((l) => l.id === listingId)
                   : null;
 
-                // Check if listing.title exists
                 if (listing && listing.title) {
-                  // Create custom popup content
                   const popupContent = `
-        <div class="tooltip-content">
-          <div class="flex space-x-4">
-          <span>${listing.address.locality || "Unknown"}, ${
-            listing.address.administrativeArea || ""
-          }</span>
-          <span>${listing.acreage || "N/A"} Acres</span>
-          </div>
-          <h3 class="text-3xl">${listing.title}</h3>
-        </div>
-      `;
+                    <div class="tooltip-content">
+                      <div class="flex space-x-4">
+                        <span>${listing.address.locality || "Unknown"}, ${listing.address.administrativeArea || ""}</span>
+                        <span>${listing.acreage || "N/A"} Acres</span>
+                      </div>
+                      <h3 class="text-3xl">${listing.title}</h3>
+                    </div>
+                  `;
 
                   layer.bindPopup(popupContent, {
                     className: "custom-popup",
@@ -240,7 +242,6 @@ export function initMap() {
                     layer.closePopup();
                   });
                 } else {
-                  // Fallback behavior when no title exists
                   layer.on("mouseover", () => {
                     layer.setStyle({
                       color: "red",
@@ -272,7 +273,6 @@ export function initMap() {
               },
             }).addTo(map);
 
-            // Store the layer for this listing
             if (listingId) {
               mapLayers[listingId] = layer;
             }
@@ -287,7 +287,7 @@ export function initMap() {
       });
   };
 
-  // Attach event listeners
+  // Attach event listeners for buttons
   const attachButtonListeners = (selector, callback) => {
     const buttons = document.querySelectorAll(selector);
     buttons.forEach((button) => {
@@ -316,30 +316,69 @@ export function initMap() {
     });
   };
 
-  // Attach listeners for view buttons and image buttons
   attachButtonListeners(".view-button", (listingId) => openModal(listingId));
   attachButtonListeners(".image-button", (listingId) => openModal(listingId));
 
-  // Initialize both map shapes and event listeners
-  initializeMapShapes();
-
   // Add modal close listeners
-  document.querySelector(".content-modal-close").addEventListener(
-    "click",
-    () => closeModal(document.getElementById("modal"), true) // Pass `true` to reset the map
-  );
+  const closeButton = document.querySelector(".content-modal-close");
+  if (closeButton) {
+    closeButton.addEventListener("click", () =>
+      closeModal(document.getElementById("modal"), true)
+    );
+  }
 
-  // Close the photo modal without resetting the map view
-  document
-    .querySelector(".photo-modal-close")
-    .addEventListener("click", () =>
+  const photoModalClose = document.querySelector(".photo-modal-close");
+  if (photoModalClose) {
+    photoModalClose.addEventListener("click", () =>
       closeModal(document.getElementById("photo-modal"))
     );
+  }
 
-  // Close the contact modal without resetting the map view
-  document
-    .querySelector(".contact-modal-close")
-    .addEventListener("click", () =>
-      closeModal(document.getElementById("contact-modal"))
-    );
+  // Open contact modal for a specific listing
+  const openContactModal = (listingId) => {
+    const contactModal = document.getElementById(`contact-modal-${listingId}`);
+    if (!contactModal) {
+      console.error(`Contact modal for listing ID ${listingId} not found.`);
+      return;
+    }
+    contactModal.classList.remove("pointer-events-none", "translate-y-full");
+    body.classList.add("no-scroll");
+  };
+
+  // Close contact modal
+  const closeContactModal = (listingId) => {
+    const contactModal = document.getElementById(`contact-modal-${listingId}`);
+    if (contactModal) {
+      contactModal.classList.add("pointer-events-none", "translate-y-full");
+      body.classList.remove("no-scroll");
+    }
+  };
+
+  document.querySelectorAll(".email-button").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      const listingId = button.getAttribute("data-id");
+
+      if (listingId) {
+        openContactModal(listingId);
+      } else {
+        console.error("Listing ID not found for email button.");
+      }
+    });
+  });
+
+  document.querySelectorAll(".contact-modal-close").forEach((button) => {
+    button.addEventListener("click", () => {
+      const listingId = button
+        .closest("[id^='contact-modal-']")
+        .id.replace("contact-modal-", "");
+      if (listingId) {
+        closeContactModal(listingId);
+      } else {
+        console.error("Listing ID not found for close button.");
+      }
+    });
+  });
+
+  initializeMapShapes();
 }
