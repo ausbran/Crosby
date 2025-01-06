@@ -160,16 +160,10 @@ shapefile: [{% for file in listing.shapeFile.all() %}"{{ file.url }}"{% if not l
 				{% include '_includes/_icons/close' with {
 					class: 'contact-modal-close !bg-white !absolute z-2 top-6 right-6 modal-close'
 				} %}
-				<div class="text-white px-4 sm:px-0 form-inner col-start-1 sm:col-start-3 lg:col-start-4 xl:col-start-5 col-span-12 sm:col-span-8 lg:col-span-6 xl:col-span-4">
-					{% set staffEmail = listing.staffContact.one().email ?? 'default@example.com' %}
-					{% set form = craft.formie.forms({ handle: 'contactRealEstate' }).one() %}
-					{% do craft.formie.populateFormValues(form, {
-						staffEmail: staffEmail
-					}) %}
-					{{ craft.formie.renderForm(form, {
-						class: 'p8'
-					}) }}
-				</div>
+				{% include '_includes/_blocks/formDynamic' with {
+					block: listing,
+					formHandle: 'contactRealEstate'
+				} %}
 			</div>
 
 		</div>

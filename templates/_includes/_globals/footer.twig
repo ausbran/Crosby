@@ -6,7 +6,8 @@
 			<a href="{{ currentSite.baseUrl }}">
 				{% include '_includes/_svg/logo-horizontal.svg' %}</a>
 		</div>
-		<div class="col-span-12 lg:col-span-10 list-none flex items-end justify-start lg:justify-end gap-10">{% set primaryLinks = footer.primaryLinks.all() %}
+		<div class="col-span-12 lg:col-span-10 list-none flex items-end justify-start lg:justify-end gap-10">
+			{% set primaryLinks = footer.primaryLinks.all() %}
 			{% for link in primaryLinks %}
 				<a href="{{ link.getUrl() }}" class="text-md tracking-tighter text-white font-medium">
 					{{ link.title }}

@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:css": "sass src/scss/main.scss web/assets/css/styles.temp.css && postcss web/assets/css/styles.temp.css -o web/assets/css/styles.css",
-    "watch:css": "sass --watch src/scss/main.scss:web/assets/css/styles.temp.css & postcss web/assets/css/styles.temp.css -o web/assets/css/styles.css --watch",
-    "dev": "vite",
-    "build:js": "vite build",
-    "start": "npm run watch:css & npm run dev"
+    "build": "sass src/scss/main.scss web/assets/css/styles.temp.css && postcss web/assets/css/styles.temp.css -o web/assets/css/styles.css",
+    "dev": "sass --watch src/scss/main.scss:web/assets/css/styles.temp.css & postcss web/assets/css/styles.temp.css -o web/assets/css/styles.css --watch"
   },
   "keywords": [],
   "author": "",
