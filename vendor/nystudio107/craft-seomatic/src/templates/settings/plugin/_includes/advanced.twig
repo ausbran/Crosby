@@ -1,0 +1,91 @@
+{% import "_includes/forms" as forms %}
+{% from "seomatic/settings/_includes/macros.twig" import configWarning %}
+
+<div id="advanced" class="hidden">
+    {% namespace "settings" %}
+
+        {{ forms.lightswitchField({
+            label: "Site Groups define logically separate sites"|t("seomatic"),
+            instructions: "If you are using Site Groups to logically separate 'sister sites', turn this on."|t("seomatic"),
+            id: "siteGroupsSeparate",
+            name: "siteGroupsSeparate",
+            on: settings.siteGroupsSeparate,
+            warning: configWarning("siteGroupsSeparate", "seomatic"),
+            errors: settings.getErrors("siteGroupsSeparate"),
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: "Always include `canonical` links regardless of environment"|t("seomatic"),
+            instructions: "SEO [best practices](https://www.searchenginejournal.com/google-dont-mix-noindex-relcanonical/262607) are to have `canonical` links not appear on pages that are not intended to be indexed. SEOmatic does this for you by default, but you can override that behavior with this setting"|t("seomatic"),
+            id: "alwaysIncludeCanonicalUrls",
+            name: "alwaysIncludeCanonicalUrls",
+            on: settings.alwaysIncludeCanonicalUrls,
+            warning: configWarning("alwaysIncludeCanonicalUrls", "seomatic"),
+            errors: settings.getErrors("alwaysIncludeCanonicalUrls"),
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: "Lowercase Canonical URL"|t("seomatic")|md,
+            instructions: "Should the Canonical URL be automatically lower-cased?"|t("seomatic"),
+            id: "lowercaseCanonicalUrl",
+            name: "lowercaseCanonicalUrl",
+            on: settings.lowercaseCanonicalUrl,
+            warning: configWarning("lowercaseCanonicalUrl", "seomatic"),
+            errors: settings.getErrors("lowercaseCanonicalUrl"),
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: "SEOmatic Debug Toolbar Panel"|t("seomatic")|md,
+            instructions: "Determines whether the SEOmatic debug toolbar panel should be added to the Yii2 debug toolbar."|t("seomatic"),
+            id: "enableDebugToolbarPanel",
+            name: "enableDebugToolbarPanel",
+            on: settings.enableDebugToolbarPanel,
+            warning: configWarning("enableDebugToolbarPanel", "seomatic"),
+            errors: settings.getErrors("enableDebugToolbarPanel"),
+        }) }}
+
+        {% if settings.siteUrlOverride is iterable %}
+            <div class="field">
+                <div class="heading">
+                    <label>
+                        {{ "Site URL Override"|t("seomatic") }}
+                    </label>
+                </div>
+                <div class="instructions">
+                    <p>{{ "The Site URL Override is overriden as an array for a multi-site setup in the `config/seomatic.php` file."|t("seomatic") }}</p>
+                </div>
+            </div>
+        {% else %}
+            {{ forms.autosuggestField({
+                label: "Site URL Override"|t("seomatic"),
+                instructions: "SEOmatic uses the Craft `siteUrl` to generate the external URLs.  If you are using it in a non-standard environment, such as a headless GraphQL or ElementAPI server, you can override what it uses for the `siteUrl` below."|t("seomatic"),
+                suggestEnvVars: true,
+                suggestAliases: true,
+                id: "siteUrlOverride",
+                name: "siteUrlOverride",
+                value: settings.siteUrlOverride,
+                warning: configWarning("siteUrlOverride", "seomatic"),
+                errors: settings.getErrors("siteUrlOverride"),
+            }) }}
+        {% endif %}
+
+        {{ forms.selectField({
+            label: "Meta Cache Duration"|t("seomatic"),
+            instructions: "The duration of the SEOmatic meta cache. The default Unlimited setting is typically desired, as SEOmatic will break the cache as needed. If `devMode` is on, caches last 30 seconds."|t("seomatic"),
+            id: "metaCacheDuration",
+            name: "metaCacheDuration",
+            value: settings.metaCacheDuration,
+            options: {
+                0: "Unlimited"|t("seomatic"),
+                31556952: "1 year"|t("seomatic"),
+                2592000: "1 month"|t("seomatic"),
+                604800: "1 week"|t("seomatic"),
+                86400: "1 day"|t("seomatic"),
+                3600: "1 hour"|t("seomatic"),
+            },
+            warning: configWarning("metaCacheDuration", "seomatic"),
+            errors: settings.getErrors("metaCacheDuration"),
+        }) }}
+
+    {% endnamespace %}
+</div>

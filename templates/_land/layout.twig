@@ -1,0 +1,19 @@
+<div id="map-wrapper" class="lg:page grid grid-cols-12 pt-0 lg:pt-[180px] !mt-0">
+	<div class="z-5 lg:z-1 absolute lg:static bottom-6 lg:bottom-0 col-span-12 lg:col-span-6 flex-col flex lg:grid grid-cols-6 space-y-6 content-start justify-center">
+		<h2 class="text-white lg:text-charcoal text-3xl lg:text-6xl font-medium col-span-6 row-start-1 ml-6 lg:ml-0 pointer-events-none">{{ entry.title }}</h2>
+		<div class="hidden lg:block text-lg xl:col-span-4 col-span-6 row-start-2">{{ entry.text|raw }}</div>
+		<!-- left -->
+		{% block left %}{% endblock %}
+
+	</div>
+	<!-- map -->
+	{% include '_includes/_blocks/gradient.twig' with {
+		height: '1/4',
+		zIndex: 4,
+		class: 'block lg:hidden transition-all duration-300 pointer-events-none'
+	}%}
+	<div id="map" class="z-3 w-full rounded-none lg:rounded-xl fixed lg:sticky h-full lg:h-[calc(100svh-250px)] lg:max-h-[750px] top-0 lg:top-[180px] col-span-6 bg-gray-200 p-6"></div>
+</div>
+
+<!-- modal -->
+{% block modal %}{% endblock %}

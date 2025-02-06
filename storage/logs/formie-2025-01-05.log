@@ -1,0 +1,7 @@
+2025-01-05 21:36:02 [ERROR] Notification email error. No recipient email address found.
+2025-01-05 21:36:02 [INFO] Fail alert not configured to send.
+2025-01-05 21:36:02 [INFO] Request context:
+$_GET = [
+    'p' => 'admin/actions/queue/retry'
+    'v' => '1736138162039'
+]

@@ -1,0 +1,16 @@
+# security.txt file for {{ seomatic.helper.baseSiteUrl("/") }} - more info: https://securitytxt.org/
+
+# (required) Contact email address for security issues
+Contact: mailto:user@example.com
+
+# (required) Expiration date for the security information herein
+Expires: {{ date('+1 year')|atom }}
+
+# (optional) OpenPGP key:
+Encryption: {{ url('pgp-key.txt') }}
+
+# (optional) Security policy page:
+Policy: {{ url('security-policy') }}
+
+# (optional) Security acknowledgements page:
+Acknowledgements: {{ url('hall-of-fame') }}

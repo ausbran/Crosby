@@ -1,0 +1,98 @@
+{% set inheritedFrom = seomatic.helper.findInheritableBundle(parentBundles, "twitterTitle") %}
+{% set hasInheritableValues = inheritedFrom is not null %}
+
+{% set additionalVars = {
+    'isInherited': seomatic.helper.isInherited(metaGlobalVars, "twitterTitle"),
+    'wrapperClass': 'seomatic-textSourceWrapper',
+    'fieldLabel': "X (Twitter) Title Source"|t("seomatic"),
+    'labelFor': 'metaBundleSettings-twitterTitleSource',
+    'settingName': 'twitterTitle'
+} %}
+
+{% embed "seomatic/settings/_includes/fields/_inheritableField.twig" with additionalVars %}
+    {% macro twitterTitleField(textOptions, textFieldSources, metaBundleSettings, metaGlobalVars, suffix, pageContext) %}
+        {% set disabled = suffix|length > 0 %}
+        <div class="instructions">
+            <p>{{ "The X (Twitter) Title is displayed in bold at the top of your X (Twitter) card. Make sure it is a pithy summary of your webpage."|t("seomatic") }}</p>
+        </div>
+
+        {% import "_includes/forms" as forms %}
+        {% import 'codeeditor/codeEditor' as codeEditor %}
+
+        {% namespace "metaBundleSettings" %}
+            <div class="heading">
+                {{ forms.select({
+                    id: "twitterTitleSource" ~ suffix,
+                    name: "twitterTitleSource",
+                    options: textOptions,
+                    value: metaBundleSettings.twitterTitleSource,
+                    class: "seomatic-textSourceSelect",
+                    errors: metaBundleSettings.getErrors("twitterTitleSource"),
+                    disabled: disabled,
+                }) }}
+            </div>
+        {% endnamespace %}
+
+        {% if textFieldSources is defined and textFieldSources |length %}
+            {% namespace "metaBundleSettings" %}
+                <div class="heading seomatic-textSourceFromField">
+                    <label
+                        for="metaBundleSettings-twitterTitleField{{ suffix }}">{{ "Source Field: "|t("seomatic") }}</label>
+                    {{ forms.select({
+                        id: "twitterTitleField" ~ suffix,
+                        name: "twitterTitleField",
+                        options: textFieldSources,
+                        value: metaBundleSettings.twitterTitleField,
+                        errors: metaBundleSettings.getErrors("twitterTitleField"),
+                        disabled: disabled,
+                    }) }}
+                </div>
+            {% endnamespace %}
+        {% endif %}
+
+        {% namespace "metaGlobalVars" %}
+            <div class="input ltr seomatic-textSourceFromUrl">
+                {% if pageContext != "field" %}
+                    {{ codeEditor.textField({
+                        id: "twitterTitle" ~ suffix,
+                        name: "twitterTitle",
+                        value: metaGlobalVars.twitterTitle,
+                        warning: false,
+                        errors: metaGlobalVars.getErrors("twitterTitle"),
+                        disabled: disabled,
+                    }, "SeomaticExpressionField", {}, {wrapperClass: "monaco-editor-background-frame"}) }}
+                {% else %}
+                    {{ forms.text({
+                        id: "twitterTitle" ~ suffix,
+                        name: "twitterTitle",
+                        value: metaGlobalVars.twitterTitle,
+                        class: "nicetext",
+                        maxlength: seomatic.config.maxTitleLength,
+                        showCharsLeft: true,
+                        warning: false,
+                        errors: metaGlobalVars.getErrors("twitterTitle"),
+                        disabled: disabled,
+                    }) }}
+                {% endif %}
+            </div>
+        {% endnamespace %}
+    {% endmacro %}
+
+    {% set textOptions = {
+        fromCustom: "Custom Text"|t("seomatic"),
+    } %}
+
+    {% if textFieldSources is defined and textFieldSources |length %}
+        {% set textOptions = { fromField: "From Field"|t("seomatic"), } | merge(textOptions) %}
+    {% endif %}
+
+    {% set textOptions = { sameAsSeo: "Same as SEO Title"|t("seomatic"), } | merge(textOptions) %}
+
+    {% block inheritedValues %}
+        {{ _self.twitterTitleField(textOptions, textFieldSources, inheritedFrom.metaBundleSettings ?? metaBundleSettings, inheritedFrom.metaGlobalVars ?? metaGlobalVars, "-inherited", pageContext) }}
+    {% endblock %}
+
+    {% block field %}
+        {{ _self.twitterTitleField(textOptions, textFieldSources, metaBundleSettings, metaGlobalVars, "", pageContext) }}
+    {% endblock %}
+{% endembed %}

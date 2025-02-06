@@ -1,0 +1,96 @@
+{% set inheritedFrom = seomatic.helper.findInheritableBundle(parentBundles, "seoKeywords") %}
+{% set hasInheritableValues = inheritedFrom is not null %}
+
+{% set additionalVars = {
+    'isInherited': seomatic.helper.isInherited(metaGlobalVars, "seoKeywords"),
+    'wrapperClass': 'seomatic-textSourceWrapper',
+    'fieldLabel': "SEO Keywords Source"|t("seomatic"),
+    'labelFor': 'metaBundleSettings-seoKeywordsSource',
+    'settingName': 'seoKeywords'
+} %}
+
+{% embed "seomatic/settings/_includes/fields/_inheritableField.twig" with additionalVars %}
+    {% macro seoKeywordsField(textOptions, textFieldSources, seomaticConfig, metaBundleSettings, metaGlobalVars, suffix, pageContext) %}
+        {% set disabled = suffix|length > 0 %}
+        <div class="instructions">
+            <p>{{ "Google ignores SEO Keywords tag; though other search engines do look at it. Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam."|t("seomatic") }}</p>
+        </div>
+
+        {% import "_includes/forms" as forms %}
+        {% import 'codeeditor/codeEditor' as codeEditor %}
+
+        {% namespace "metaBundleSettings" %}
+            <div class="heading">
+                {{ forms.select({
+                    id: "seoKeywordsSource" ~ suffix,
+                    name: "seoKeywordsSource",
+                    options: textOptions,
+                    value: metaBundleSettings.seoKeywordsSource,
+                    class: "seomatic-textSourceSelect",
+                    errors: metaBundleSettings.getErrors("seoKeywordsSource"),
+                    disabled: disabled,
+                }) }}
+            </div>
+        {% endnamespace %}
+
+        {% if textFieldSources is defined and textFieldSources |length %}
+            {% namespace "metaBundleSettings" %}
+                <div class="heading seomatic-textSourceFromField">
+                    <label
+                        for="metaBundleSettings-seoKeywordsField{{ suffix }}">{{ "Source Field: "|t("seomatic") }}</label>
+                    {{ forms.select({
+                        id: "seoKeywordsField" ~ suffix,
+                        name: "seoKeywordsField",
+                        options: textFieldSources,
+                        value: metaBundleSettings.seoKeywordsField,
+                        errors: metaBundleSettings.getErrors("seoKeywordsField"),
+                        disabled: disabled,
+                    }) }}
+                </div>
+            {% endnamespace %}
+        {% endif %}
+
+        {% namespace "metaGlobalVars" %}
+            <div class="input ltr seomatic-textSourceFromUrl" style="box-sizing: border-box;">
+                {% if pageContext != "field" %}
+                    {{ codeEditor.textField({
+                        id: "seoKeywords" ~ suffix,
+                        name: "seoKeywords",
+                        value: metaGlobalVars.seoKeywords,
+                        warning: false,
+                        errors: metaGlobalVars.getErrors("seoKeywords"),
+                        disabled: disabled,
+                    }, "SeomaticExpressionField", {}, {wrapperClass: "monaco-editor-background-frame"}) }}
+                {% else %}
+                    {{ forms.textField({
+                        id: "seoKeywords" ~ suffix,
+                        name: "seoKeywords",
+                        value: metaGlobalVars.seoKeywords,
+                        class: "seomatic-keywords",
+                        maxlength: seomatic.config.maxDescriptionLength,
+                        showCharsLeft: true,
+                        warning: false,
+                        errors: metaGlobalVars.getErrors("seoKeywords"),
+                        disabled: disabled,
+                    }) }}
+                {% endif %}
+            </div>
+        {% endnamespace %}
+    {% endmacro %}
+
+    {% set textOptions = {
+        fromCustom: "Custom Text"|t("seomatic"),
+    } %}
+    {% if textFieldSources is defined and textFieldSources |length %}
+        {% set textOptions = { keywordsFromField: "Keywords From Field"|t("seomatic"), } | merge(textOptions) %}
+        {% set textOptions = { fromField: "From Field"|t("seomatic"), } | merge(textOptions) %}
+    {% endif %}
+
+    {% block inheritedValues %}
+        {{ _self.seoKeywordsField(textOptions, textFieldSources, seomatic.config, inheritedFrom.metaBundleSettings ?? metaBundleSettings, inheritedFrom.metaGlobalVars ?? metaGlobalVars, "-inherited", pageContext) }}
+    {% endblock %}
+
+    {% block field %}
+        {{ _self.seoKeywordsField(textOptions, textFieldSources, seomatic.config, metaBundleSettings, metaGlobalVars, "", pageContext) }}
+    {% endblock %}
+{% endembed %}

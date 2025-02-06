@@ -1,0 +1,14 @@
+{% extends '_land/layout' %}
+{% set footerClass = '!mt-0' %}
+{% set listings = craft.entries()
+                    .section('realEstate')
+                    .all() %}
+
+
+{% block left %}
+	{% include '_land/left' %}
+{% endblock %}
+
+{% block modal %}
+	{% include '_land/modal' %}
+{% endblock %}

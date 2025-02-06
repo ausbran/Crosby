@@ -1,0 +1,29 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var metaBundle \nystudio107\seomatic\models\MetaBundle #}
+
+{% requirePermission "seomatic:content-meta" %}
+
+{% extends 'seomatic/_layouts/seomatic-cp.twig' %}
+{% import '_includes/forms' as forms %}
+
+{% block head %}
+    {{ parent() }}
+    {% set tagOptions = {
+        'depends': [
+            'nystudio107\\seomatic\\assetbundles\\seomatic\\SeomaticAsset'
+        ],
+    } %}
+    {{ seomatic.vite.register('src/js/content-seo.js', false, tagOptions, tagOptions) }}
+{% endblock %}
+
+{% set content %}
+    <div class="readable">
+        <div id="cp-nav-content">
+            <content-seo-table
+                :site-id="{{ currentSiteId }}"
+                :api-url="'{{ actionUrl('seomatic/content-seo/meta-bundles') }}'"
+            >
+            </content-seo-table>
+        </div>
+    </div>
+{% endset %}

@@ -1,0 +1,16 @@
+{% block content %}
+	{% if entry.asset|length %}
+		{% include '_includes/_blocks/bannerSlides' with {
+            block: entry
+        } %}
+	{% endif %}
+
+	{% include '_about/profiles' with {
+		parent: 'staff',
+		contactInfo: false,
+		bioInfo: true
+	} %}
+
+	<!-- Modal Template -->
+	{% include '_includes/_blocks/modalContact' %}
+{% endblock %}

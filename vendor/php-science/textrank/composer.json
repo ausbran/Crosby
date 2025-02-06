@@ -1,0 +1,33 @@
+{
+    "name": "php-science/textrank",
+    "description": "TextRank (automatic text summarization) for PHP.",
+    "keywords": ["science", "textrank", "automatic", "summarization", "PHP", "PHP8", "strict", "ai", "artificial", "intelligence"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Belicza",
+            "email": "david@belicza.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "ext-ctype": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpScience\\TextRank\\": ["src/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpScience\\TextRank\\": ["tests/"]
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors='always' $(pwd)/tests"
+    }
+}

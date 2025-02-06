@@ -1,0 +1,71 @@
+{% set navigation = craft.entries().section('navigation').level(1).all() %}
+
+<nav id="main-nav" class="md:page top-0 md:top-8 grid grid-cols-12 fixed left-0 right-0 z-10 transition-transform duration-300 ease-in-out">
+	<div
+		class="inner relative p-8 flex col-span-12 xl:col-span-8 justify-between items-center text-center text-base bg-red text-white md:rounded-xl z-[9999]">
+
+
+		<!-- Logo -->
+		<a href="{{ currentSite.baseUrl }}" class="relative z-2 w-[80px] md:w-[100px] hover:opacity-60">
+			{% include '_includes/_svg/logo-horizontal.svg' %}
+		</a>
+
+		<!-- Desktop Navigation -->
+		<ul class="hidden md:flex primary-links justify-evenly gap-10 lg:gap-12 highlight justify-between flex flex-row">
+
+			{% for primary in navigation %}
+				<li class="group font-medium z-10">
+					<span class="relative z-3 tracking-tighter">{{ primary.title }}</span>
+					{% if primary.hasDescendants %}
+						<ul class="secondary-links z-2 w-full text-left rounded-md absolute left-0 invisible transition-all duration-300 ease-in-out transform">
+							<div class="color-banner duration-500 z-1 col-span-8 rounded-br-xl rounded-bl-xl bg-red absolute w-full h-full"></div>
+							<div class="z-2 p-16 pt-40 space-y-10">
+								{% for secondary in primary.getDescendants().level(2) %}
+									<li class="opacity-0 tracking-tighter text-nav hover:opacity-60 transition-all duration-300">
+										<a href="{{ secondary.linkUrl }}">{{ secondary.title }}</a>
+									</li>
+								{% endfor %}
+							</div>
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+
+		<!-- Mobile Navigation -->
+		<div id="mobile-menu" class="flex md:hidden bg-red fixed top-20 left-0 w-full h-screen text-white -translate-x-full transition-transform duration-300 z-40">
+			<ul id="mobile-primary" class="p-8 pt-12 space-y-10">
+				{% for primary in navigation %}
+					<li class="text-left block primary-link flex gap-6 transition-all duration-200" data-secondary="#secondary-{{ loop.index }}">
+						{% include '_includes/_blocks/button' with {
+							link: '#',
+							label: primary.title,
+							class: '!p-0 !text-4xl !bg-transparent'
+						} %}
+					</li>
+					{% if primary.hasDescendants %}
+						<ul id="secondary-{{ loop.index }}" class="!mt-0 z-10 mobile-secondary text-left fixed top-0 left-0 w-full h-full bg-inherit p-8 pt-12 space-y-10 -translate-x-full transition-transform duration-300">
+							<button class="back-button text-2xl transition-all duration-300 hover:opacity-60">&larr; Back</button>
+							{% for secondary in primary.getDescendants().level(2) %}
+								<li>
+									<a href="{{ secondary.linkUrl }}" class="transition-all duration-300 hover:opacity-60 text-4xl">{{ secondary.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	{# icons #}
+	<div class="icons relative">
+		{% include '_includes/_icons/nav' with {
+				class: 'block md:hidden'
+			} %}
+		{% include '_includes/_icons/magnify' with {
+				class: '!bg-transparent !hidden md:!block'
+			}%}
+	</div>
+
+</div></nav>

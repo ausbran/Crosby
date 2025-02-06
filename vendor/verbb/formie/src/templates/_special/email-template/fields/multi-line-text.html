@@ -1,0 +1,9 @@
+{% if value %}
+    {% if field.useRichText %}
+        {{ field.getValueAsString(value, submission) | raw }}
+    {% else %}
+        {{ field.getValueAsString(value, submission) | nl2br }}
+    {% endif %}
+{% else %}
+    {{ notification.getPlaceholder() }}
+{% endif %}

@@ -1,0 +1,7 @@
+{% if value %}
+    {% set displayValue = field.emailValue == 'value' ? (value.value ?? '') : (value.label ?? '') %}
+    
+    {{ displayValue }}
+{% else %}
+    {{ notification.getPlaceholder() }}
+{% endif %}

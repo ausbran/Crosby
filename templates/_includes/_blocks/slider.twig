@@ -1,0 +1,20 @@
+{% set slides = slides ?? block.slides.all() %}
+{% set sliderWrapperClass = sliderWrapperClass ?? null %}
+{% set sliderClass = sliderClass ?? null %}
+{% set arrows = arrows ?? true %}
+{% set fadeIn = fadeIn is defined ? 'fade-in' : '' %}
+
+<div class="slider-wrapper {{ sliderWrapperClass }} {{ fadeIn }}" data-cascade>
+	<div class="slider {{ sliderClass }}">
+		{% block slides %}
+			{% for slide in slides %}
+				{% include slideTemplate with {
+                        slide: slide
+                    } %}
+			{% endfor %}
+		{% endblock %}
+	</div>
+	{% if arrows %}
+		{% include '_includes/_icons/arrows' %}
+	{% endif %}
+</div>

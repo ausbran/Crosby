@@ -1,0 +1,10 @@
+<div class="text-white px-4 sm:px-0 form-inner col-start-1 sm:col-start-3 lg:col-start-4 xl:col-start-5 col-span-12 sm:col-span-8 lg:col-span-6 xl:col-span-4">
+	{% set staffEmail = block.staffContact.one().email ?? 'default@example.com' %}
+	{% set form = craft.formie.forms({ handle: formHandle }).one() %}
+	{% do craft.formie.populateFormValues(form, {
+        staffEmail: staffEmail
+    }) %}
+	{{ craft.formie.renderForm(form, {
+        class: 'p8'
+    }) }}
+</div>

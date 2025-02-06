@@ -1,0 +1,15 @@
+{% block content %}
+	{% include '_about/profiles' with {
+		parent: 'contact',
+		contactInfo: true,
+		bioInfo: false
+	} %}
+
+	<!-- Modal Template -->
+	<div id="contact-modal" style="height: calc(100vh - 400px);" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden justify-center items-center">
+		<div class="bg-white rounded-lg p-8 relative w-3/4 h-full">
+			<button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800" id="modal-close">✖</button>
+			<div id="modal-content" class="h-full grid grid-cols-12"></div>
+		</div>
+	</div>
+{% endblock %}

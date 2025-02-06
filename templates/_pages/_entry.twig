@@ -1,0 +1,11 @@
+{% extends "index" %}
+
+{% block content %}
+    {% set blocks = entry.contentBlocks %}
+
+    {% for block in blocks %}
+        {% include '_includes/_blocks/' ~ block.type with {
+            block: block
+        } %}
+    {% endfor %}
+{% endblock %}

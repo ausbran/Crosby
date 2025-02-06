@@ -1,0 +1,11 @@
+{% if value | length %}
+    <ul>
+        {% for item in value %}
+            {% set displayValue = field.emailValue == 'value' ? (item.value ?? '') : (item.label ?? '') %}
+
+            <li>{{ displayValue }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    {{ notification.getPlaceholder() }}
+{% endif %}

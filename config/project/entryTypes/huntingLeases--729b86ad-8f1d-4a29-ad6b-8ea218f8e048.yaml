@@ -1,0 +1,89 @@
+color: null
+fieldLayouts:
+  c3159597-f513-4416-88d5-f91f27b0c329:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-02-04T01:37:55+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 44bdcfbb-0876-4989-81a5-dab80ccc488a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-04T01:39:28+00:00'
+            elementCondition: null
+            fieldUid: 5e876e9e-c27f-47f3-ade9-0e2b65433348 # Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a394fb03-7f2e-489e-9fb6-01a5f4fd9b48
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 622f7952-1c33-4b45-9278-d6a2845a1602
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-02-04T21:43:14+00:00'
+            elementCondition: null
+            fieldUid: 451ebed9-368d-4404-a7f4-1c565c0dfc4a # Color
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 58bb00a9-0d2d-490d-bd9e-005e5999da8d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 09787b0d-7bba-483d-b4fe-77bbf837bb3f
+        userCondition: null
+handle: huntingLeases
+hasTitleField: true
+icon: ''
+name: 'Hunting Leases'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

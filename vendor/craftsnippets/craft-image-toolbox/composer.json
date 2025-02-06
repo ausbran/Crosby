@@ -1,0 +1,44 @@
+{
+    "name": "craftsnippets/craft-image-toolbox",
+    "description": "Image toolbox",
+    "type": "craft-plugin",
+    "version": "3.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "image toolbox"
+    ],
+    "support": {
+        "docs": "http://craftsnippets.com/docs/image-toolbox/",
+        "issues": "https://github.com/craft-snippets/Craft-image-toolbox/issues"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Piotr Pogorzelski",
+            "homepage": "http://craftsnippets.com/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^5.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "craftsnippets\\imagetoolbox\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Image toolbox",
+        "handle": "image-toolbox",
+        "developer": "Piotr Pogorzelski",
+        "developerUrl": "http://craftsnippets.com/",
+        "documentationUrl": "http://craftsnippets.com/docs/image-toolbox/",
+        "changelogUrl": "https://github.com/craft-snippets/Craft-image-toolbox/blob/master/CHANGELOG.md",
+        "components": {
+            "imageToolboxService": "craftsnippets\\imagetoolbox\\services\\ImageToolboxService"
+        },
+        "class": "craftsnippets\\imagetoolbox\\ImageToolbox"
+    }
+}

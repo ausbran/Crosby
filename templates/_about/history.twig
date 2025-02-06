@@ -1,0 +1,112 @@
+{% block content %}
+
+	{% set firstBlock = entry.historyBlocks.one() %}
+	{% set firstBlockColor = firstBlock.color ?? 'red' %}
+	{# Default to 'red' if no color is set #}
+
+	<div class="page mx-auto space-y-10 xl:space-y-20 grid grid-cols-12">
+		<div class="h-[calc(100%+200px)] w-[300%] -left-[100%] absolute -z-1 bg-texture h-30 bg-{{ firstBlockColor }}"></div>
+		{% for block in entry.historyBlocks.all() %}
+			{% set color = block.color ?? 'red' %}
+			{% set bg %}
+			<div class="bg-{{ color == 'white' ? 'white' : color }} h-[calc(100%+200px)] w-[300%] -left-[100%] absolute -z-1 bg-texture"></div>
+			<div class="{% if color == 'white' %}bg-red{% else %}bg-white{% endif %} border-white w-[1px] h-[calc(100%+5rem)] col-span-1 top-0 absolute !mt-0 -left-[19%]"></div>
+			{% endset %}
+
+			<div class="grid grid-cols-subgrid col-span-10 col-start-3 {% if loop.first %}pt-20 {% endif %} {% if color == 'white' %} text-charcoal {% else %} text-white {% endif %}">
+				{% switch block.type.handle %}
+
+					{% case 'headerBlock' %}
+						<div class="grid grid-cols-subgrid col-span-10 relative pt-10 xl:pt-20">
+							{{ bg|raw }}
+							<span class="z-4 absolute top-48 -left-[20%] text-3xl font-medium fade-in flex gap-6" data-cascade>
+								<span class="{{ color == 'white' ? 'bg-white border-red' : 'bg-' ~ color ~ ' border-white' }} h-6 w-6 rounded-xl border-2"></span>
+								{{ block.year }}
+							</span>
+							<h1 class="text-scale col-span-10 lg:col-span-5 fade-in" data-cascade>
+								{{ block.title }}
+							</h1>
+							<div class="grid grid-cols-subgrid col-span-10 md:col-span-8 lg:col-span-4 lg:col-start-7 fade-in content-start" data-cascade>
+								<h2 class="mb-6 col-span-8 md:col-span-6 lg:col-span-3 max-w-[300px] row-start-1 text-3xl mt-4">{{ block.subHead }}</h2>
+								<div class="text-base col-span-12 row-start-2">
+									{% include '_includes/_blocks/text' with {
+										text: block.text,
+										pClass: 'text-base col-span-12'
+									} %}
+								</div>
+							</div>
+						</div>
+
+					{% case 'sliderBlock' %}
+						<div class="relative grid grid-cols-subgrid col-span-10">
+							{{ bg|raw }}
+							<!-- Slider Wrapper -->
+							{% set textColor = (color == 'white') ? 'charcoal' : 'white' %}
+							{# Define default sliderVars #}
+							{% set sliderVars = {
+								slides: block.slides.all(),
+								sliderWrapperClass: 'history grid grid-cols-subgrid col-span-10',
+								sliderClass: 'col-span-10',
+								fadeIn: true,
+								slideTemplate: '_includes/_blocks/slideMatrix',
+								arrows: true,
+								gridSpan: 10,
+								textColor: textColor,
+								arrowsClass: 'absolute bottom-0 -top-[50px] mx-[30px] flex items-center w-full max-w-[1225px] justify-between'
+							} %}
+							{# Conditionally add arrow styles when color is white #}
+							{% if color == 'red' %}
+								{% set sliderVars = sliderVars|merge({
+									prevArrowClass: '!bg-white',
+									nextArrowClass: '!bg-white',
+									firstArrow: 'red-arrow',
+									secondArrow: 'red-arrow'
+								}) %}
+							{% endif %}
+							{% include '_includes/_blocks/slider' with sliderVars %}
+						</div>
+
+					{% case 'largeImageBlock' %}
+						<div class="grid grid-cols-subgrid col-span-10 relative">
+							{{ bg|raw }}
+							<div class="col-span-10 rounded-xl overflow-hidden fade-in" data-cascade>
+								{% include '_includes/_blocks/asset' with {
+                                    asset: block.asset.one()
+                                } %}
+							</div>
+							<div class="mt-4 col-span-3 fade-in" data-cascade>
+								{% include '_includes/_blocks/text' with {
+									text: block.caption,
+									pClass: 'text-base col-span-12'
+								} %}
+							</div>
+						</div>
+
+					{% case 'pullQuoteBlock' %}
+						<blockquote class="grid grid-cols-subgrid col-span-10 relative {% if color == 'white' %} text-charcoal {% else %} text-white {% endif %}">
+							{{ bg|raw }}
+							<div class="fade-in grid grid-cols-subgrid col-span-10">
+								{% include '_includes/_blocks/text' with {
+									text: block.text
+								} %}
+							</div>
+						</blockquote>
+
+					{% case 'masonryBlock' %}
+						<div class="grid grid-cols-subgrid col-span-10 !gap-y-6 relative">
+							{{ bg|raw }}
+							{% for key, asset in block.asset.all() %}
+								<div class="rounded-xl overflow-hidden fade-in {% if key == 0 %} col-span-3 row-span-1 one{% endif %}{% if key == 1 %} col-span-4 row-span-2 two {% endif %}{% if key == 2 %} col-span-3 row-span-1 three{% endif %}{% if key == 3 %} col-span-3 row-span-2 four{% endif %}{% if key == 4 %} col-span-4 row-span-1 five{% endif %}{% if key == 5 %} col-span-3 row-span-2 six{% endif %}" data-cascade>
+									{% include '_includes/_blocks/asset' with {
+										class: 'h-full object-cover'
+									} %}
+								</div>
+							{% endfor %}
+						</div>
+
+				{% endswitch %}
+			</div>
+
+		{% endfor %}
+	</div>
+{% endblock %}
