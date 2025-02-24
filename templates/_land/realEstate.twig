@@ -1,5 +1,5 @@
 {% extends '_land/layout' %}
-{% set footerClass = '!mt-0' %}
+{% set footerClass = 'hidden lg:visible !mt-0' %}
 {% set listings = craft.entries()
                     .section('realEstate')
                     .all() %}

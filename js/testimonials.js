@@ -1,6 +1,8 @@
 export function initTestimonials(carouselSelector, progressBarSelector) {
-    const carousels = document.querySelectorAll(carouselSelector);
+    // Check if screen size is above lg breakpoint (1024px)
+    if (window.innerWidth < 1024) return;
 
+    const carousels = document.querySelectorAll(carouselSelector);
     if (!carousels.length) return;
 
     carousels.forEach((carousel) => {
@@ -53,3 +55,10 @@ export function initTestimonials(carouselSelector, progressBarSelector) {
         startCarousel();
     });
 }
+
+// Listen for screen resize and re-run the function if needed
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+        initTestimonials(".carousel", ".progress-bar .progress");
+    }
+});

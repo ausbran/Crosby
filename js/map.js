@@ -3,7 +3,7 @@ import { initSlider } from "./slider.js";
 
 export function initMap() {
   const map = L.map("map").setView([30.8461, -93.2893], 13);
-  const mapDuration = 0.25;
+  const mapDuration = 0.75;
 
   // Add customized zoom controls
   map.removeControl(map.zoomControl);
@@ -29,9 +29,12 @@ export function initMap() {
     .getElementById("zoom-out")
     .addEventListener("click", () => map.zoomOut());
 
-  L.tileLayer("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {}).addTo(
-    map
-  );
+  L.tileLayer("https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}", {
+    maxZoom: 26, // Increase max zoom for better details
+    tileSize: 256, // Default Google tile size
+    zoomOffset: 0,
+    detectRetina: true // Enable higher resolution tiles on retina displays
+}).addTo(map);
 
   const allBounds = L.featureGroup();
 
@@ -51,7 +54,7 @@ export function initMap() {
     document.getElementById("modal-title").innerText =
       listing.title || "No title available";
     document.getElementById("modal-description").innerText =
-      listing.description || "No description available";
+      listing.description
     document.getElementById("modal-address").innerText =
       `${listing.address.locality || "Unknown"}, ${listing.address.administrativeArea || ""}`;
     document.getElementById("modal-price").innerText = listing.price
@@ -73,10 +76,16 @@ export function initMap() {
     });
 
     // Populate images
-    const modalImageContainer = document.getElementById(
-      "modal-image-container"
-    );
-    modalImageContainer.innerHTML = ""; // Clear existing images
+    const modalImageContainer = document.getElementById("modal-image-container");
+    const modalImageContainerWrapper = document.getElementById("modal-image-container-wrapper");
+    modalImageContainer.innerHTML = "";
+
+    if (listing.images.length === 1) {
+      modalImageContainerWrapper.classList.add("single");
+    } else {
+      modalImageContainerWrapper.classList.remove("single");
+    }
+
     listing.images.forEach((imageHtml) => {
       const imageDiv = document.createElement("div");
       imageDiv.innerHTML = imageHtml;
@@ -94,7 +103,8 @@ export function initMap() {
         openPhotoModal(listing, listing.images.indexOf(imageHtml))
       );
       modalImageContainer.appendChild(imageDiv);
-      // call slider script whenever a modal opens so that it works with new modal
+      
+      // Call slider script whenever a modal opens so that it works with new modal
       initSlider();
     });
 

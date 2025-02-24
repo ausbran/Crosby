@@ -200,10 +200,6 @@ figure {
 .lock {
   overflow: hidden;
 }
-.active {
-  opacity: 1;
-  visibility: visible;
-}
 .progress-bar {
   // height: 10px;
   // background: $grey;
@@ -389,6 +385,15 @@ figure {
   }
 }
 
+@media (max-width: 1024px) {
+  .slider-shadow {
+    &:after,
+    &:before {
+      content: unset;
+    }
+  }
+}
+
 .grid {
   row-gap: 0;
   column-gap: 1.5em;
@@ -495,41 +500,73 @@ figure {
   }
 }
 
-// banner
 .banner {
-  position: relative;
-  height: 100svh;
-  width: 100vw;
-  min-height: 600px;
-  overflow: hidden;
-  background: $white;
   .background,
   .carousel {
-    top: 0;
-    left: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    @apply absolute top-0 left-0 h-full w-full;
   }
   .carousel {
     &.gradient:before {
-      z-index: 4;
+      @apply z-4;
     }
     .carousel-item {
-      height: inherit;
-      width: inherit;
-      position: inherit;
-      z-index: 2;
-      opacity: 0;
-      transition: .28s ease;
       &.active {
-        z-index: 3;
-        opacity: 1;
+        @apply z-3 opacity-100;
       }
     }
   }
-} // end landing
+}
 
+// nav
+#main-nav {
+  &.scrolled {
+    @apply -translate-y-[125px];
+  }
+
+  .secondary-links {
+    @apply invisible pointer-events-none;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    &:after {
+      background-color: $red;
+      content: '';
+      height: 0;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      transition: .3s ease;
+      @apply rounded-bl-xl rounded-br-xl;
+    }
+  }
+
+  .primary-links > li:hover {
+    .secondary-links {
+      @apply visible opacity-100 pointer-events-auto;
+      transform: translateY(0);
+    }
+  }
+
+  .active {
+    .secondary-links {
+      @apply visible opacity-100 pointer-events-auto;
+      transform: translateY(0);
+      &:after {
+        height: 100%
+      }
+      li {
+        @apply opacity-100;
+      }
+    }
+  }
+
+  /* ✅ Fix: Smooth transition when switching menus */
+  .secondary-links.fade-out {
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+  }
+}
 
 .bg-yellow-dark {
   background-color: #db8815;
@@ -559,7 +596,7 @@ body.yellow {
   .btn,
   nav .inner,
   footer,
-  nav .color-banner,
+  #main-nav .secondary-links:after,
   .testimonials,
   *::selection,
   .fui-submit,
@@ -589,7 +626,7 @@ body.green {
   }
   *::selection,
   nav .inner,
-  nav .color-banner,
+  #main-nav .secondary-links:after,
   #mobile-menu,
   .progress {
     @apply bg-green-dark;
@@ -612,7 +649,7 @@ body.green-light {
   }
   *::selection,
   nav .inner,
-  nav .color-banner,
+  #main-nav .secondary-links:after,
   #mobile-menu,
   .progress {
     @apply bg-green;
@@ -635,7 +672,7 @@ body.green-dark {
   }
   *::selection,
   nav .inner,
-  nav .color-banner,
+  #main-nav .secondary-links:after,
   #mobile-menu,
   .progress {
     @apply bg-green-light;
@@ -650,7 +687,7 @@ body.green-dark {
 
 // banner
 .progress-bar {
-  @apply h-2 md:h-3;
+  @apply h-2 lg:h-3;
 }
 
 .banner.entry-type-landServices {
@@ -680,40 +717,9 @@ body.green-dark {
   }
 }
 
-#main-nav {
-  &.scrolled {
-    @apply -translate-y-[125px];
-  }
-  .color-banner {
-    @apply h-0 -z-1;
-    transition: 0.5s ease;
-  }
-
-  .secondary-links li {
-    transform: translateY(-10px);
-  }
-
-  .active {
-    .secondary-links {
-      @apply block visible;
-      li {
-        @apply opacity-100 cursor-pointer;
-        transform: translateY(-10px);
-
-        &:hover {
-          @apply opacity-60;
-        }
-      }
-    }
-    .color-banner {
-      @apply h-full;
-    }
-  }
-}
-
 // buttons
 .btn {
-  @apply px-[30px] py-[18px] bg-red rounded-md gap-[40px] w-fit relative inline-flex items-center cursor-pointer text-base font-medium border-none whitespace-nowrap transition-all hover:brightness-110;
+  @apply tracking-tight px-[25px] py-[15px] lg:px-[30px] lg:py-[18px] bg-red rounded-md gap-[40px] w-fit relative inline-flex items-center cursor-pointer text-[.9rem] lg:text-base font-medium border-none whitespace-nowrap transition-all hover:brightness-110;
 }
 
 .btn.btn-inline {
@@ -790,93 +796,103 @@ body.green-dark {
 // real estate and modals
 // map animations
 #map-wrapper {
-  transition: .3s ease-in-out;
+  @apply transition-[padding] duration-300 ease-in-out;
+
   &.expand {
     @apply pt-[50px];
   }
 }
+
 #modal {
-  padding-top: 50px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out, padding-top .3s ease-in-out;
-  pointer-events: none; /* Prevent interactions when not visible */
+  @apply pt-[50px] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out;
 }
+
 #modal:before {
   content: "";
-  transition: opacity 0.3s ease-in-out;
-  @apply pointer-events-none opacity-0 h-screen w-screen fixed top-0 left-0 bg-white;
+  @apply fixed top-0 left-0 h-screen w-screen bg-white opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out;
 }
-#modal-image-container .slide:first-of-type {
-  @apply ml-16;
+
+#modal-image-container {
+  .slide:first-of-type {
+    @apply ml-16;
+  }
+
+  .slide:last-of-type {
+    @apply mr-6;
+  }
 }
-#modal-image-container .slide:last-of-type {
-  @apply mr-6;
+
+#modal-image-container-wrapper.single {
+  .slide {
+    @apply max-w-none m-0 flex-1 !important;
+  }
+  .arrow-wrapper,
+  &:after {
+    content: unset;
+    @apply hidden;
+  }
 }
+
 /* Modal visible state */
 #modal.show {
-  opacity: 1;
-  pointer-events: auto;
+  @apply opacity-100 pointer-events-auto;
 }
+
 #modal.show:before {
   @apply opacity-100;
-  transition: opacity 0.3s ease-in-out;
 }
-.contact-modal .close svg * {
-  @apply stroke-red !important;
+
+.contact-modal {
+  .close svg * {
+    @apply stroke-red !important;
+  }
 }
+
 #photo-modal {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
+  @apply opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out;
 }
+
 #photo-modal.show {
-  opacity: 1;
-  pointer-events: auto;
+  @apply opacity-100 pointer-events-auto;
 }
+
 .photo-slide {
-  position: absolute;
-  opacity: 0;
-  transition:
-    opacity 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+  @apply absolute opacity-0 transition-opacity duration-300 ease-in-out transform transition-transform;
 }
+
 .photo-slide.active {
-  opacity: 1 !important;
-  transform: translateX(0);
+  @apply opacity-100 translate-x-0 !important;
 }
+
 .photo-slide.left {
-  transform: translateX(-100%);
+  @apply -translate-x-full;
 }
+
 .photo-slide.right {
-  transform: translateX(100%);
+  @apply translate-x-full;
 }
-.leaflet-popup.custom-popup .leaflet-popup-content-wrapper {
-  @apply rounded-xl bg-white p-4 shadow-md;
+
+.leaflet-popup.custom-popup {
+  .leaflet-popup-content-wrapper {
+    @apply rounded-xl bg-white p-4 shadow-md;
+  }
 }
+
 .tooltip-content {
   @apply space-y-3;
 }
+
 .leaflet-control {
   @apply hidden gap-x-2;
 }
+
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-  background-color: $red; /* Custom button background color */
-  color: #fff; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 50%; /* Make them circular */
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 18px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
+  @apply bg-red text-white border-none rounded-full w-10 h-10 leading-[40px] text-center text-[18px] shadow-md transition-colors duration-300;
 
-.leaflet-control-zoom-in:hover,
-.leaflet-control-zoom-out:hover {
-  background-color: #b7171c; /* Hover effect */
+  &:hover {
+    @apply bg-red-dark;
+  }
 }
 
 @screen sm {
@@ -902,7 +918,7 @@ body.green-dark {
 
 // form
 .fui-submit {
-  @apply border-none border-0 text-2xl font-medium w-full;
+  @apply tracking-tight w-full px-[25px] py-[15px] lg:px-[30px] lg:py-[18px] rounded-md gap-[40px] relative items-center cursor-pointer text-[.9rem] lg:text-base font-medium border-none whitespace-nowrap transition-all hover:brightness-110 border-none border-0 !important;
 }
 .fui-form {
   @apply w-full;
@@ -916,63 +932,33 @@ body.green-dark {
     @apply text-white;
   }
   .fui-submit {
-    @apply bg-white text-red border-none;
+    @apply bg-white text-red;
     &:hover {
       @apply bg-white brightness-95 text-red;
     }
   }
 }
 
-.translate-x-full {
-  transform: translateX(100%);
-}
-.translate-x-0 {
-  transform: translateX(0);
-}
-.transition-transform {
-  transition-property: transform;
-}
-.duration-300 {
-  transition-duration: 300ms;
-}
-.absolute {
-  position: absolute;
-}
-
 .testimonials {
   .carousel {
     .carousel-item {
-      @apply hidden;
-      opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease, visibility 1s ease;
+      @apply hidden opacity-0 invisible transition-opacity duration-1000 ease-in-out;
+
       &.active {
-        @apply block !important;
-        opacity: 1;
-    visibility: visible;
+        @apply block opacity-100 visible !important;
       }
+
       &.fade-in {
-        opacity: 1;
-    visibility: visible;
+        @apply opacity-100;
+        visibility: visible;
       }
+
       &.fade-out {
-        opacity: 0;
-    visibility: hidden;
+        @apply opacity-0 invisible;
       }
     }
   }
 }
-
-// @media (max-width: 639px) {
-//   .testimonials {
-//     .carousel {
-//       @apply flex;
-//       .carousel-item {
-//         @apply block !important;
-//       }
-//     }
-//   }
-// }
 
 #hamburger {
   @apply relative cursor-pointer;

@@ -1,0 +1,378 @@
+2025-02-21 10:09:30 [queue.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":805216} 
+2025-02-21 10:09:30 [queue.INFO] [yii\web\Session::open] Session started {"memory":2000664} 
+2025-02-21 10:09:30 [queue.INFO] [nystudio107\codeeditor\CodeEditor::bootstrap] CodeEditor module bootstrapped {"memory":2041416} 
+2025-02-21 10:09:30 [queue.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":2646296} 
+2025-02-21 10:09:30 [queue.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":3112424} 
+2025-02-21 10:09:30 [queue.INFO] [craft\queue\QueueLogBehavior::beforeExec]  [5096] t9n:["app","Pruning extra revisions"] (attempt: 1, pid: 2987931) - Started {"memory":3179720} 
+2025-02-21 10:09:30 [queue.INFO] [craft\queue\QueueLogBehavior::afterExec]  [5096] t9n:["app","Pruning extra revisions"] (attempt: 1, pid: 2987931) - Done (time: 0.041s) {"memory":4915368} 
+2025-02-21 10:09:30 [queue.INFO] [application] Request context:
+$_GET = [
+    'p' => 'admin/actions/queue/run'
+    'v' => '1740157769926'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '5a70ea625015277d5c3da65516347700_username' => '32d20cce79116cb039564d6483c9bc0f36b4416433cf9f8bfff49403d4dbced6a:2:{i:0;s:41:\"5a70ea625015277d5c3da65516347700_username\";i:1;s:5:\"admin\";}'
+    'Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar' => 'expanded'
+    'Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar-details' => 'expanded'
+    'CraftSessionId' => 'volhgvn2grsnnn3me4nu3h5rdn'
+    '5a70ea625015277d5c3da65516347700_identity' => 'a7135e5b50189a9a06cf80013edc02f5cfe31f10ca4806c4d1fcaada93516383a:2:{i:0;s:41:\"5a70ea625015277d5c3da65516347700_identity\";i:1;s:159:\"[1,\"[\\\"JvBDKdABN4OtHDS3nmd9ZM8PaVqaP2UAb15wBaFTO6xFCCczRqdv2snxonpUuAX6iThhPb1U4lo-YQ32_gf9eLs2AML7Df_K3d9J\\\",null,\\\"6dbb10952a38c11d19e2648023d5055b\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'a8242a11a2340b611fb4de7fb5462609__flash' => []
+    '5a70ea625015277d5c3da65516347700__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '5a70ea625015277d5c3da65516347700__id' => 1
+    '__authKey' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '5a70ea625015277d5c3da65516347700__expire' => 1740161370
+    '__duration' => 3600
+    '__elevated_timeout' => 1740154733
+    'a8242a11a2340b611fb4de7fb5462609__auth_access' => [
+        0 => 'seomaticPreviewAuthorizationKey1997'
+        1 => 'previewElement:489'
+        2 => 'manageNestedElements::489::field:historyBlocks'
+        3 => 'editStructure:13'
+        4 => 'editStructure:15'
+        5 => 'seomaticPreviewAuthorizationKey595'
+        6 => 'previewElement:595'
+    ]
+]
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?p=admin%2Factions%2Fqueue%2Frun&v=1740157769926'
+    'QUERY_STRING' => 'p=admin%2Factions%2Fqueue%2Frun&v=1740157769926'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '38214'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '170.249.132.250'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '1508031'
+    'HTTP_X_FORWARDED_FOR' => '170.249.132.250'
+    'HTTP_COOKIE' => '5a70ea625015277d5c3da65516347700_username=32d20cce79116cb039564d6483c9bc0f36b4416433cf9f8bfff49403d4dbced6a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%225a70ea625015277d5c3da65516347700_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar=expanded; Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar-details=expanded; CraftSessionId=volhgvn2grsnnn3me4nu3h5rdn; 5a70ea625015277d5c3da65516347700_identity=a7135e5b50189a9a06cf80013edc02f5cfe31f10ca4806c4d1fcaada93516383a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%225a70ea625015277d5c3da65516347700_identity%22%3Bi%3A1%3Bs%3A159%3A%22%5B1%2C%22%5B%5C%22JvBDKdABN4OtHDS3nmd9ZM8PaVqaP2UAb15wBaFTO6xFCCczRqdv2snxonpUuAX6iThhPb1U4lo-YQ32_gf9eLs2AML7Df_K3d9J%5C%22%2Cnull%2C%5C%226dbb10952a38c11d19e2648023d5055b%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=c26fec888e4900290150056d27c695c3151655c3ec322235bcc0e24dcacd49c4a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A147%3A%22SDOYiL-IPWHPdjfAocqzn6w_hokBvAdzHssi8nEs%7C4c58618f996e4fcca42e35d157ea8d9020752ee151a1be0e6e2de47e6a8ab94aSDOYiL-IPWHPdjfAocqzn6w_hokBvAdzHssi8nEs%7C1%22%3B%7D'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_REFERER' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/admin/entries/land/595-real-estate'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_REGISTERED_ASSET_BUNDLES' => '7b7669ac,22e517a2,aee7f8dc,e505ffd6,6b4d7555,bb2f10a0,e5e48399,815d39ea,fc0bc163,1ccab40d,1e21896b,54698ee0,b842675b,1c3c9add,4b1fd285,d8d08e47,8f00ce04,8768f48b,cf3018d6,15a36a51,841995d6,eccadbb,5bcea07e,be6e4c69'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"'
+    'HTTP_X_REGISTERED_JS_FILES' => ''
+    'HTTP_X_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '170.249.132.250'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/index.php'
+    'SCRIPT_URL' => '/index.php'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7izSTgnHrjt7FfQn-3IJAAADyk'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740157769.9755
+    'REQUEST_TIME' => 1740157769
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev","userId":1} 
+2025-02-21 10:14:06 [queue.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":805168} 
+2025-02-21 10:14:06 [queue.INFO] [yii\web\Session::open] Session started {"memory":2000616} 
+2025-02-21 10:14:06 [queue.INFO] [nystudio107\codeeditor\CodeEditor::bootstrap] CodeEditor module bootstrapped {"memory":2041368} 
+2025-02-21 10:14:06 [queue.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":2646248} 
+2025-02-21 10:14:06 [queue.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":3111736} 
+2025-02-21 10:14:06 [queue.INFO] [craft\queue\QueueLogBehavior::beforeExec]  [5097] t9n:["app","Pruning extra revisions"] (attempt: 1, pid: 2988590) - Started {"memory":3179032} 
+2025-02-21 10:14:06 [queue.INFO] [craft\queue\QueueLogBehavior::afterExec]  [5097] t9n:["app","Pruning extra revisions"] (attempt: 1, pid: 2988590) - Done (time: 0.038s) {"memory":4914680} 
+2025-02-21 10:14:06 [queue.INFO] [application] Request context:
+$_GET = [
+    'p' => 'admin/actions/queue/run'
+    'v' => '1740158045971'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '5a70ea625015277d5c3da65516347700_username' => '32d20cce79116cb039564d6483c9bc0f36b4416433cf9f8bfff49403d4dbced6a:2:{i:0;s:41:\"5a70ea625015277d5c3da65516347700_username\";i:1;s:5:\"admin\";}'
+    'Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar' => 'expanded'
+    'Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar-details' => 'expanded'
+    'CraftSessionId' => 'volhgvn2grsnnn3me4nu3h5rdn'
+    '5a70ea625015277d5c3da65516347700_identity' => 'a7135e5b50189a9a06cf80013edc02f5cfe31f10ca4806c4d1fcaada93516383a:2:{i:0;s:41:\"5a70ea625015277d5c3da65516347700_identity\";i:1;s:159:\"[1,\"[\\\"JvBDKdABN4OtHDS3nmd9ZM8PaVqaP2UAb15wBaFTO6xFCCczRqdv2snxonpUuAX6iThhPb1U4lo-YQ32_gf9eLs2AML7Df_K3d9J\\\",null,\\\"6dbb10952a38c11d19e2648023d5055b\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'a8242a11a2340b611fb4de7fb5462609__flash' => []
+    '5a70ea625015277d5c3da65516347700__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '5a70ea625015277d5c3da65516347700__id' => 1
+    '__authKey' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '5a70ea625015277d5c3da65516347700__expire' => 1740161646
+    '__duration' => 3600
+    '__elevated_timeout' => 1740154733
+    'a8242a11a2340b611fb4de7fb5462609__auth_access' => [
+        0 => 'seomaticPreviewAuthorizationKey1997'
+        1 => 'previewElement:489'
+        2 => 'manageNestedElements::489::field:historyBlocks'
+        3 => 'editStructure:13'
+        4 => 'editStructure:15'
+        5 => 'seomaticPreviewAuthorizationKey595'
+        6 => 'previewElement:595'
+    ]
+]
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?p=admin%2Factions%2Fqueue%2Frun&v=1740158045971'
+    'QUERY_STRING' => 'p=admin%2Factions%2Fqueue%2Frun&v=1740158045971'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '18542'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '170.249.132.250'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '534758'
+    'HTTP_X_FORWARDED_FOR' => '170.249.132.250'
+    'HTTP_COOKIE' => '5a70ea625015277d5c3da65516347700_username=32d20cce79116cb039564d6483c9bc0f36b4416433cf9f8bfff49403d4dbced6a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%225a70ea625015277d5c3da65516347700_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar=expanded; Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar-details=expanded; CraftSessionId=volhgvn2grsnnn3me4nu3h5rdn; 5a70ea625015277d5c3da65516347700_identity=a7135e5b50189a9a06cf80013edc02f5cfe31f10ca4806c4d1fcaada93516383a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%225a70ea625015277d5c3da65516347700_identity%22%3Bi%3A1%3Bs%3A159%3A%22%5B1%2C%22%5B%5C%22JvBDKdABN4OtHDS3nmd9ZM8PaVqaP2UAb15wBaFTO6xFCCczRqdv2snxonpUuAX6iThhPb1U4lo-YQ32_gf9eLs2AML7Df_K3d9J%5C%22%2Cnull%2C%5C%226dbb10952a38c11d19e2648023d5055b%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=c26fec888e4900290150056d27c695c3151655c3ec322235bcc0e24dcacd49c4a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A147%3A%22SDOYiL-IPWHPdjfAocqzn6w_hokBvAdzHssi8nEs%7C4c58618f996e4fcca42e35d157ea8d9020752ee151a1be0e6e2de47e6a8ab94aSDOYiL-IPWHPdjfAocqzn6w_hokBvAdzHssi8nEs%7C1%22%3B%7D'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_REFERER' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/admin/entries/land/595-real-estate'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_REGISTERED_ASSET_BUNDLES' => '7b7669ac,22e517a2,aee7f8dc,e505ffd6,6b4d7555,bb2f10a0,e5e48399,815d39ea,fc0bc163,1ccab40d,1e21896b,54698ee0,b842675b,1c3c9add,4b1fd285,d8d08e47,8f00ce04,8768f48b,cf3018d6,15a36a51,841995d6,eccadbb,5bcea07e,be6e4c69'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"'
+    'HTTP_X_REGISTERED_JS_FILES' => ''
+    'HTTP_X_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '170.249.132.250'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/index.php'
+    'SCRIPT_URL' => '/index.php'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7i0XoUiObbyylg_KBy96AAADM4'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740158046.0151
+    'REQUEST_TIME' => 1740158046
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev","userId":1} 
+2025-02-21 10:14:55 [queue.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":805264} 
+2025-02-21 10:14:55 [queue.INFO] [yii\web\Session::open] Session started {"memory":2001848} 
+2025-02-21 10:14:55 [queue.INFO] [nystudio107\codeeditor\CodeEditor::bootstrap] CodeEditor module bootstrapped {"memory":2042600} 
+2025-02-21 10:14:55 [queue.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":2647512} 
+2025-02-21 10:14:55 [queue.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":3113640} 
+2025-02-21 10:14:55 [queue.INFO] [craft\queue\QueueLogBehavior::beforeExec]  [5098] t9n:["app","Pruning extra revisions"] (attempt: 1, pid: 2988661) - Started {"memory":3180936} 
+2025-02-21 10:14:55 [queue.INFO] [craft\queue\QueueLogBehavior::afterExec]  [5098] t9n:["app","Pruning extra revisions"] (attempt: 1, pid: 2988661) - Done (time: 0.050s) {"memory":4916584} 
+2025-02-21 10:14:55 [queue.INFO] [application] Request context:
+$_GET = [
+    'p' => 'admin/actions/queue/run'
+    'v' => '1740158095557'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '5a70ea625015277d5c3da65516347700_username' => '32d20cce79116cb039564d6483c9bc0f36b4416433cf9f8bfff49403d4dbced6a:2:{i:0;s:41:\"5a70ea625015277d5c3da65516347700_username\";i:1;s:5:\"admin\";}'
+    'Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar' => 'expanded'
+    'Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar-details' => 'expanded'
+    'CraftSessionId' => 'volhgvn2grsnnn3me4nu3h5rdn'
+    '5a70ea625015277d5c3da65516347700_identity' => 'a7135e5b50189a9a06cf80013edc02f5cfe31f10ca4806c4d1fcaada93516383a:2:{i:0;s:41:\"5a70ea625015277d5c3da65516347700_identity\";i:1;s:159:\"[1,\"[\\\"JvBDKdABN4OtHDS3nmd9ZM8PaVqaP2UAb15wBaFTO6xFCCczRqdv2snxonpUuAX6iThhPb1U4lo-YQ32_gf9eLs2AML7Df_K3d9J\\\",null,\\\"6dbb10952a38c11d19e2648023d5055b\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'a8242a11a2340b611fb4de7fb5462609__flash' => []
+    '5a70ea625015277d5c3da65516347700__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '5a70ea625015277d5c3da65516347700__id' => 1
+    '__authKey' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '5a70ea625015277d5c3da65516347700__expire' => 1740161695
+    '__duration' => 3600
+    '__elevated_timeout' => 1740154733
+    'a8242a11a2340b611fb4de7fb5462609__auth_access' => [
+        0 => 'seomaticPreviewAuthorizationKey1997'
+        1 => 'previewElement:489'
+        2 => 'manageNestedElements::489::field:historyBlocks'
+        3 => 'editStructure:13'
+        4 => 'editStructure:15'
+        5 => 'seomaticPreviewAuthorizationKey595'
+        6 => 'previewElement:595'
+        7 => 'seomaticPreviewAuthorizationKey2094'
+        8 => 'previewElement:2094'
+        9 => 'manageNestedElements::2094::field:address'
+        10 => 'manageNestedElements::2094::field:features'
+        11 => 'saveAssets:0524ce74-5809-4227-9995-c07e31fcd67f'
+        12 => 'saveAssets:ebc5822f-5362-4f1c-a6b8-37a17ea08cf0'
+    ]
+]
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?p=admin%2Factions%2Fqueue%2Frun&v=1740158095557'
+    'QUERY_STRING' => 'p=admin%2Factions%2Fqueue%2Frun&v=1740158095557'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '34828'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '170.249.132.250'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '1508166'
+    'HTTP_X_FORWARDED_FOR' => '170.249.132.250'
+    'HTTP_COOKIE' => '5a70ea625015277d5c3da65516347700_username=32d20cce79116cb039564d6483c9bc0f36b4416433cf9f8bfff49403d4dbced6a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%225a70ea625015277d5c3da65516347700_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar=expanded; Craft-ca7cd53e-1b7c-440e-9daa-a4a7a527e905:sidebar-details=expanded; CraftSessionId=volhgvn2grsnnn3me4nu3h5rdn; 5a70ea625015277d5c3da65516347700_identity=a7135e5b50189a9a06cf80013edc02f5cfe31f10ca4806c4d1fcaada93516383a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%225a70ea625015277d5c3da65516347700_identity%22%3Bi%3A1%3Bs%3A159%3A%22%5B1%2C%22%5B%5C%22JvBDKdABN4OtHDS3nmd9ZM8PaVqaP2UAb15wBaFTO6xFCCczRqdv2snxonpUuAX6iThhPb1U4lo-YQ32_gf9eLs2AML7Df_K3d9J%5C%22%2Cnull%2C%5C%226dbb10952a38c11d19e2648023d5055b%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=c26fec888e4900290150056d27c695c3151655c3ec322235bcc0e24dcacd49c4a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A147%3A%22SDOYiL-IPWHPdjfAocqzn6w_hokBvAdzHssi8nEs%7C4c58618f996e4fcca42e35d157ea8d9020752ee151a1be0e6e2de47e6a8ab94aSDOYiL-IPWHPdjfAocqzn6w_hokBvAdzHssi8nEs%7C1%22%3B%7D'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_REFERER' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/admin/entries/realEstate/2094-n-fort-rd'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_X_REGISTERED_ASSET_BUNDLES' => '815d39ea,7b7669ac,22e517a2,aee7f8dc,e505ffd6,6b4d7555,bb2f10a0,e5e48399,fc0bc163,1ccab40d,1e21896b,54698ee0,b842675b,1c3c9add,4b1fd285,d8d08e47,8f00ce04,8768f48b,cf3018d6,e7c1329,15a36a51,841995d6,eccadbb,5bcea07e,be6e4c69'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"'
+    'HTTP_X_REGISTERED_JS_FILES' => ''
+    'HTTP_X_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '170.249.132.250'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/index.php'
+    'SCRIPT_URL' => '/index.php'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7i0jzgnHrjt7FfQn-3IUAAADv4'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740158095.6026
+    'REQUEST_TIME' => 1740158095
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev","userId":1} 

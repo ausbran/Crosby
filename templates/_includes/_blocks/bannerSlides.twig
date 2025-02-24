@@ -11,7 +11,7 @@
 			<div class="progress bg-red"></div>
 		</div>
 	{% endif %}
-	<div class="col-span-12 row-start-2 mt-12 mb-8 self-end grid grid-cols-subgrid auto-rows-min">
+	<div class="col-span-12 row-start-2 mt-8 lg:mt-12 mb-8 self-end grid grid-cols-subgrid auto-rows-min">
 		{% include '_includes/_blocks/text'  with {
 			figureClass: 'col-span-10 sm:col-span-8 md:col-span-6 lg:col-span-5 xl:col-span-4'
 		} %}
@@ -32,10 +32,17 @@
 	{% if assets|length %}
 		<div class="carousel" data-slide-time="{{ slideTime ?? 15 }}">
 			{% include '_includes/_blocks/gradient.twig' with {
-                zIndex: '4'
+                zIndex: '4',
+				opacity: '40'
             } %}
+			{% include '_includes/_blocks/gradientBlur' with {
+				height: '1/2',
+				gradientStop: '40',
+				blur: 'sm',
+				zIndex: '4'
+			} %}
 			{% for asset in assets %}
-				<div class="carousel-item">
+				<div class="carousel-item absolute h-full w-full z-2 opacity-0 transition-opacity duration-300 ease-in-out">
 					{% include '_includes/_blocks/asset' %}
 				</div>
 			{% endfor %}

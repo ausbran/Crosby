@@ -1,26 +1,26 @@
 <!-- Content Modal -->
-<div id="modal" class="page overflow-y-scroll z-2 bg-white grid grid-cols-12 fixed inset-0 flex items-center justify-center !mt-0 pt-14 pb-14" style="padding-top:50px;">
+<div id="modal" class="page overflow-y-scroll z-10 lg:z-2 bg-white grid grid-cols-12 fixed inset-0 flex items-center justify-center !mt-0 pt-14 pb-14" style="padding-top:50px;">
 
-    <div class="bg-white grid grid-cols-subgrid relative col-span-6">
+    <div class="bg-white grid grid-cols-subgrid relative col-span-12 lg:col-span-12 lg:col-span-6">
 
         {% include '_includes/_icons/close' with {
-            class: 'content-modal-close !absolute z-2 top-0 right-0 modal-close'
+            class: 'content-modal-close !absolute z-2 -top-4 lg:top-0 right-0 modal-close'
         } %}
-        <h2 id="modal-title" class="col-span-5 mb-4"></h2>
-        <div class="flex gap-10 col-span-6 mb-8">
+        <h2 id="modal-title" class="col-span-9 lg:col-span-5 mb-4"></h2>
+        <div class="flex gap-4 lg:gap-10 col-span-12 lg:col-span-6 mb-6 lg:mb-8">
             <p id="modal-price" class="text-2xl"></p>
             <p id="modal-address" class="text-2xl"></p>
             <p id="modal-acreage" class="text-2xl"></p>
         </div>
-        <div id="modal-description" class="col-span-5"></div>
-        <div id="modal-features" class="mt-8 mb-4 col-span-6 grid grid-cols-subgrid text-[14px] xl:text-base">
-            <ul class="list-none !gap-y-4 col-span-6 grid grid-cols-subgrid"></ul>
+        <div id="modal-description" class="col-span-12 lg:col-span-5"></div>
+        <div id="modal-features" class="mt-6 lg:mt-8 mb-6 lg:mb-4 col-span-12 lg:col-span-6 grid grid-cols-subgrid text-[14px] xl:text-base">
+            <ul class="list-none !gap-y-4 col-span-12 lg:col-span-6 grid grid-cols-subgrid"></ul>
         </div>
-        <div class="col-span-6 flex gap-6">
+        <div class="col-span-12 lg:col-span-6 flex flex-wrap gap-y-2 gap-x-6">
             {% include '_includes/_blocks/button' with {
                 link: '#',
                 label: 'Get in touch',
-                class: 'email-button text-white',
+                class: 'email-button text-white w-full lg:w-auto',
                 attributes: {
                     'data-id': ''
                 }
@@ -28,20 +28,20 @@
             {% include '_includes/_blocks/button' with {
                 link: '#',
                 label: 'Call',
-                class: 'call-button text-white'
+                class: 'call-button text-white w-full lg:w-auto'
             } %}
         </div>
 
-        <div class="slider-shadow mt-8 grid grid-cols-subgrid flex col-span-6 overflow-x-scroll gap-6 !-mr-0 slider-wrapper snap-x">
-            <div class="z-2 flex absolute right-8 top-0 bottom-0 m-auto items-center">
-
+        <div id="modal-image-container-wrapper" class="slider-shadow mt-8 grid grid-cols-subgrid flex col-span-12 lg:col-span-6 overflow-x-scroll gap-6 lg:!-mr-0 slider-wrapper snap-x">
+            <div class="arrow-wrapper hidden lg:flex z-2 absolute right-8 top-0 bottom-0 m-auto items-center">
                 {% include '_includes/_icons/arrowNext' with {
                     nextArrowClass: ''
                 } %}
             </div>
             <div
-                id="modal-image-container" class="slider col-span-6 !pr-0"><!-- hover:opacity-70; snap-start;scroll-ml-16 -->
-
+                id="modal-image-container"
+                class="slider col-span-12 lg:col-span-6 !pr-0
+                {% if listings[0].asset.all()|length == 1 %}single{% endif %}"><!-- hover:opacity-70; snap-start;scroll-ml-16 -->
             </div>
         </div>
     </div>

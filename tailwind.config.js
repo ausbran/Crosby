@@ -154,6 +154,16 @@ module.exports = {
     // page
     "page",
 
+    // blur
+    "backdrop-blur-sm",
+    "backdrop-blur-md",
+    "backdrop-blur-lg",
+    "backdrop-blur-xl",
+    "backdrop-blur-2xl",
+    ...Array.from({ length: 101 }, (_, i) => `[mask:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_${i}%,rgba(0,0,0,1)_100%)]`),
+    "to_top", "to_bottom", "to_right", "to_left",
+    "to_top_right", "to_top_left", "to_bottom_right", "to_bottom_left",
+
     // horizontal scroller
     "slider-wrapper",
     "slider",
@@ -258,10 +268,12 @@ module.exports = {
     "h-auto",
 
     // margins needed for real estate sliders dynamically populated by js
+    // other random margins used
     "mr-6",
     "ml-16",
     "mb-0",
     "!mb-0",
+    "mt-60",
 
     // space
     "!space-y-2",

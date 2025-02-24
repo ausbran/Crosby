@@ -1,6 +1,6 @@
-{% set class = class ?? null %}
+{% set profilesClass = profilesClass ?? null %}
 
-<div class="page grid grid-cols-12 {{ class }}">
+<div class="page grid grid-cols-12 {{ profilesClass }}">
     {% set categories = craft.categories.group(parent).all() %}
     {% for category in categories %}
         {% set contacts = craft.entries()

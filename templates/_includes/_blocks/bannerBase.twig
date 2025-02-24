@@ -1,7 +1,7 @@
 {% set textAlignment = '' %}
 {% set backgroundClass = backgroundClass ?? null %}
 
-<div class="banner {{ 'entry-type-' ~ entry.type }} {{ entry.slug }} py-6 sm:py-8 md:py-12 lg:py-20">
+<div class="banner {{ 'entry-type-' ~ entry.type }} {{ entry.slug }} py-6 sm:py-8 md:py-12 lg:py-16 relative min-h-[600px] lg:min-h-[820px] h-[100svh] w-[100vw] overflow-hidden bg-white">
 	<div class="text page items-end flex h-full z-5 relative text-white {{ textAlignment }}">
 		<div class="grid grid-cols-12 fade-in" data-cascade>
 			{% block content %}

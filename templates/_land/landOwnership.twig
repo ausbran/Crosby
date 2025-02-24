@@ -1,4 +1,4 @@
-{% extends '_land/map' %}
+{% extends '_land/layout' %}
 
 {% block left %}
 	<!-- Blocks Section -->
@@ -14,7 +14,10 @@
 						{{ block.title }}
 					</h3>
 					<div class="max-w-64">
-						{{ block.text }}
+						{% include '_includes/_blocks/text' with {
+							text: block.text,
+							pClass: "col-span-12 text-base"
+						} %}
 					</div>
 				</div>
 				<div class="relative h-80 object-cover w-full -z-1">
@@ -36,10 +39,10 @@
 	</div>
 
 	<script>
-		// Define mapData globally
-window.mapData = {
-shapefiles: [{% for file in entry.shapeFile.all() %}"{{ file.url }}"{% if not loop.last %},{% endif %}{% endfor %}]
-};
+				// Define mapData globally
+		window.mapData = {
+		shapefiles: [{% for file in entry.shapeFile.all() %}"{{ file.url }}"{% if not loop.last %},{% endif %}{% endfor %}]
+		};
 	</script>
 
 

@@ -1,0 +1,715 @@
+2025-02-22 07:03:52 [web.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=ngrsnrwarf;port=3306 {"memory":779512} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\codeeditor\CodeEditor::bootstrap] CodeEditor module bootstrapped {"memory":1991944} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":2599496} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\services\{closure}] Meta container cache miss: /2 {"memory":5121000} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\services\{closure}] parsed_globals_ cache miss: seomatic_metacontainer_2page1 {"memory":11119752} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: generalseomatic_metacontainer_2page1 {"memory":11136672} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `keywords` did not render because it is missing attributes. Array
+(
+    [name] => keywords
+)
+ {"memory":11187896} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `description` did not render because it is missing attributes. Array
+(
+    [name] => description
+)
+ {"memory":11189088} 
+2025-02-22 07:03:52 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: opengraphseomatic_metacontainer_2page1 {"memory":11200280} 
+2025-02-22 07:03:52 [web.INFO] [application] Request context:
+$_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '43728'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '172.121.222.178'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '1542077'
+    'HTTP_X_FORWARDED_FOR' => '172.121.222.178'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36'
+    'HTTP_BAGGAGE' => 'sentry-trace_id=3b3c632483cc4337bb7f809b9da6c950,sentry-environment=production,sentry-public_key=1b2aeb425ca74d4397fb558fa693db0f'
+    'HTTP_SENTRY_TRACE' => '3b3c632483cc4337bb7f809b9da6c950-b28aac41007158c0'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '172.121.222.178'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/'
+    'SCRIPT_URL' => '/'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7nZR7s57T_sj7-12XosrwAADn8'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740233031.9355
+    'REQUEST_TIME' => 1740233031
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev"} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `fb:profile_id` did not render because it is missing attributes. Array
+(
+    [property] => fb:profile_id
+)
+ {"memory":10579600} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `fb:app_id` did not render because it is missing attributes. Array
+(
+    [property] => fb:app_id
+)
+ {"memory":10581304} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:locale:alternate` did not render because it is missing attributes. Array
+(
+    [property] => og:locale:alternate
+)
+ {"memory":10590672} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:title` did not render because it is missing attributes. Array
+(
+    [property] => og:title
+)
+ {"memory":10616392} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:description` did not render because it is missing attributes. Array
+(
+    [property] => og:description
+)
+ {"memory":10618720} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image` did not render because it is missing attributes. Array
+(
+    [property] => og:image
+)
+ {"memory":10621048} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image:width` did not render because it is missing attributes. Array
+(
+    [property] => og:image:width
+)
+ {"memory":10624624} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image:height` did not render because it is missing attributes. Array
+(
+    [property] => og:image:height
+)
+ {"memory":10628200} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image:alt` did not render because it is missing attributes. Array
+(
+    [property] => og:image:alt
+)
+ {"memory":10633056} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:see_also` did not render because it is missing attributes. Array
+(
+    [property] => og:see_also
+)
+ {"memory":10633560} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: twitterseomatic_metacontainer_2page1 {"memory":10630928} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:title` did not render because it is missing attributes. Array
+(
+    [name] => twitter:title
+)
+ {"memory":10652720} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:description` did not render because it is missing attributes. Array
+(
+    [name] => twitter:description
+)
+ {"memory":10655048} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image
+)
+ {"memory":10658656} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image:width` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image:width
+)
+ {"memory":10662232} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image:height` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image:height
+)
+ {"memory":10665840} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image:alt` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image:alt
+)
+ {"memory":10675048} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: miscellaneousseomatic_metacontainer_2page1 {"memory":10673416} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaLinkContainer cache miss: generalseomatic_metacontainer_2page1 {"memory":10674128} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\MetaLink::prepForRender] WARNING - Link tag `alternate` did not render because it is missing attributes. {"memory":10746400} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaScriptContainer cache miss: generalseomatic_metacontainer_2page1670c90965044bcaa46b898c32e441128 {"memory":10745184} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaJsonLdContainer cache miss: generalseomatic_metacontainer_2page1-v2 {"memory":10745880} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "default" for http://schema.org/{{ seomatic.meta.mainEntityOfPage }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "author": {
+        "@id": "#identity"
+    },
+    "copyrightHolder": {
+        "@id": "#identity"
+    },
+    "copyrightYear": "2024",
+    "creator": {
+        "@id": "#creator"
+    },
+    "dateCreated": "2024-11-21T20:40:54-07:00",
+    "dateModified": "2025-01-06T12:09:01-07:00",
+    "datePublished": "2024-11-21T20:40:00-07:00",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": "https://phpstack-1321557-5103849.cloudwaysapps.com/",
+    "name": "Crosby",
+    "publisher": {
+        "@id": "#creator"
+    },
+    "url": "https://phpstack-1321557-5103849.cloudwaysapps.com"
+}
+</script> {"memory":7601728} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: dateCreated -> Must be one of these types: array, Date, Date[], array, DateTime, DateTime[] {"memory":7602264} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/{{ seomatic.meta.mainEntityOfPage }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "author": {
+        "@id": "#identity"
+    },
+    "copyrightHolder": {
+        "@id": "#identity"
+    },
+    "copyrightYear": "2024",
+    "creator": {
+        "@id": "#creator"
+    },
+    "dateCreated": "2024-11-21T20:40:54-07:00",
+    "dateModified": "2025-01-06T12:09:01-07:00",
+    "datePublished": "2024-11-21T20:40:00-07:00",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": "https://phpstack-1321557-5103849.cloudwaysapps.com/",
+    "name": "Crosby",
+    "publisher": {
+        "@id": "#creator"
+    },
+    "url": "https://phpstack-1321557-5103849.cloudwaysapps.com"
+}
+</script> {"memory":7626576} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: dateCreated -> Must be one of these types: array, Date, Date[], array, DateTime, DateTime[] {"memory":7626784} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: description -> This property is required by Google. {"memory":7627048} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/{{ seomatic.site.identity.computedType }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@id": "#identity",
+    "@type": "LocalBusiness",
+    "priceRange": "$"
+}
+</script> {"memory":7684568} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: description -> This property is required by Google. {"memory":7684992} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: name -> This property is required by Google. {"memory":7685304} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: url -> This property is recommended by Google. {"memory":7685632} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/{{ seomatic.site.creator.computedType }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@id": "#creator",
+    "@type": "Organization"
+}
+</script> {"memory":7744152} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: description -> This property is required by Google. {"memory":7744576} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: name -> This property is required by Google. {"memory":7744888} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: url -> This property is recommended by Google. {"memory":7745216} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/BreadcrumbList
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "description": "Breadcrumbs list",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "item": "https://phpstack-1321557-5103849.cloudwaysapps.com",
+            "position": 1
+        }
+    ],
+    "name": "Breadcrumbs"
+}
+</script> {"memory":7748856} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: image -> This property is recommended by Google. {"memory":7749280} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: url -> This property is recommended by Google. {"memory":7749608} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTitleContainer cache miss: generalseomatic_metacontainer_2page1 {"memory":7800784} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "default"
+<title>🚧 Crosby</title> {"memory":7815312} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - Tag attribute: title -> Title cannot be blank. {"memory":7815688} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "warning"
+<title>🚧 Crosby</title> {"memory":7819912} 
+2025-02-22 07:03:53 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - Tag attribute: title -> Title cannot be blank. {"memory":7820040} 
+2025-02-22 07:03:53 [web.INFO] [application] Request context:
+$_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '43728'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '172.121.222.178'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '1542077'
+    'HTTP_X_FORWARDED_FOR' => '172.121.222.178'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36'
+    'HTTP_BAGGAGE' => 'sentry-trace_id=3b3c632483cc4337bb7f809b9da6c950,sentry-environment=production,sentry-public_key=1b2aeb425ca74d4397fb558fa693db0f'
+    'HTTP_SENTRY_TRACE' => '3b3c632483cc4337bb7f809b9da6c950-b28aac41007158c0'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '172.121.222.178'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/'
+    'SCRIPT_URL' => '/'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7nZR7s57T_sj7-12XosrwAADn8'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740233031.9355
+    'REQUEST_TIME' => 1740233031
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev"} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\codeeditor\CodeEditor::bootstrap] CodeEditor module bootstrapped {"memory":2172136} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":2779208} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\services\{closure}] Meta container cache miss: /2 {"memory":5266016} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\services\{closure}] parsed_globals_ cache miss: seomatic_metacontainer_2page1 {"memory":8485520} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: generalseomatic_metacontainer_2page1 {"memory":8502504} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `keywords` did not render because it is missing attributes. Array
+(
+    [name] => keywords
+)
+ {"memory":8553728} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `description` did not render because it is missing attributes. Array
+(
+    [name] => description
+)
+ {"memory":8554920} 
+2025-02-22 21:57:28 [web.INFO] [application] Request context:
+$_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '20658'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '104.168.124.124'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '667988'
+    'HTTP_X_FORWARDED_FOR' => '104.168.124.124'
+    'HTTP_BAGGAGE' => 'sentry-trace_id=0dd17e7891134d5d8b1ec3b69ed534da,sentry-environment=production,sentry-public_key=8862139d48f14c72adfaa016de079d2d'
+    'HTTP_SENTRY_TRACE' => '0dd17e7891134d5d8b1ec3b69ed534da-67e266e7859946a6'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en;q=0.5'
+    'HTTP_ACCEPT_CHARSET' => 'ISO-8859-1,utf-8;q=0.7,*;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; Konqueror/3; Linux)'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '104.168.124.124'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/'
+    'SCRIPT_URL' => '/'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7qqt6CwUTVK0kZfUtyLQQAADkk'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740286647.5623
+    'REQUEST_TIME' => 1740286647
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev"} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: opengraphseomatic_metacontainer_2page1 {"memory":7941680} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `fb:profile_id` did not render because it is missing attributes. Array
+(
+    [property] => fb:profile_id
+)
+ {"memory":7945224} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `fb:app_id` did not render because it is missing attributes. Array
+(
+    [property] => fb:app_id
+)
+ {"memory":7946928} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:locale:alternate` did not render because it is missing attributes. Array
+(
+    [property] => og:locale:alternate
+)
+ {"memory":7956296} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:title` did not render because it is missing attributes. Array
+(
+    [property] => og:title
+)
+ {"memory":7982016} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:description` did not render because it is missing attributes. Array
+(
+    [property] => og:description
+)
+ {"memory":7984344} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image` did not render because it is missing attributes. Array
+(
+    [property] => og:image
+)
+ {"memory":7986672} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image:width` did not render because it is missing attributes. Array
+(
+    [property] => og:image:width
+)
+ {"memory":7990248} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image:height` did not render because it is missing attributes. Array
+(
+    [property] => og:image:height
+)
+ {"memory":7995104} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:image:alt` did not render because it is missing attributes. Array
+(
+    [property] => og:image:alt
+)
+ {"memory":7998680} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `og:see_also` did not render because it is missing attributes. Array
+(
+    [property] => og:see_also
+)
+ {"memory":7999184} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: twitterseomatic_metacontainer_2page1 {"memory":7996552} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:title` did not render because it is missing attributes. Array
+(
+    [name] => twitter:title
+)
+ {"memory":8018344} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:description` did not render because it is missing attributes. Array
+(
+    [name] => twitter:description
+)
+ {"memory":8020672} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image
+)
+ {"memory":8024280} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image:width` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image:width
+)
+ {"memory":8027856} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image:height` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image:height
+)
+ {"memory":8037096} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaTag::prepForRender] WARNING - Meta tag `twitter:image:alt` did not render because it is missing attributes. Array
+(
+    [name] => twitter:image:alt
+)
+ {"memory":8040672} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTagContainer cache miss: miscellaneousseomatic_metacontainer_2page1 {"memory":8039040} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaLinkContainer cache miss: generalseomatic_metacontainer_2page1 {"memory":8039752} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\MetaLink::prepForRender] WARNING - Link tag `alternate` did not render because it is missing attributes. {"memory":8079256} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaScriptContainer cache miss: generalseomatic_metacontainer_2page1670c90965044bcaa46b898c32e441128 {"memory":8078040} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaJsonLdContainer cache miss: generalseomatic_metacontainer_2page1-v2 {"memory":8078736} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "default" for http://schema.org/{{ seomatic.meta.mainEntityOfPage }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "author": {
+        "@id": "#identity"
+    },
+    "copyrightHolder": {
+        "@id": "#identity"
+    },
+    "copyrightYear": "2024",
+    "creator": {
+        "@id": "#creator"
+    },
+    "dateCreated": "2024-11-21T20:40:54-07:00",
+    "dateModified": "2025-01-06T12:09:01-07:00",
+    "datePublished": "2024-11-21T20:40:00-07:00",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": "https://phpstack-1321557-5103849.cloudwaysapps.com/",
+    "name": "Crosby",
+    "publisher": {
+        "@id": "#creator"
+    },
+    "url": "https://phpstack-1321557-5103849.cloudwaysapps.com"
+}
+</script> {"memory":8182240} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: dateCreated -> Must be one of these types: array, Date, Date[], array, DateTime, DateTime[] {"memory":8182776} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/{{ seomatic.meta.mainEntityOfPage }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "author": {
+        "@id": "#identity"
+    },
+    "copyrightHolder": {
+        "@id": "#identity"
+    },
+    "copyrightYear": "2024",
+    "creator": {
+        "@id": "#creator"
+    },
+    "dateCreated": "2024-11-21T20:40:54-07:00",
+    "dateModified": "2025-01-06T12:09:01-07:00",
+    "datePublished": "2024-11-21T20:40:00-07:00",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": "https://phpstack-1321557-5103849.cloudwaysapps.com/",
+    "name": "Crosby",
+    "publisher": {
+        "@id": "#creator"
+    },
+    "url": "https://phpstack-1321557-5103849.cloudwaysapps.com"
+}
+</script> {"memory":8207088} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: dateCreated -> Must be one of these types: array, Date, Date[], array, DateTime, DateTime[] {"memory":8207296} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: description -> This property is required by Google. {"memory":8207560} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/{{ seomatic.site.identity.computedType }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@id": "#identity",
+    "@type": "LocalBusiness",
+    "priceRange": "$"
+}
+</script> {"memory":8265080} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: description -> This property is required by Google. {"memory":8265504} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: name -> This property is required by Google. {"memory":8265816} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: url -> This property is recommended by Google. {"memory":8266144} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/{{ seomatic.site.creator.computedType }}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@id": "#creator",
+    "@type": "Organization"
+}
+</script> {"memory":8324664} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: description -> This property is required by Google. {"memory":8325088} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - JSON-LD property: name -> This property is required by Google. {"memory":8325400} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: url -> This property is recommended by Google. {"memory":8325728} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "google" for http://schema.org/BreadcrumbList
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "description": "Breadcrumbs list",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "item": "https://phpstack-1321557-5103849.cloudwaysapps.com",
+            "position": 1
+        }
+    ],
+    "name": "Breadcrumbs"
+}
+</script> {"memory":8329368} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: image -> This property is recommended by Google. {"memory":8329792} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - JSON-LD property: url -> This property is recommended by Google. {"memory":8330120} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\models\{closure}] MetaTitleContainer cache miss: generalseomatic_metacontainer_2page1 {"memory":8381296} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "default"
+<title>🚧 Crosby</title> {"memory":8395824} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] ERROR - Tag attribute: title -> Title cannot be blank. {"memory":8396200} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] Scenario: "warning"
+<title>🚧 Crosby</title> {"memory":8400424} 
+2025-02-22 21:57:28 [web.INFO] [nystudio107\seomatic\base\MetaItem::debugMetaItem] WARNING - Tag attribute: title -> Title cannot be blank. {"memory":8400552} 
+2025-02-22 21:57:28 [web.INFO] [application] Request context:
+$_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'ngrsnrwarf'
+    'HOME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '20658'
+    'SCRIPT_FILENAME' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/index.php'
+    'SERVER_ADMIN' => '[no address given]'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/home/1321557.cloudwaysapps.com/ngrsnrwarf/public_html/web/'
+    'REMOTE_ADDR' => '104.168.124.124'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Debian)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Debian) Server at phpstack-1321557-5103849.cloudwaysapps.com Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'HTTP_X_VARNISH' => '667988'
+    'HTTP_X_FORWARDED_FOR' => '104.168.124.124'
+    'HTTP_BAGGAGE' => 'sentry-trace_id=0dd17e7891134d5d8b1ec3b69ed534da,sentry-environment=production,sentry-public_key=8862139d48f14c72adfaa016de079d2d'
+    'HTTP_SENTRY_TRACE' => '0dd17e7891134d5d8b1ec3b69ed534da-67e266e7859946a6'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us,en;q=0.5'
+    'HTTP_ACCEPT_CHARSET' => 'ISO-8859-1,utf-8;q=0.7,*;q=0.7'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (compatible; Konqueror/3; Linux)'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_VERSION' => '81'
+    'HTTP_X_APP_USER' => 'ngrsnrwarf'
+    'HTTP_X_APPLICATION' => 'phpstack'
+    'HTTP_X_FORWARDED_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_FORWARDED_PROTO' => 'https'
+    'HTTP_HOST' => 'phpstack-1321557-5103849.cloudwaysapps.com'
+    'HTTP_X_REAL_IP' => '104.168.124.124'
+    'IMUNIFY360_WEAKPASS_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'IMUNIFY360_COMPROMISED_REDIRECT_URL' => 'appsecurity.cloudwaysapps.com/'
+    'SCRIPT_URI' => 'http://phpstack-1321557-5103849.cloudwaysapps.com/'
+    'SCRIPT_URL' => '/'
+    'HTTP_AUTHORIZATION' => ''
+    'HTTPS' => 'on'
+    'cw_allowed_ip' => '0'
+    'UNIQUE_ID' => 'Z7qqt6CwUTVK0kZfUtyLQQAADkk'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1740286647.5623
+    'REQUEST_TIME' => 1740286647
+    'CRAFT_APP_ID' => 'CraftCMS--2ca79e68-bc75-4adc-80d5-7560ec41478e'
+    'CRAFT_ENVIRONMENT' => 'dev'
+    'CRAFT_DB_DRIVER' => 'mysql'
+    'CRAFT_DB_SERVER' => '137.184.15.251'
+    'CRAFT_DB_PORT' => '3306'
+    'CRAFT_DB_DATABASE' => 'ngrsnrwarf'
+    'CRAFT_DB_USER' => 'ngrsnrwarf'
+    'CRAFT_DB_PASSWORD' => '••••••••••'
+    'CRAFT_DB_SCHEMA' => ''
+    'CRAFT_DB_TABLE_PREFIX' => ''
+    'CRAFT_SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'CRAFT_DEV_MODE' => 'true'
+    'CRAFT_ALLOW_ADMIN_CHANGES' => 'true'
+    'CRAFT_DISALLOW_ROBOTS' => 'true'
+    'PRIMARY_SITE_URL' => 'https://phpstack-1321557-5103849.cloudwaysapps.com/'
+] {"environment":"dev"} 

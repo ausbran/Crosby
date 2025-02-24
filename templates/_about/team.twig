@@ -12,5 +12,7 @@
 	} %}
 
 	<!-- Modal Template -->
-	{% include '_includes/_blocks/modalContact' %}
+	{% include '_includes/_blocks/modalContact' with {
+		closeClass: '!stroke-red'
+	} %}
 {% endblock %}
