@@ -39,10 +39,10 @@
 {% if asset %}
 	{% if asset.kind == 'video' %}
 		<video {% if class is defined %} class="{{ class }}" {% endif %} autoplay {{ loopVideo ? 'loop' }} muted preload="metadata" playsinline webkit-playsinline">
-			<source src="{{ asset.url }}" type="{{ asset.mimeType }}" media="(min-width: 768px)">
 			{% if assetMobile %}
 				<source src="{{ assetMobile.url }}" type="{{ assetMobile.mimeType }}" media="(max-width: 767px)">
 			{% endif %}
+			<source src="{{ asset.url }}" type="{{ asset.mimeType }}">
 		</video>
 	{% elseif asset.kind == 'image' %}
 		{# Image rendering logic #}

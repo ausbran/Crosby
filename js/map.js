@@ -170,10 +170,10 @@ export function initMap() {
     }
   };
 
-  // Initialize shapes on the map
+  // Initialize shapes on the maps for Land Sale and Land Ownership
   const initializeMapShapes = () => {
     if (mapData.listings && mapData.listings.length > 0) {
-      // Real Estate Page Logic
+      // Land Sales Page Logic
       mapData.listings.forEach((listing) => {
         if (!listing.shapefile || listing.shapefile.length === 0) {
           console.warn(
@@ -198,114 +198,123 @@ export function initMap() {
 
   const mapLayers = {}; // Store layers for each listing by ID
 
-  const processShapefile = (shapefileUrl, listingId = null) => {
-    fetch(shapefileUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.arrayBuffer();
-      })
-      .then((arrayBuffer) => {
-        return shapefile.open(arrayBuffer).then((source) => {
-          source.read().then(function log(result) {
-            if (result.done) {
-              map.fitBounds(allBounds.getBounds()); // Initial view
-              return;
-            }
+const processShapefile = (shapefileUrl, listingId = null) => {
+  fetch(shapefileUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.arrayBuffer();
+    })
+    .then((arrayBuffer) => {
+      return shapefile.open(arrayBuffer).then((source) => {
+        source.read().then(function log(result) {
+          if (result.done) {
+            map.fitBounds(allBounds.getBounds()); // Initial view
+            return;
+          }
 
-            const geojson = result.value;
+          const geojson = result.value;
 
-            const layer = L.geoJSON(geojson, {
-              style: {
-                color: "red", // Default color
-                weight: 2,
-                fillOpacity: 0.2,
-              },
-              onEachFeature: (feature, layer) => {
-                const listing = listingId
-                  ? mapData.listings.find((l) => l.id === listingId)
-                  : null;
+          const layer = L.geoJSON(geojson, {
+            style: {
+              color: "red", // Default color
+              weight: 2,
+              fillOpacity: 0.2,
+            },
+            onEachFeature: (feature, layer) => {
+              const listing = listingId
+                ? mapData.listings.find((l) => l.id === listingId)
+                : null;
 
-                if (listing && listing.title) {
-                  const popupContent = `
-                    <div class="tooltip-content">
-                      <div class="flex space-x-4">
-                        <span>${listing.address.locality || "Unknown"}, ${listing.address.administrativeArea || ""}</span>
-                        <span>${listing.acreage || "N/A"} Acres</span>
-                      </div>
-                      <h3 class="text-3xl">${listing.title}</h3>
+              if (listing && listing.title) {
+                const popupContent = `
+                  <div class="tooltip-content" data-id="${listingId}">
+                    <div class="flex space-x-4">
+                      <span>${listing.address.locality || "Unknown"}, ${listing.address.administrativeArea || ""}</span>
+                      <span>${listing.acreage || "N/A"} Acres</span>
                     </div>
-                  `;
+                    <h3 class="text-3xl">${listing.title}</h3>
+                    <button class="view-button read-more btn w-full text-white" data-id="${listingId}">Read More</button>
+                  </div>
+                `;
 
-                  layer.bindPopup(popupContent, {
-                    className: "custom-popup",
-                    closeButton: false,
-                    offset: [0, -20],
+                layer.bindPopup(popupContent, {
+                  className: "custom-popup",
+                  closeButton: false,
+                  offset: [0, -20],
+                });
+
+                // **Desktop Hover Behavior - Keep Popup Open on Hover**
+                layer.on("mouseover", () => {
+                  layer.setStyle({
+                    color: "red",
+                    weight: 3,
+                    fillOpacity: 0.4,
                   });
-
-                  layer.on("mouseover", () => {
-                    layer.setStyle({
-                      color: "red",
-                      weight: 3,
-                      fillOpacity: 0.4,
-                    });
+                  if (window.matchMedia("(min-width: 1024px)").matches) {
                     layer.openPopup();
-                  });
 
-                  layer.on("mouseout", () => {
-                    layer.setStyle({
-                      color: "red",
-                      weight: 2,
-                      fillOpacity: 0.2,
-                    });
-                    layer.closePopup();
-                  });
-                } else {
-                  layer.on("mouseover", () => {
-                    layer.setStyle({
-                      color: "red",
-                      weight: 3,
-                      fillOpacity: 0.4,
-                    });
-                  });
+                    // **Ensure popup stays open when hovered**
+                    setTimeout(() => {
+                      const popup = document.querySelector(".custom-popup");
+                      if (popup) {
+                        popup.addEventListener("mouseenter", () => {
+                          layer.openPopup();
+                        });
 
-                  layer.on("mouseout", () => {
-                    layer.setStyle({
-                      color: "red",
-                      weight: 2,
-                      fillOpacity: 0.2,
-                    });
-                  });
-                }
+                        popup.addEventListener("mouseleave", () => {
+                          layer.closePopup();
+                        });
+                      }
+                    }, 300);
+                  }
+                });
 
+                layer.on("mouseout", () => {
+                  layer.setStyle({
+                    color: "red",
+                    weight: 2,
+                    fillOpacity: 0.2,
+                  });
+                });
+
+                // **Handle Click Behavior**
                 layer.on("click", () => {
+                  const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
                   if (listingId) {
-                    openModal(listingId);
+                    if (isDesktop) {
+                      openModal(listingId); // Desktop opens modal immediately
+                    } else {
+                      layer.openPopup(); // Mobile opens popup first
+                    }
                   }
 
                   const bounds = layer.getBounds();
                   map.flyToBounds(bounds, {
-                    padding: [50, 50],
+                    paddingTopLeft: [150, 0],  
+                paddingBottomRight: [150, 50],
                     duration: mapDuration,
                   });
                 });
-              },
-            }).addTo(map);
+              }
+            },
+          }).addTo(map);
 
-            if (listingId) {
-              mapLayers[listingId] = layer;
-            }
+          if (listingId) {
+            mapLayers[listingId] = layer;
+          }
 
-            allBounds.addLayer(layer);
-            source.read().then(log);
-          });
+          allBounds.addLayer(layer);
+          source.read().then(log);
         });
-      })
-      .catch((error) => {
-        console.error("Error processing shapefile:", shapefileUrl, error);
       });
-  };
+    })
+    .catch((error) => {
+      console.error("Error processing shapefile:", shapefileUrl, error);
+    });
+};
 
 function adjustScrollForMap() {
     if (!mapWrapper) return;
@@ -322,9 +331,9 @@ function adjustScrollForMap() {
     }
 }
 
-  // Modify your existing attachButtonListeners function to include the scroll adjustment
 const attachButtonListeners = (selector, callback) => {
   const buttons = document.querySelectorAll(selector);
+
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
@@ -332,24 +341,58 @@ const attachButtonListeners = (selector, callback) => {
       if (buttonElement) {
         const listingId = buttonElement.getAttribute("data-id");
         if (listingId) {
-          // Zoom to the shape for this listing
           const layer = mapLayers[listingId];
+
           if (layer) {
             const bounds = layer.getBounds();
-            map.flyToBounds(bounds, {
-              padding: [50, 50],
-              duration: mapDuration,
-            });
+            const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
+            if (isDesktop) {
+              // **Desktop: Zoom to shape and open modal**
+              map.flyToBounds(bounds, {
+                padding: [70, 70],
+                duration: mapDuration,
+              });
+
+              callback(listingId);
+            } else {
+              // **Mobile: Zoom to shape and show popup**
+              map.flyToBounds(bounds, {
+                paddingTopLeft: [150, 0],  
+                paddingBottomRight: [150, 50],
+                duration: mapDuration,
+              });
+
+              setTimeout(() => {
+                // Explicitly open the popup
+                layer.eachLayer((shape) => {
+                  if (shape.getPopup()) {
+                    shape.openPopup();
+                  }
+                });
+
+                // **Ensure "Read More" in popup opens modal**
+                setTimeout(() => {
+                  document.querySelectorAll(".read-more").forEach((btn) => {
+                    btn.addEventListener("click", (e) => {
+                      e.preventDefault();
+                      const id = btn.getAttribute("data-id");
+                      if (id) {
+                        callback(id);
+                        layer.eachLayer((shape) => {
+                          if (shape.getPopup()) {
+                            shape.closePopup();
+                          }
+                        });
+                      }
+                    });
+                  });
+                }, 500);
+              }, mapDuration * 1000);
+            }
+          } else {
+            console.error(`Layer not found for listing ID ${listingId}`);
           }
-
-          // Open the modal
-          callback(listingId);
-
-          navState.allowNavScrollLogic = false;
-          nav.classList.add("scrolled");
-
-          // Adjust scroll for map visibility
-          setTimeout(adjustScrollForMap, 300); // Delay to ensure smooth scroll after modal opens
         } else {
           console.error(`Listing ID not found on ${selector}`);
         }
@@ -357,7 +400,6 @@ const attachButtonListeners = (selector, callback) => {
     });
   });
 };
-
   attachButtonListeners(".view-button", (listingId) => openModal(listingId));
   attachButtonListeners(".image-button", (listingId) => openModal(listingId));
 

@@ -1,11 +1,11 @@
 <!-- Listings Section -->
-<h2 class="absolute lg:static left-[160px] lg:left-unset top-[1px] lg:top-unset text-white lg:text-charcoal text-xl lg:text-3xl col-span-12 lg:col-span-6 !mt-0 lg:!mt-16 pointer-events-none">{{ listings|length }} Listings</h2>
+<h2 class="absolute lg:static max-lg:left-auto max-lg:right-6 -top-[4px] lg:top-unset text-white lg:text-charcoal text-xl lg:text-3xl col-span-12 lg:col-span-6 !mt-0 lg:!mt-16 pointer-events-none">{{ listings|length }} Listings</h2>
 
 <div class="z-1 col-span-12 lg:col-span-6 overflow-x-auto lg:overflow-visible flex lg:grid grid-cols-12 lg:grid-cols-6 gap-x-6 !gap-y-6 px-6 lg:px-0 items-start justify-start snap-x scroll-pl-6 lg:scroll-pl-none">
     {% for listing in listings %}
-       <div class="max-w-[400px] lg:max-w-none w-[calc(100vw-80px)] lg:w-auto flex-none col-span-6 xl:col-span-3 relative bg-white rounded-lg lg:rounded-none snap-start">
+       <div class="max-w-[350px] lg:max-w-none w-[calc(100vw-80px)] lg:w-auto flex-none col-span-6 xl:col-span-3 relative bg-white rounded-lg lg:rounded-none snap-start">
             {% if listing.asset.one() %}
-                <div data-id="{{listing.id}}" class="image-button outline-hover h-40 lg:h-60 object-cover rounded-b-none rounded-t-lg lg:!rounded-xl overflow-hidden w-full">
+                <div data-id="{{listing.id}}" class="image-button outline-hover h-32 lg:h-60 object-cover rounded-b-none rounded-t-lg lg:!rounded-xl overflow-hidden w-full">
                     {% include '_includes/_blocks/asset' with {
                         asset: listing.asset.one(),
                         class: "w-full h-full object-cover"

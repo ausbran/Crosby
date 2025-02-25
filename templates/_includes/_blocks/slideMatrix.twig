@@ -24,7 +24,7 @@
                 rounded-xl overflow-hidden h-[600px] transition-transform transform bg-{{ slide.color }}">
 
         <!-- Text -->
-        <div class="grid {{ slide.textAlignment }} w-full h-full absolute z-2 space-y-4 p-10 bottom-0 text-{{ textColor }}">
+        <div class="grid {{ slide.textAlignment }} content-between w-full h-full absolute z-2 space-y-4 p-10 bottom-0 text-{{ textColor }}">
             {% for block in slide.slideMatrix %}
                 {% switch block.type.handle %}
                     {% case 'text' %}

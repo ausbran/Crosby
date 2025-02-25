@@ -276,7 +276,7 @@ figure {
     }
   }
   .slider-wrapper .slider {
-    @apply flex space-x-6 overflow-x-auto overflow-y-hidden snap-x;
+    @apply flex space-x-4 lg:space-x-6 overflow-x-auto overflow-y-hidden snap-x;
     padding-left: theme("spacing.p-default");
     padding-right: theme("spacing.p-default");
   }
@@ -346,6 +346,10 @@ figure {
     content: unset;
   }
 }
+.slider .main-slide {
+  @apply flex-none max-lg:!max-w-[500px] !w-full !max-w-full;
+}
+
 .grid {
   row-gap: 0;
   column-gap: 1.5em;
@@ -433,7 +437,7 @@ figure {
       @apply text-3xl;
     }
     p {
-      @apply text-lg;
+      @apply text-[18px] leading-[1.75rem];
     }
   }
 }
@@ -725,18 +729,20 @@ body.green-dark footer svg * {
 }
 
 #modal-image-container .slide:first-of-type {
-  @apply ml-16;
+  @apply lg:ml-16;
 }
 #modal-image-container .slide:last-of-type {
-  @apply mr-6;
+  @apply mr-4 lg:mr-6;
 }
 
+#modal-image-container-wrapper.single {
+  @apply mr-0;
+}
 #modal-image-container-wrapper.single .slide {
   @apply max-w-none m-0 flex-1 !important;
 }
 #modal-image-container-wrapper.single .arrow-wrapper, #modal-image-container-wrapper.single:after {
-  content: unset;
-  @apply hidden;
+  @apply hidden content-none;
 }
 
 /* Modal visible state */
@@ -746,10 +752,6 @@ body.green-dark footer svg * {
 
 #modal.show:before {
   @apply opacity-100;
-}
-
-.contact-modal .close svg * {
-  @apply stroke-red !important;
 }
 
 #photo-modal {
@@ -776,8 +778,14 @@ body.green-dark footer svg * {
   @apply translate-x-full;
 }
 
+.leaflet-popup.custom-popup .leaflet-popup-content {
+  @apply m-0;
+}
 .leaflet-popup.custom-popup .leaflet-popup-content-wrapper {
-  @apply rounded-xl bg-white p-4 shadow-md;
+  @apply rounded-xl bg-white p-4 lg:p-6 shadow-md !important;
+}
+.leaflet-popup.custom-popup .read-more {
+  @apply w-full !important;
 }
 
 .tooltip-content {
@@ -820,24 +828,43 @@ body.green-dark footer svg * {
 .fui-submit {
   @apply tracking-tight w-full px-[25px] py-[15px] lg:px-[30px] lg:py-[18px] rounded-md gap-[40px] relative items-center cursor-pointer text-[.9rem] lg:text-base font-medium border-none whitespace-nowrap transition-all hover:brightness-110 border-none border-0 !important;
 }
+.fui-submit:active {
+  @apply bg-current;
+}
 
 .fui-form {
   @apply w-full;
 }
 
 .fui-form h6 {
-  @apply mb-4 text-base xl:text-lg;
+  @apply mb-4 text-base xl:text-[18px] xl:leading-[1.75rem];
 }
 
+.fui-alert-error p {
+  @apply leading-none;
+}
+
+.contact-modal .close svg * {
+  @apply stroke-red !important;
+}
 .contact-modal .fui-label *,
-.contact-modal .fui-label {
-  @apply text-white;
+.contact-modal .fui-label,
+.contact-modal .fui-error-message {
+  @apply text-white !important;
 }
 .contact-modal .fui-submit {
-  @apply bg-white text-red;
+  @apply bg-white text-red leading-none !important;
 }
 .contact-modal .fui-submit:hover {
   @apply bg-white brightness-95 text-red;
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
+
+.translate-x-0 {
+  transform: translateX(0);
 }
 
 .testimonials .carousel .carousel-item {

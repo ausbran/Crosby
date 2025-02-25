@@ -8,6 +8,7 @@ import { initScale } from "./scale.js";
 import { initServices } from "./services.js";
 import { initAnchor } from "./anchor.js";
 import { initMap } from "./map.js";
+import { initSliderFixed } from "./sliderFixed.js";
 import { body, nav, navHeight } from "./globals.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -24,6 +25,7 @@ function initializeComponents(container, namespace) {
   }
   switch (namespace) {
     case "home":
+      initSliderFixed();
       initSlider();
       initBanner(".banner .carousel", ".banner .progress-bar .progress", ".banner .background");
       break;
@@ -64,11 +66,15 @@ function initializeComponents(container, namespace) {
     default:
       const carousel = container.querySelector(".carousel");
       const slider = container.querySelector(".slider");
+      const sliderFixed = container.querySelector('.fixed-slider')
       if (carousel) {
         initBanner(".carousel", ".progress-bar .progress");
       }
       if (slider) {
         initSlider();
+      }
+      if (sliderFixed) {
+        initSliderFixed();
       }
       break;
   }

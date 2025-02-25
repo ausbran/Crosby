@@ -316,7 +316,7 @@ figure {
 
     // slider
     .slider {
-      @apply flex space-x-6 overflow-x-auto overflow-y-hidden snap-x;
+      @apply flex space-x-4 lg:space-x-6 overflow-x-auto overflow-y-hidden snap-x;
       padding-left: theme("spacing.p-default");
       padding-right: theme("spacing.p-default");
 
@@ -392,6 +392,11 @@ figure {
       content: unset;
     }
   }
+}
+
+.slider .main-slide {
+  // dynamic styles added for sliderFixed script that moves slide in and out of container
+    @apply flex-none max-lg:!max-w-[500px] !w-full !max-w-full;
 }
 
 .grid {
@@ -495,7 +500,7 @@ figure {
       @apply text-3xl;
     }
     p {
-      @apply text-lg;
+      @apply text-[18px] leading-[1.75rem];
     }
   }
 }
@@ -814,22 +819,22 @@ body.green-dark {
 
 #modal-image-container {
   .slide:first-of-type {
-    @apply ml-16;
+    @apply lg:ml-16;
   }
 
   .slide:last-of-type {
-    @apply mr-6;
+    @apply mr-4 lg:mr-6;
   }
 }
 
 #modal-image-container-wrapper.single {
+  @apply mr-0;
   .slide {
     @apply max-w-none m-0 flex-1 !important;
   }
   .arrow-wrapper,
   &:after {
-    content: unset;
-    @apply hidden;
+    @apply hidden content-none;
   }
 }
 
@@ -840,12 +845,6 @@ body.green-dark {
 
 #modal.show:before {
   @apply opacity-100;
-}
-
-.contact-modal {
-  .close svg * {
-    @apply stroke-red !important;
-  }
 }
 
 #photo-modal {
@@ -873,8 +872,14 @@ body.green-dark {
 }
 
 .leaflet-popup.custom-popup {
+  .leaflet-popup-content {
+    @apply m-0;
+  }
   .leaflet-popup-content-wrapper {
-    @apply rounded-xl bg-white p-4 shadow-md;
+    @apply rounded-xl bg-white p-4 lg:p-6 shadow-md !important;
+  }
+  .read-more {
+    @apply w-full !important;
   }
 }
 
@@ -919,24 +924,41 @@ body.green-dark {
 // form
 .fui-submit {
   @apply tracking-tight w-full px-[25px] py-[15px] lg:px-[30px] lg:py-[18px] rounded-md gap-[40px] relative items-center cursor-pointer text-[.9rem] lg:text-base font-medium border-none whitespace-nowrap transition-all hover:brightness-110 border-none border-0 !important;
+  &:active {
+    @apply bg-current;
+  }
 }
 .fui-form {
   @apply w-full;
 }
 .fui-form h6 {
-  @apply mb-4 text-base xl:text-lg;
+  @apply mb-4 text-base xl:text-[18px] xl:leading-[1.75rem];
 }
+.fui-alert-error p {
+    @apply leading-none;
+  }
 .contact-modal {
+  .close svg * {
+    @apply stroke-red !important;
+  }
   .fui-label *,
-  .fui-label {
-    @apply text-white;
+  .fui-label,
+  .fui-error-message {
+    @apply text-white !important;
   }
   .fui-submit {
-    @apply bg-white text-red;
+    @apply bg-white text-red leading-none !important;
     &:hover {
       @apply bg-white brightness-95 text-red;
     }
   }
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
+.translate-x-0 {
+  transform: translateX(0);
 }
 
 .testimonials {

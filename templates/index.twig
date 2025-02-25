@@ -15,7 +15,7 @@
 	</head>
 	<body data-barba="wrapper" class="overflow-x-hidden {{ bodyClass|default('') }}"></body>
 		{% include '_includes/_globals/navigation' %}
-		<main class="transition-[filter] duration-400 space-y-12 lg:space-y-16 xl:space-y-20" data-barba="container" {% if entry.type is defined %} data-barba-namespace="{{ entry.type }}" {% else %} data-barba-namespace="projectCategory" {% endif %}> {% block content %}{% endblock %}
+		<main class="transition-[filter] duration-400 space-y-10 lg:space-y-16 xl:space-y-20" data-barba="container" {% if entry.type is defined %} data-barba-namespace="{{ entry.type }}"{% endif %}> {% block content %}{% endblock %}
 		</main>
 		{% include '_includes/_globals/footer' with { footerClass: footerClass ?? null } %}
 		<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
