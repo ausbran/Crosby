@@ -1,0 +1,174 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Retour plugin for Craft CMS
+ *
+ * Retour Redirects index.twig
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2018 nystudio107
+ * @link      https://nystudio107.com/
+ * @package   Retour
+ * @since     3.0.0
+ */
+#}
+
+{% requirePermission "retour:redirects" %}
+
+{% extends "retour/_layouts/retour-cp.twig" %}
+
+{% import "_includes/forms" as forms %}
+
+{% block content %}
+    <input type="hidden" name="action" value="retour/redirects/save-redirect">
+    {{ csrfInput() }}
+
+    {% if redirect.associatedElementId > 0 %}
+        {{ redirectInput("retour/shortlinks") }}
+    {% else %}
+        {{ redirectInput("retour/redirects") }}
+    {% endif %}
+
+
+    {% namespace "redirectConfig" %}
+        {{ forms.hidden({
+            id: "id",
+            name: "id",
+            value: redirect.id,
+        }) }}
+
+        {{ forms.hidden({
+            id: "hitCount",
+            name: "hitCount",
+            value: redirect.hitCount,
+        }) }}
+
+        {{ forms.hidden({
+            id: "hitLastTime",
+            name: "hitLastTime",
+            value: redirect.hitLastTime,
+        }) }}
+
+        {{ forms.hidden ({
+            name: 'associatedElementId',
+            value: redirect.associatedElementId
+        }) }}
+
+        <div class="field first">
+            <div class="heading">
+                <div class="instructions">
+                    <p>{{ "Retour will look for 404 (Not Found) URLs that match the Legacy URL Pattern below, and redirect them to Destination URL." |t("retour") |raw }}</p>
+                </div>
+            </div>
+        </div>
+
+        {{ forms.lightswitchField({
+            label: "Enabled"|t("retour"),
+            instructions: "Should this redirect be processed?"|t("retour"),
+            id: "enabled",
+            name: "enabled",
+            on: redirect.enabled,
+            errors: redirect.getErrors("enabled"),
+        }) }}
+
+        {{ forms.selectField({
+            label: "Sites"|t("retour"),
+            instructions: "What sites should this redirect be active for."|t("retour"),
+            id: "siteId",
+            name: "siteId",
+            value: redirect.siteId,
+            options: sitesMenu,
+            errors: redirect.getErrors("siteId"),
+        }) }}
+
+        {{ forms.textField({
+            label: "Legacy URL Pattern"|t("retour"),
+            instructions: "Enter the URL pattern that Retour should match.  This matches against the path only (the part of the URL after the domain name), or the full URL, depending on the setting of **Legacy URL Match Type**.  e.g.: Exact Match: `/recipes/` or `http://example.com/recipes/`, or RegEx Match: `.*RecipeID=(.*)`"|t("retour"),
+            id: "redirectSrcUrl",
+            name: "redirectSrcUrl",
+            class: 'nicetext',
+            value: redirect.redirectSrcUrl,
+            maxlength: 255,
+            showCharsLeft: true,
+            required: true,
+            errors: redirect.getErrors("redirectSrcUrl"),
+        }) }}
+
+        {{ forms.selectField({
+            label: "Legacy URL Match Type"|t("retour"),
+            instructions: "Should the legacy URL be matched by path (e.g. `/new-recipes/`) or by full URL (e.g.: `http://example.com/de/new-recipes/`)?"|t("retour"),
+            id: "redirectSrcMatch",
+            name: "redirectSrcMatch",
+            value: redirect.redirectSrcMatch,
+            options: {
+                "pathonly": "Path Only"|t("retour"),
+                "fullurl": "Full URL"|t("retour"),
+            },
+            errors: redirect.getErrors("redirectSrcMatch"),
+        }) }}
+
+        {{ forms.textField({
+            label: "Destination URL"|t("retour"),
+            instructions: "Enter the destination URL that should be redirected to.  This can either be a fully qualified URL or a relative URL.  e.g.: Exact Match: `/new-recipes/` or `http://example.com/new-recipes/`, or RegEx Match: `/new-recipes/$1`"|t("retour"),
+            id: "redirectDestUrl",
+            name: "redirectDestUrl",
+            class: 'nicetext',
+            value: redirect.redirectDestUrl,
+            maxlength: 255,
+            showCharsLeft: true,
+            required: true,
+            errors: redirect.getErrors("redirectDestUrl"),
+        }) }}
+
+        {{ forms.selectField({
+            label: "Match Type"|t("retour"),
+            instructions: "What type of matching should be done with the Legacy URL Pattern.  Details on RegEx matching can be found at [regexr.com](http://regexr.com/).  If a plugin provides a custom matching function, you can select it here."|t("retour"),
+            id: "redirectMatchType",
+            name: "redirectMatchType",
+            value: redirect.redirectMatchType,
+            options: craft.retour.getMatchesList(),
+            errors: redirect.getErrors("redirectMatchType"),
+            toggle: true,
+        }) }}
+
+        <div id="regexmatch" {{ redirect.redirectMatchType != 'regexmatch' ? 'class="hidden"' : '' }}>
+            {{ forms.selectField({
+                label: "Priority"|t("retour"),
+                instructions: "Select the priority of the redirect to determine the order in which matches are checked (1 is highest priority, 9 is lowest priority)."|t("retour"),
+                id: "priority",
+                name: "priority",
+                value: redirect.priority,
+                options: {
+                    1 : 1,
+                    2 : 2,
+                    3 : 3,
+                    4 : 4,
+                    5 : 5,
+                    6 : 6,
+                    7 : 7,
+                    8 : 8,
+                    9 : 9,
+                },
+                errors: redirect.getErrors("priority"),
+            }) }}
+        </div>
+
+        {{ forms.selectField({
+            label: "Redirect Type"|t("retour"),
+            instructions: "Select whether the redirect should be permanent or temporary."|t("retour"),
+            id: "redirectHttpCode",
+            name: "redirectHttpCode",
+            value: redirect.redirectHttpCode,
+            options: {
+                "301": "301 - Moved Permanently"|t("retour"),
+                "302": "302 - Found"|t("retour"),
+                "307": "307 - Temporary Redirect"|t("retour"),
+                "308": "308 - Permanent Redirect"|t("retour"),
+                "410": "410 - Gone"|t("retour"),
+            },
+            errors: redirect.getErrors("redirectHttpCode"),
+        }) }}
+    {% endnamespace %}
+    {# include our JavaScript modules #}
+    {{ parent() }}
+{% endblock %}

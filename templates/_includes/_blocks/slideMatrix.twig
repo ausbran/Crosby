@@ -1,0 +1,81 @@
+{% set columnSpan = slide.columnSpan ?? 4 %}
+{% set gridSpan = gridSpan ?? 12 %}
+{% set slideClass = slideClass ?? null %}
+{% set textColor = textColor ?? 'white' %} {# Default text color is white if not set #}
+{% set hasBackground = false %}
+
+{% for block in slide.slideMatrix %}
+    {% if block.type.handle == 'asset' and block.asset|length %}
+        {% set hasBackground = true %}
+    {% endif %}
+{% endfor %}
+
+<div class="slide flex-none content-start text-{{ textColor }} grid grid-cols-{{ gridSpan }} {{ slideClass }} 
+    md:grid-cols-{{ columnSpan }} sm:grid-cols-12"
+    style="
+        width: calc(100% * ({{ columnSpan }}/{{ gridSpan }}) - 1rem);
+        max-width: calc(100% * ({{ columnSpan }}/{{ gridSpan }}) - 1rem);
+    ">
+
+    <div class="{{ hasBackground ? 'max-h-[450px] md:max-h-[600px] h-[calc(100svh-100px)] lg:h-[600px]' : 'md:min-h-[600px] h-full' }}
+                min-h-[450px] col-span-12 md:col-span-{{ columnSpan }} 
+                rounded-xl overflow-hidden transition-transform transform bg-{{ slide.color }}">
+
+        <!-- Text -->
+        <div class="{{ hasBackground ? 'absolute' : 'static' }}
+        grid {{ slide.textAlignment }} content-between w-full h-full z-2 space-y-4 p-8 lg:p-10 bottom-0 text-{{ textColor }}">
+            {% for block in slide.slideMatrix %}
+                {% switch block.type.handle %}
+                    {% case 'text' %}
+                        {% include '_includes/_blocks/text' with {
+                            text: block.text,
+                            h1Class: 'col-span-12',
+                            h2Class: 'col-span-12',
+                            h3Class: 'col-span-12',
+                            h4Class: 'col-span-12',
+                            pClass: '!text-md col-span-12',
+                            figureClass: 'col-span-8'
+                        } %}
+                    {% case 'buttons' %}
+                        {% for button in block.buttons.all() %}
+                            {% include '_includes/_blocks/button' with {
+                                link: button.buttonLink,
+                                label: button.buttonLabel,
+                                class: 'col-span-12 !bg-white text-' ~ slide.color
+                            } %}
+                        {% endfor %}
+                {% endswitch %}
+            {% endfor %}
+        </div>
+
+        <!-- Background -->
+        {% for block in slide.slideMatrix %}
+            {% switch block.type.handle %}
+                {% case 'asset' %}
+                    <div class="w-full h-full block">
+                        {% include '_includes/_blocks/gradient' with {
+                            height: '1/2',
+                            opacity: 40
+                        } %}
+                        {% include '_includes/_blocks/asset' with {
+                            asset: block.asset.one(),
+                            class: 'h-full object-cover'
+                        } %}
+                    </div>
+            {% endswitch %}
+        {% endfor %}
+    </div>
+
+    {# caption #}
+    {% for block in slide.slideMatrix %}
+        {% switch block.type.handle %}
+            {% case 'caption' %}
+                <div class="mt-4 col-span-2 fade-in" data-cascade>
+                    {% include '_includes/_blocks/text' with {
+                        text: block.caption,
+                        pClass: 'text-base col-span-12'
+                    } %}
+                </div>
+        {% endswitch %}
+    {% endfor %}
+</div>

@@ -1,0 +1,52 @@
+# robots.txt for {{ seomatic.helper.baseSiteUrl("/") }}
+
+{{ seomatic.helper.sitemapIndex() }}
+{% switch seomatic.config.environment %}
+
+{% case "live" %}
+
+# live - don't allow web crawlers to index cpresources/ or vendor/
+
+User-agent: *
+Disallow: /cpresources/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /cache/
+
+{% case "staging" %}
+
+# staging - disallow all
+
+User-agent: *
+Disallow: /
+
+{% case "local" %}
+
+# local - disallow all
+
+User-agent: *
+Disallow: /
+
+{% default %}
+
+# default - don't allow web crawlers to index cpresources/ or vendor/
+
+User-agent: *
+Disallow: /cpresources/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /cache/
+
+{% endswitch %}
+
+# Disallow ChatGPT bot, as there's no benefit to allowing it to index your site
+User-agent: GPTBot
+Disallow: /
+
+# Disallow Google Bard and Vertex AI bots, as there's no benefit to allowing it to index your site
+User-agent: Google-Extended
+Disallow: /
+
+# Disallow Perplexity bot, as there's no benefit to allowing it to index your site
+User-agent: PerplexityBot
+Disallow: /

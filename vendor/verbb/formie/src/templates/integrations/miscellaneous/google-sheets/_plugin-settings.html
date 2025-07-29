@@ -1,0 +1,51 @@
+{% extends 'formie/_layouts/integrations/plugin-settings' %}
+
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% block content %}
+
+{{ macros.proxyField(fieldVariables, 'booleanMenuField', {
+    label: 'Proxy Redirect URI' | t('formie'),
+    instructions: 'Whether to proxy the redirect URI through Verbb‘s servers. This should **only** be used for local testing. See {link} for more.' | t('formie', { link: '[docs](https://verbb.io/craft-plugins/formie/docs/integrations/miscellaneous-integrations#local-testing-proxy)' }),
+    name: 'proxyRedirect',
+    includeEnvVars: true,
+    value: integration.settings.proxyRedirect ?? false,
+    warning: macros.configWarning('proxyRedirect', 'formie'),
+    errors: integration.getErrors('proxyRedirect'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientId ?? '',
+    warning: macros.configWarning('clientId', 'formie'),
+    errors: integration.getErrors('clientId'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client Secret' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientSecret',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientSecret ?? '',
+    warning: macros.configWarning('clientSecret', 'formie'),
+    errors: integration.getErrors('clientSecret'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Spreadsheet ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'spreadsheetId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.spreadsheetId ?? '',
+    warning: macros.configWarning('spreadsheetId', 'formie'),
+    errors: integration.getErrors('spreadsheetId'),
+}) }}
+
+{% endblock %}

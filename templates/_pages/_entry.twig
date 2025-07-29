@@ -1,0 +1,17 @@
+{% extends "index" %}
+
+{% block content %}
+    {% set blocks = entry.contentBlocks %}
+
+    {% for block in blocks %}
+        {% include '_includes/_blocks/' ~ block.type with {
+            block: block
+        } %}
+    {% endfor %}
+    <div class="page pt-32 lg:pt-[180px]">
+        <h1 class="text-6xl mb-8">{{ entry.title }}</h1>
+        <div class="max-w-[700px]">
+            {{ entry.text }}
+        </div>
+    </div>
+{% endblock %}

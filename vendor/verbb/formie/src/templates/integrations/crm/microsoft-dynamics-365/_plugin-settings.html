@@ -1,0 +1,110 @@
+{% extends 'formie/_layouts/integrations/plugin-settings' %}
+
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% block content %}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientId ?? '',
+    warning: macros.configWarning('clientId', 'formie'),
+    errors: integration.getErrors('clientId'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client Secret' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientSecret',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientSecret ?? '',
+    warning: macros.configWarning('clientSecret', 'formie'),
+    errors: integration.getErrors('clientSecret'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Domain' | t('formie'),
+    instructions: 'Enter your {name} {label} here. e.g. `{link}`' | t('formie', { link: 'https://ffcor.crm6.dynamics.com' }),
+    name: 'apiDomain',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiDomain ?? '',
+    warning: macros.configWarning('apiDomain', 'formie'),
+    errors: integration.getErrors('apiDomain'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Tenant' | t('formie'),
+    instructions: 'Enter the {name} Tenant.' | t('formie', { name: integration.displayName() }) | md,
+    name: 'tenant',
+    suggestEnvVars: true,
+    value: integration.settings.tenant ?? '',
+    warning: macros.configWarning('tenant', 'formie'),
+    errors: integration.getErrors('tenant'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'selectField', {
+    label: 'API version' | t('formie'),
+    instructions: 'Set a specific web API version to use with {name} Web API requests.' | t('formie'),
+    name: 'apiVersion',
+    options: [
+        { label: '9.0', value: 'v9.0'},
+        { label: '9.1', value: 'v9.1'},
+        { label: '9.2', value: 'v9.2'}
+    ],
+    value: integration.settings.apiVersion ?? 'v9.0',
+    warning: macros.configWarning('apiVersion', 'formie'),
+    errors: integration.getErrors('apiVersion'),
+}) }}
+
+{% set impersonationInstructions %}
+### Impersonation user settings
+
+By default all records created will appear as the authenticated user which the OAuth token was requested under (This differs from the application user). If you would like to modify this, <a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/impersonate-another-user-web-api#how-to-impersonate-a-user" target="_blank">you can use impersonation</a>. This will apply to all Microsoft Dynamics 365 forms with the integration enabled.
+
+**Note:** Impersonation may require additional security permissions not covered in the setup instructions.
+
+If you want to selectively control the created by user per form, use the "Created By" field in the mapping instead.
+{% endset %}
+
+<div class="fui-settings-block">
+    {{ impersonationInstructions | t('formie') | md }}
+</div>
+
+{{ macros.proxyField(fieldVariables, 'lightswitchField', {
+    label: 'Impersonate User' | t('formie'),
+    instructions: 'Enable this setting to impersonate the user for created records to be set as.' | t('formie'),
+    id: 'impersonateUser',
+    name: 'impersonateUser',
+    on: integration.settings.impersonateUser ?? false
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'selectField', {
+    label: 'Impersonation Header' | t('formie'),
+    instructions: 'Set the value of the impersonate header to be used.' | t('formie'),
+    name: 'impersonateHeader',
+    options: [
+        { label: 'CallerObjectId', value: 'CallerObjectId' },
+        { label: 'MSCRMCallerID', value: 'MSCRMCallerID' }
+    ],
+    value: integration.settings.impersonateHeader ?? 'CallerObjectId',
+    warning: macros.configWarning('impersonateHeader', 'formie'),
+    errors: integration.getErrors('impersonateHeader')
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Impersonate User ID' | t('formie'),
+    instructions: 'Enter the GUID of a valid systemuser to impersonate.' | t('formie'),
+    name: 'impersonateUserId',
+    suggestEnvVars: true,
+    value: integration.settings.impersonateUserId ?? '',
+    warning: macros.configWarning('impersonateUserId', 'formie'),
+    errors: integration.getErrors('impersonateUserId')
+}) }}
+
+{% endblock %}

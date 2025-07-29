@@ -1,0 +1,78 @@
+[19-May-2025 14:33:01 America/Denver] An Error occurred while handling another error:
+Twig\Error\SyntaxError: A mapping key must be followed by a colon (:). Unexpected token "operator" of value "=" ("punctuation" expected with value ":"). in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/templates/404.twig:12
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(503): Twig\TokenStream->expect()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(349): Twig\ExpressionParser->parseMappingExpression()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(266): Twig\ExpressionParser->parsePrimaryExpression()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(103): Twig\ExpressionParser->getPrimary()
+#4 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/TokenParser/IncludeTokenParser.php(52): Twig\ExpressionParser->parseExpression()
+#5 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/TokenParser/IncludeTokenParser.php(34): Twig\TokenParser\IncludeTokenParser->parseArguments()
+#6 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Parser.php(202): Twig\TokenParser\IncludeTokenParser->parse()
+#7 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(46): Twig\Parser->subparse()
+#8 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Parser.php(202): Twig\TokenParser\BlockTokenParser->parse()
+#9 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Parser.php(95): Twig\Parser->subparse()
+#10 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(539): Twig\Parser->parse()
+#11 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(567): Twig\Environment->parse()
+#12 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/twig/Environment.php(39): Twig\Environment->compileSource()
+#13 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(395): craft\web\twig\Environment->compileSource()
+#14 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(357): Twig\Environment->loadTemplate()
+#15 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(320): Twig\Environment->load()
+#16 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/View.php(581): Twig\Environment->render()
+#17 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/View.php(634): craft\web\View->renderTemplate()
+#18 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/TemplateResponseFormatter.php(57): craft\web\View->renderPageTemplate()
+#19 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/Response.php(1109): craft\web\TemplateResponseFormatter->format()
+#20 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/Response.php(341): yii\web\Response->prepare()
+#21 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/Response.php(340): craft\web\Response->prepare()
+#22 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(136): yii\web\Response->send()
+#23 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/ErrorHandler.php(226): yii\web\ErrorHandler->renderException()
+#24 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(152): craft\web\ErrorHandler->renderException()
+#25 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/ErrorHandler.php(102): yii\base\ErrorHandler->handleException()
+#26 [internal function]: craft\web\ErrorHandler->handleException()
+#27 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/Request.php:1409
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/Application.php(82): craft\web\Request->resolve()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/Application.php(329): yii\web\Application->handleRequest()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application->handleRequest()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/web/index.php(12): yii\base\Application->run()
+#4 {main}
+[19-May-2025 14:33:03 America/Denver] An Error occurred while handling another error:
+Twig\Error\SyntaxError: A mapping key must be followed by a colon (:). Unexpected token "operator" of value "=" ("punctuation" expected with value ":"). in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/templates/404.twig:12
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(503): Twig\TokenStream->expect()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(349): Twig\ExpressionParser->parseMappingExpression()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(266): Twig\ExpressionParser->parsePrimaryExpression()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/ExpressionParser.php(103): Twig\ExpressionParser->getPrimary()
+#4 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/TokenParser/IncludeTokenParser.php(52): Twig\ExpressionParser->parseExpression()
+#5 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/TokenParser/IncludeTokenParser.php(34): Twig\TokenParser\IncludeTokenParser->parseArguments()
+#6 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Parser.php(202): Twig\TokenParser\IncludeTokenParser->parse()
+#7 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(46): Twig\Parser->subparse()
+#8 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Parser.php(202): Twig\TokenParser\BlockTokenParser->parse()
+#9 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Parser.php(95): Twig\Parser->subparse()
+#10 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(539): Twig\Parser->parse()
+#11 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(567): Twig\Environment->parse()
+#12 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/twig/Environment.php(39): Twig\Environment->compileSource()
+#13 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(395): craft\web\twig\Environment->compileSource()
+#14 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(357): Twig\Environment->loadTemplate()
+#15 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/twig/twig/src/Environment.php(320): Twig\Environment->load()
+#16 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/View.php(581): Twig\Environment->render()
+#17 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/View.php(634): craft\web\View->renderTemplate()
+#18 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/TemplateResponseFormatter.php(57): craft\web\View->renderPageTemplate()
+#19 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/Response.php(1109): craft\web\TemplateResponseFormatter->format()
+#20 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/Response.php(341): yii\web\Response->prepare()
+#21 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/Response.php(340): craft\web\Response->prepare()
+#22 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(136): yii\web\Response->send()
+#23 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/ErrorHandler.php(226): yii\web\ErrorHandler->renderException()
+#24 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(152): craft\web\ErrorHandler->renderException()
+#25 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/ErrorHandler.php(102): yii\base\ErrorHandler->handleException()
+#26 [internal function]: craft\web\ErrorHandler->handleException()
+#27 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/Request.php:1409
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/web/Application.php(82): craft\web\Request->resolve()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/web/Application.php(329): yii\web\Application->handleRequest()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application->handleRequest()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/web/index.php(12): yii\base\Application->run()
+#4 {main}

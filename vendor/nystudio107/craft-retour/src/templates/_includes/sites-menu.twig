@@ -1,0 +1,52 @@
+{% import "_includes/forms" as forms %}
+
+{% set baseUrl = "retour/#{controllerHandle}/" %}
+{% set params = [] %}
+
+{% if showSites %}
+    <a id="sites-btn" class="crumb-link" data-icon="world"> {{ sitesMenuLabel }} </a>
+    <button type="button" class="btn menubtn" aria-label="Select site" aria-controls="language-menu"
+            data-disclosure-trigger="" aria-expanded="false"></button>
+
+    <div id="language-menu" class="padded menu">
+        <ul class="padded">
+            <li>
+                {% if currentSiteId == 0 %}
+                    <a class="menu-item sel">
+                        <div class="status enabled"></div>{{ "All Sites"|t('retour') }}
+                    </a>
+                {% else %}
+                    {% set url = url(baseUrl, params) %}
+                    <a href="{{ url }}" class="menu-item">
+                        <div class="status enabled"></div>{{ "All Sites"|t('site') }}
+                    </a>
+                {% endif %}
+            </li>
+        </ul>
+        {% set siteGroups = craft.app.sites.getAllGroups() %}
+        {% for group in siteGroups %}
+            {% set groupSiteIds = group.getSiteIds()|intersect(siteIds) %}
+            {% if groupSiteIds %}
+                {% if siteGroups|length > 1 %}<h6>{{ group.name|t('site') }}</h6>{% endif %}
+                <ul class="padded">
+                    {% for siteId in groupSiteIds %}
+                        {% set site = craft.app.sites.getSiteById(siteId) %}
+                        {% set status = siteId in enabledSiteIds ? 'enabled' : 'disabled' %}
+                        <li>
+                            {% if siteId == currentSiteId %}
+                                <a class="menu-item sel">
+                                    <div class="status {{ status }}"></div>{{ site.name|t('site') }}
+                                </a>
+                            {% else %}
+                                {% set url = url(baseUrl~site.handle, params) %}
+                                <a href="{{ url }}" class="menu-item">
+                                    <div class="status {{ status }}"></div>{{ site.name|t('site') }}
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: stickyBlocks
+instructions: null
+name: 'Sticky Blocks'
+searchable: false
+settings:
+  createButtonLabel: 'New Block'
+  defaultIndexViewMode: cards
+  entryTypes:
+    - 63e1ee5f-c534-4d68-b1ac-554acf74ae3b # Sticky Block
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

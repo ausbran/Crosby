@@ -1,0 +1,52 @@
+{% extends 'formie/_layouts/integrations/plugin-settings' %}
+
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% block content %}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Token' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiToken',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiToken ?? '',
+    warning: macros.configWarning('apiToken', 'formie'),
+    errors: integration.getErrors('apiToken'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Password' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiPassword',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiPassword ?? '',
+    warning: macros.configWarning('apiPassword', 'formie'),
+    errors: integration.getErrors('apiPassword'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Space ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiSpaceId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiSpaceId ?? '',
+    warning: macros.configWarning('apiSpaceId', 'formie'),
+    errors: integration.getErrors('apiSpaceId'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Service URL' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiServiceUrl',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiServiceUrl ?? '',
+    warning: macros.configWarning('apiServiceUrl', 'formie'),
+    errors: integration.getErrors('apiServiceUrl'),
+}) }}
+
+{% endblock %}

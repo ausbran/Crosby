@@ -1,0 +1,77 @@
+2025-07-24 08:27:19 [INFO] Submission triggered for contactGeneral.
+2025-07-24 08:27:19 [INFO] Request context:
+$_GET = []
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'formie/submissions/submit'
+    'submitAction' => 'submit'
+    'handle' => 'contactGeneral'
+    'siteId' => '2'
+    'fields' => [
+        'yourName' => [
+            'firstName' => 'Aaron'
+            'lastName' => 'Thibodeaux'
+        ]
+        'emailAddress' => 'thibodeauxaaron34@gmail.com'
+        'phoneNumber' => [
+            'number' => '3375257422'
+        ]
+        'message' => 'How much is it to get on the hunting lease in the area of DeQuincy location number. 
+(30.3838040,
+-93.2920481)
+
+Sincerely, Aaron Thibodeaux'
+        'staffEmail' => 'Dnortman@crosbyresource.com'
+    ]
+    '__JSCHK_3181' => '688241496ee316.43467546'
+]
+2025-07-24 10:38:27 [ERROR] Notification email “Admin Notification” could not be sent for submission “3787”. Error: Failed to authenticate on SMTP server with username "ausbranham" using the following authenticators: "LOGIN", "PLAIN", "XOAUTH2". Authenticator "LOGIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-23fa48dbd0esm19138395ad.128 - gsmtp".". Authenticator "PLAIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-23fa48dbd0esm19138395ad.128 - gsmtp".". Authenticator "XOAUTH2" returned "Expected response code "235" but got code "334", with message "334 eyJzdGF0dXMiOiI0MDAiLCJzY2hlbWVzIjoiQmVhcmVyIiwic2NvcGUiOiJodHRwczovL21haWwuZ29vZ2xlLmNvbS8ifQ==".". /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:269
+2025-07-24 10:38:27 [ERROR] Email payload: {"charset":"utf-8","from":{"ausbranham@gmail.com":"Crosby Resource Management"},"replyTo":{"thibodeauxaaron34@gmail.com":""},"to":{"ausbranham@gmail.com":"","dnortman@crosbyresource.com":""},"cc":"","bcc":"","sender":"","subject":"A new submission was made on \"Contact General\"","body":"<p>A user submission has been made on the \"Contact General\" form on Crosby Resource Management at 2025-07-24 10:38:25<\/p><p>Their submission details are:<\/p>    \n        \n            <p>\n    <strong>Your Name<\/strong><br>\n\n            <strong>First Name: <\/strong>Aaron<br><strong>Last Name: <\/strong>Thibodeaux<br>\n    <\/p>\n        \n            <p>\n    <strong>Email Address<\/strong><br>\n\n            thibodeauxaaron34@gmail.com\n    <\/p>\n        \n            <p>\n    <strong>Phone Number<\/strong><br>\n\n            3375257422\n    <\/p>\n        \n            <p>\n    <strong>Message<\/strong><br>\n\n                        How much is it to get on the hunting lease in the area of DeQuincy location number. <br \/>\r\n(30.3838040,<br \/>\r\n-93.2920481)<br \/>\r\n<br \/>\r\nSincerely, Aaron Thibodeaux\n    \n    <\/p>"}
+2025-07-24 10:38:27 [INFO] Fail alert not configured to send.
+2025-07-24 10:38:27 [ERROR] Notification email “User Notification” could not be sent for submission “3787”. Error: Failed to authenticate on SMTP server with username "ausbranham" using the following authenticators: "LOGIN", "PLAIN", "XOAUTH2". Authenticator "LOGIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-761b0641201sm2036218b3a.132 - gsmtp".". Authenticator "PLAIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-761b0641201sm2036218b3a.132 - gsmtp".". Authenticator "XOAUTH2" returned "Expected response code "235" but got code "334", with message "334 eyJzdGF0dXMiOiI0MDAiLCJzY2hlbWVzIjoiQmVhcmVyIiwic2NvcGUiOiJodHRwczovL21haWwuZ29vZ2xlLmNvbS8ifQ==".". /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:269
+2025-07-24 10:38:27 [ERROR] Email payload: {"charset":"utf-8","from":{"ausbranham@gmail.com":"Crosby Resource Management"},"replyTo":{"Info@crosbyresource.com":""},"to":{"thibodeauxaaron34@gmail.com":""},"cc":"","bcc":"","sender":"","subject":"Thanks for contacting us!","body":"<p>Thanks again for contacting us. Our team will get back to you as soon as we can.<\/p><p>As a reminder, you submitted the following details at 2025-07-24 10:38:25<\/p>    \n        \n            <p>\n    <strong>Your Name<\/strong><br>\n\n            <strong>First Name: <\/strong>Aaron<br><strong>Last Name: <\/strong>Thibodeaux<br>\n    <\/p>\n        \n            <p>\n    <strong>Email Address<\/strong><br>\n\n            thibodeauxaaron34@gmail.com\n    <\/p>\n        \n            <p>\n    <strong>Phone Number<\/strong><br>\n\n            3375257422\n    <\/p>\n        \n            <p>\n    <strong>Message<\/strong><br>\n\n                        How much is it to get on the hunting lease in the area of DeQuincy location number. <br \/>\r\n(30.3838040,<br \/>\r\n-93.2920481)<br \/>\r\n<br \/>\r\nSincerely, Aaron Thibodeaux\n    \n    <\/p>"}
+2025-07-24 10:38:27 [INFO] Fail alert not configured to send.
+2025-07-24 10:38:27 [INFO] Request context:
+$_GET = [
+    'p' => 'admin/actions/queue/run'
+    'v' => '1753375105581'
+]
+
+$_POST = []
+2025-07-24 10:42:54 [INFO] Submission triggered for contactGeneral.
+2025-07-24 10:42:54 [INFO] Couldn’t save submission due to errors - {"emailAddress":["Email Address is not a valid email address."]}.
+2025-07-24 10:42:54 [INFO] Request context:
+$_GET = []
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'formie/submissions/submit'
+    'submitAction' => 'submit'
+    'handle' => 'contactGeneral'
+    'siteId' => '2'
+    'fields' => [
+        'yourName' => [
+            'firstName' => 'David Schipper'
+            'lastName' => 'David Schipper'
+        ]
+        'emailAddress' => '1323 Vista del Monte'
+        'phoneNumber' => [
+            'number' => '210-493-6193 (call or text)'
+        ]
+        'message' => 'All-U.S. Marketing [ NOTHING overseas ]  TX based 
+Get More Google Reviews (More Reviews = More Business) and Much More!
+Only $199/mo [ Hosting Included upon client request ] - 26 Years Experience
+
+Find out more, see our list of clients and read our reviews:
+https://adventdigital.net/seo/17-point-plan/
+https://g.page/r/CUY2hdTXAq4sEBM/
+
+(Unsubscribe on Request - Email or Text)'
+        'staffEmail' => 'CCrosby@crosbyresource.com'
+    ]
+]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ currentSite.language }}">
+	<head>
+		<title>{% include '_includes/_globals/title' %}</title>
+		<meta charset="utf-8"/>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ craft.rebrand.getIcon().url }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ craft.rebrand.getIcon().url }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ craft.rebrand.getIcon().url }}">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+		{% css "/assets/css/styles.css" %}
+	</head>
+	<body data-barba="wrapper" class="overflow-x-hidden {{ bodyClass|default('')}}">
+		{% include '_includes/_globals/navigation' %}
+		<main class="transition-[filter] duration-800 space-y-10 lg:space-y-16 xl:space-y-20" data-barba="container" {% if entry.type is defined %}data-barba-namespace="{{ entry.type }}"{% endif %}>
+			{% block content %}{% endblock %}
+		</main>
+		{% include '_includes/_globals/footer' with { footerClass: footerClass ?? null } %}
+		<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/shapefile@latest/dist/shapefile.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.15.0/proj4.min.js"></script>
+		<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+		{% js "/assets/js/main.min.js" %}
+	</body>
+</html>

@@ -1,0 +1,41 @@
+2025-07-16 21:22:23 [INFO] Submission triggered for contactGeneral.
+2025-07-16 21:22:23 [INFO] Submission marked as spam - “Failed Captcha “Javascript”: “”” - {"yourName":{"1d33b675-822e-47b3-8820-d4f4a9940b39":null,"1b290c8c-ebb5-40be-809d-70b1f6aea682":"Terri","19402e68-f997-4d3a-b40e-3888b7401b5e":null,"363b1142-db14-4667-9698-1286893a104e":"McKerihan"},"emailAddress":"terri.mckerihan@googlemail.com","phoneNumber":{"number":"3380553112","country":null,"hasCountryCode":false,"countryCode":"","countryName":""},"message":"Hey all.\r\n\r\nNoticing your local rivals at the top? This is what’s working for them.\r\n\r\nThis review tool grows your Google reviews like crazy, and it blocks low-star reviews from appearing.\r\n\r\nThis helps people trust your business faster, and leads to more customers.\r\n\r\nThis is what your competitors are doing, and you don’t want to fall behind.\r\n\r\nThere’s no monthly fee, just a one-time low payment, and keep using it with no limits.\r\n\r\nHead over to: https:\/\/customreviewscard.com\/crosbyresource.com to learn more. We’re happy to connect through our site.\r\n\r\n\r\n\r\n\r\n","staffEmail":"CCrosby@crosbyresource.com"}.
+2025-07-16 21:22:23 [INFO] Request context:
+$_GET = []
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'formie/submissions/submit'
+    'submitAction' => 'submit'
+    'handle' => 'contactGeneral'
+    'siteId' => '2'
+    'fields' => [
+        'yourName' => [
+            'firstName' => 'Terri'
+            'lastName' => 'McKerihan'
+        ]
+        'emailAddress' => 'terri.mckerihan@googlemail.com'
+        'phoneNumber' => [
+            'number' => '3380553112'
+        ]
+        'message' => 'Hey all.
+
+Noticing your local rivals at the top? This is what’s working for them.
+
+This review tool grows your Google reviews like crazy, and it blocks low-star reviews from appearing.
+
+This helps people trust your business faster, and leads to more customers.
+
+This is what your competitors are doing, and you don’t want to fall behind.
+
+There’s no monthly fee, just a one-time low payment, and keep using it with no limits.
+
+Head over to: https://customreviewscard.com/crosbyresource.com to learn more. We’re happy to connect through our site.
+
+
+
+
+'
+        'staffEmail' => 'CCrosby@crosbyresource.com'
+    ]
+]

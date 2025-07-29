@@ -1,0 +1,48 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Retour plugin for Craft CMS
+ *
+ * Retour Settings index.twig
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2018 nystudio107
+ * @link      https://nystudio107.com/
+ * @package   Retour
+ * @since     3.0.0
+ */
+#}
+
+{% requirePermission "retour:settings" %}
+
+{% extends "_layouts/cp" %}
+
+{% import "_includes/forms" as forms %}
+
+{% from "retour/_includes/macros.twig" import configWarning %}
+
+{% set tabs = {
+    "general": {label: "General"|t('retour'), url: "#general"},
+    "appearance": {label: "Statistics"|t('retour'), url: "#statistics"},
+    "advanced": {label: "Advanced"|t('retour'), url: "#advanced"},
+} %}
+
+{% block content %}
+
+    <input type="hidden" name="action" value="retour/settings/save-plugin-settings">
+    <input type="hidden" name="pluginHandle" value="retour">
+
+    {{ redirectInput("retour/settings") }}
+
+    {# -- General settings -- #}
+    {% include "retour/settings/_includes/general.twig" %}
+
+    {# -- Statistics settings -- #}
+    {% include "retour/settings/_includes/statistics.twig" %}
+
+    {# -- Advanced settings -- #}
+    {% include "retour/settings/_includes/advanced.twig" %}
+
+    {# include our JavaScript modules #}
+    {{ parent() }}
+{% endblock %}

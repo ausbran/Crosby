@@ -1,0 +1,99 @@
+{
+  "name": "nystudio107/craft-seomatic",
+  "description": "SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 5. It is a turnkey SEO system that is comprehensive, powerful, and flexible.",
+  "type": "craft-plugin",
+  "version": "5.1.16",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "seomatic",
+    "seo",
+    "json-ld",
+    "meta",
+    "tags",
+    "sitemap",
+    "twitter",
+    "facebook"
+  ],
+  "support": {
+    "docs": "https://nystudio107.com/docs/seomatic/",
+    "issues": "https://nystudio107.com/plugins/seomatic/support",
+    "source": "https://github.com/nystudio107/craft-seomatic"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "nystudio107",
+      "homepage": "https://nystudio107.com"
+    }
+  ],
+  "require-dev": {
+  },
+  "require": {
+    "php": "^8.2",
+    "craftcms/cms": "^5.0.0",
+    "nystudio107/craft-plugin-vite": "^5.0.0",
+    "nystudio107/craft-code-editor": "^1.0.14",
+    "nystudio107/craft-twig-sandbox": "^5.0.3",
+    "php-science/textrank": "^1.0.3",
+    "davechild/textstatistics": "^1.0.3",
+    "sunra/php-simple-html-dom-parser": "^1.5.2"
+  },
+  "require-dev": {
+    "codeception/codeception": "^5.0.11",
+    "codeception/module-asserts": "^3.0.0",
+    "codeception/module-datafactory": "^3.0.0",
+    "codeception/module-phpbrowser": "^3.0.0",
+    "codeception/module-rest": "^3.3.2",
+    "codeception/module-yii2": "^1.1.9",
+    "vlucas/phpdotenv": "^5.4.0",
+    "craftcms/commerce": "^5.0.0",
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main",
+    "craftcms/rector": "dev-main",
+    "craftcms/ckeditor": "^4.0.0",
+    "craftcms/digital-products": "^4.0.0",
+    "craftcms/feed-me": "^6.0.0",
+    "craftcms/redactor": "^4.0.0",
+    "craftcms/shopify": "^5.0.0",
+    "nystudio107/craft-fastcgicachebust": "^5.0.0",
+    "nystudio107/craft-minify": "^5.0.0",
+    "putyourlightson/craft-blitz": "^5.0.0",
+    "putyourlightson/craft-campaign": "^3.0.0",
+    "solspace/craft-calendar": "^5.0.0",
+    "spicyweb/craft-neo": "^5.0.0",
+    "verbb/doxter": "^6.0.0"
+  },
+  "scripts": {
+    "phpstan": "phpstan --ansi --memory-limit=2G",
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --fix --ansi",
+    "test": "codecept run unit --coverage-xml"
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "platform-check": false,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "nystudio107\\seomatic\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "nystudio107\\seomatic\\Seomatic",
+    "handle": "seomatic",
+    "name": "SEOmatic"
+  }
+}

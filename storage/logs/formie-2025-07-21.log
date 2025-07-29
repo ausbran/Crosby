@@ -1,0 +1,40 @@
+2025-07-21 07:44:08 [ERROR] Notification email “Admin Notification” could not be sent for submission “3781”. Error: Failed to authenticate on SMTP server with username "ausbranham" using the following authenticators: "LOGIN", "PLAIN", "XOAUTH2". Authenticator "LOGIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-759cbc68184sm5693530b3a.136 - gsmtp".". Authenticator "PLAIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-759cbc68184sm5693530b3a.136 - gsmtp".". Authenticator "XOAUTH2" returned "Expected response code "235" but got code "334", with message "334 eyJzdGF0dXMiOiI0MDAiLCJzY2hlbWVzIjoiQmVhcmVyIiwic2NvcGUiOiJodHRwczovL21haWwuZ29vZ2xlLmNvbS8ifQ==".". /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:269
+2025-07-21 07:44:08 [ERROR] Email payload: {"charset":"utf-8","from":{"ausbranham@gmail.com":"Crosby Resource Management"},"replyTo":{"tyler.smith@174powerglobal.com":""},"to":{"ausbranham@gmail.com":"","ccrosby@crosbyresource.com":""},"cc":"","bcc":"","sender":"","subject":"A new submission was made on \"Contact General\"","body":"<p>A user submission has been made on the \"Contact General\" form on Crosby Resource Management at 2025-07-21 07:44:06<\/p><p>Their submission details are:<\/p>    \n        \n            <p>\n    <strong>Your Name<\/strong><br>\n\n            <strong>First Name: <\/strong>Tyler<br><strong>Last Name: <\/strong>Smith<br>\n    <\/p>\n        \n            <p>\n    <strong>Email Address<\/strong><br>\n\n            tyler.smith@174powerglobal.com\n    <\/p>\n        \n            <p>\n    <strong>Phone Number<\/strong><br>\n\n            2819005406\n    <\/p>\n        \n            <p>\n    <strong>Message<\/strong><br>\n\n                        My company is interested in discussing a possible solar lease on Crosby Land &amp; Resource owned parcels in Vernon County, LA. Please feel free to contact me at your earliest convenience to discuss in greater detail. \n    \n    <\/p>"}
+2025-07-21 07:44:08 [INFO] Fail alert not configured to send.
+2025-07-21 07:44:08 [ERROR] Notification email “User Notification” could not be sent for submission “3781”. Error: Failed to authenticate on SMTP server with username "ausbranham" using the following authenticators: "LOGIN", "PLAIN", "XOAUTH2". Authenticator "LOGIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-759c84e3a99sm5413994b3a.4 - gsmtp".". Authenticator "PLAIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-759c84e3a99sm5413994b3a.4 - gsmtp".". Authenticator "XOAUTH2" returned "Expected response code "235" but got code "334", with message "334 eyJzdGF0dXMiOiI0MDAiLCJzY2hlbWVzIjoiQmVhcmVyIiwic2NvcGUiOiJodHRwczovL21haWwuZ29vZ2xlLmNvbS8ifQ==".". /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:269
+2025-07-21 07:44:08 [ERROR] Email payload: {"charset":"utf-8","from":{"ausbranham@gmail.com":"Crosby Resource Management"},"replyTo":{"Info@crosbyresource.com":""},"to":{"tyler.smith@174powerglobal.com":""},"cc":"","bcc":"","sender":"","subject":"Thanks for contacting us!","body":"<p>Thanks again for contacting us. Our team will get back to you as soon as we can.<\/p><p>As a reminder, you submitted the following details at 2025-07-21 07:44:06<\/p>    \n        \n            <p>\n    <strong>Your Name<\/strong><br>\n\n            <strong>First Name: <\/strong>Tyler<br><strong>Last Name: <\/strong>Smith<br>\n    <\/p>\n        \n            <p>\n    <strong>Email Address<\/strong><br>\n\n            tyler.smith@174powerglobal.com\n    <\/p>\n        \n            <p>\n    <strong>Phone Number<\/strong><br>\n\n            2819005406\n    <\/p>\n        \n            <p>\n    <strong>Message<\/strong><br>\n\n                        My company is interested in discussing a possible solar lease on Crosby Land &amp; Resource owned parcels in Vernon County, LA. Please feel free to contact me at your earliest convenience to discuss in greater detail. \n    \n    <\/p>"}
+2025-07-21 07:44:08 [INFO] Fail alert not configured to send.
+2025-07-21 07:44:08 [INFO] Request context:
+$_GET = [
+    'p' => 'admin/actions/queue/run'
+    'v' => '1753105446087'
+]
+
+$_POST = []
+2025-07-21 22:22:13 [INFO] Submission triggered for contactLandSales.
+2025-07-21 22:22:13 [INFO] Request context:
+$_GET = []
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'formie/submissions/submit'
+    'submitAction' => 'submit'
+    'handle' => 'contactLandSales'
+    'siteId' => '2'
+    'fields' => [
+        'yourName' => [
+            'firstName' => 'Brandon'
+            'lastName' => 'Shaneck'
+        ]
+        'emailAddress' => 'b.shaneck@yahoo.com'
+        'phoneNumber' => [
+            'number' => '1 (337) 658-8550'
+        ]
+        'message' => 'Can you send me a lease price on this track in Ragley, LA '
+        'staffEmail' => 'Dnortman@crosbyresource.com,Ccrosby@crosbyresource.com'
+    ]
+]

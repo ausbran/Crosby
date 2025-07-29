@@ -1,0 +1,24 @@
+2025-07-18 15:35:47 [INFO] Submission triggered for contactGeneral.
+2025-07-18 15:35:47 [INFO] Request context:
+$_GET = []
+
+$_POST = [
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    'action' => 'formie/submissions/submit'
+    'submitAction' => 'submit'
+    'handle' => 'contactGeneral'
+    'siteId' => '2'
+    'fields' => [
+        'yourName' => [
+            'firstName' => 'Tyler'
+            'lastName' => 'Smith'
+        ]
+        'emailAddress' => 'tyler.smith@174powerglobal.com'
+        'phoneNumber' => [
+            'number' => '2819005406'
+        ]
+        'message' => 'My company is interested in discussing a possible solar lease on Crosby Land & Resource owned parcels in Vernon County, LA. Please feel free to contact me at your earliest convenience to discuss in greater detail. '
+        'staffEmail' => 'Ccrosby@crosbyresource.com'
+    ]
+    '__JSCHK_3181' => '687abbbd7d8b52.88829933'
+]

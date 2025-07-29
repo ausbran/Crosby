@@ -1,0 +1,11 @@
+{% extends "_layouts/cp" %}
+
+{% block head %}
+    {{ parent() }}
+    {% set tagOptions = {
+        'depends': [
+            'nystudio107\\retour\\assetbundles\\retour\\RetourAsset'
+        ],
+    } %}
+    {{ craft.retour.register('src/js/Retour.js', false, tagOptions, tagOptions) }}
+{% endblock %}

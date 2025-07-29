@@ -1,0 +1,43 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Retour plugin for Craft CMS
+ *
+ * Retour Widget Body
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2018 nystudio107
+ * @link      https://nystudio107.com/
+ * @package   Retour
+ * @since     3.0.0
+ */
+#}
+
+{% extends "retour/_layouts/widget-cp.twig" %}
+
+{% set baseAssetsUrl = view.getAssetManager().getPublishedUrl('@nystudio107/retour/web/assets/dist', true) %}
+{% set iconUrl = baseAssetsUrl ~ '/img/Retour-icon.svg' %}
+
+{% block content %}
+    <div id="widget-content">
+        <h1 style="margin: 0px;">404 Hits</h1>
+        <h5>Discrete 404s hits in the last {{ numberOfDays }} days</h5>
+        <widget-chart
+                title="404s hits"
+                sub-title="Discrete 404s hits in the last"
+                days="{{ numberOfDays }}"
+                :api-url="'{{ actionUrl('retour/charts/widget') }}'"
+        >
+        </widget-chart>
+        <div style="float: right;">
+            <a class="go" href="{{ cpUrl("retour/dashboard") }}">Dashboard</a>
+        </div>
+    </div>
+
+    {% set tagOptions = {
+        'depends': [
+            'nystudio107\\retour\\assetbundles\\retour\\RetourAsset'
+        ],
+    } %}
+    {{ craft.retour.register('src/js/Widget.js', false, tagOptions, tagOptions) }}
+{% endblock %}

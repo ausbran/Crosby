@@ -1,0 +1,11 @@
+{% extends "_layouts/cp" %}
+
+{% block head %}
+    {{ parent() }}
+    {% set tagOptions = {
+        'depends': [
+            'nystudio107\\seomatic\\assetbundles\\seomatic\\SeomaticAsset'
+        ],
+    } %}
+    {{ seomatic.vite.register('src/js/seomatic.js', false, tagOptions, tagOptions) }}
+{% endblock %}

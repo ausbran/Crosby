@@ -1,0 +1,54 @@
+2024-12-04 01:16:06 [console.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=rvsygcbzqg;port=3306 {"memory":13408664} 
+2024-12-04 01:16:06 [console.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":27983248} 
+2024-12-04 01:16:06 [console.ERROR] [yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request: setup/db-check in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Controller.php:149
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Controller.php(180): yii\base\Controller->runAction()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/ControllerTrait.php(88): yii\console\Controller->runAction()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Controller.php(216): craft\console\Controller->traitRunAction()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Module.php(552): craft\console\Controller->runAction()
+#4 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction()
+#5 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(91): yii\console\Application->runAction()
+#6 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php(147): craft\console\Application->runAction()
+#7 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(122): yii\console\Application->handleRequest()
+#8 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Application.php(384): craft\console\Application->handleRequest()
+#9 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/craft(13): yii\base\Application->run()
+#10 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "setup/db-check". in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(91): yii\console\Application->runAction()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php(147): craft\console\Application->runAction()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(122): yii\console\Application->handleRequest()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Application.php(384): craft\console\Application->handleRequest()
+#4 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/craft(13): yii\base\Application->run()
+#5 {main} {"memory":29643736,"exception":"[object] (yii\\console\\UnknownCommandException(code: 0): Unknown command \"setup/db-check\". at /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php:183)
+[previous exception] [object] (yii\\base\\InvalidRouteException(code: 0): Unable to resolve the request: setup/db-check at /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Controller.php:149)"} 
+2024-12-04 01:16:42 [console.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=rvsygcbzqg;port=3306 {"memory":13408664} 
+2024-12-04 01:16:42 [console.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":27983248} 
+2024-12-04 01:16:49 [console.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=rvsygcbzqg;port=3306 {"memory":13408672} 
+2024-12-04 01:16:49 [console.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":27983256} 
+2024-12-04 01:16:49 [console.INFO] [nystudio107\seomatic\services\FrontendTemplates::invalidateCaches] All frontend template caches cleared {"memory":30868760} 
+2024-12-04 01:16:49 [console.INFO] [nystudio107\seomatic\services\MetaContainers::invalidateCaches] All meta container caches cleared {"memory":30869648} 
+2024-12-04 01:16:49 [console.INFO] [nystudio107\seomatic\helpers\Schema::invalidateCaches] All schema caches cleared {"memory":30926192} 
+2024-12-04 01:16:49 [console.INFO] [nystudio107\seomatic\services\Sitemaps::invalidateCaches] All sitemap caches cleared {"memory":30927080} 
+2024-12-04 01:17:16 [console.INFO] [yii\db\Connection::open] Opening DB connection: mysql:host=137.184.15.251;dbname=rvsygcbzqg;port=3306 {"memory":13408656} 
+2024-12-04 01:17:16 [console.INFO] [nystudio107\seomatic\Seomatic::init] SEOmatic plugin loaded {"memory":28145984} 
+2024-12-04 01:17:16 [console.ERROR] [yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "-v". in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(91): yii\console\Application->runAction()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php(147): craft\console\Application->runAction()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(122): yii\console\Application->handleRequest()
+#4 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Application.php(384): craft\console\Application->handleRequest()
+#5 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/craft(13): yii\base\Application->run()
+#6 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "-v". in /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(91): yii\console\Application->runAction()
+#1 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php(147): craft\console\Application->runAction()
+#2 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/craftcms/cms/src/console/Application.php(122): yii\console\Application->handleRequest()
+#3 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Application.php(384): craft\console\Application->handleRequest()
+#4 /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/craft(13): yii\base\Application->run()
+#5 {main} {"memory":29631776,"exception":"[object] (yii\\console\\UnknownCommandException(code: 0): Unknown command \"-v\". at /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/console/Application.php:183)
+[previous exception] [object] (yii\\base\\InvalidRouteException(code: 0): Unable to resolve the request \"-v\". at /home/1321557.cloudwaysapps.com/rvsygcbzqg/public_html/vendor/yiisoft/yii2/base/Module.php:561)"} 

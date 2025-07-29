@@ -1,0 +1,25 @@
+{% extends 'formie/_layouts/integrations/plugin-settings' %}
+
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% block content %}
+
+<span class="warning with-icon">
+    Starting November 30, 2022, HubSpot API keys will no longer be able to be used as an authentication method to access HubSpot APIs. In addition, starting July 15, 2022, you'll no longer be able to create new API keys.<br><br>
+
+    Learn more about this <a href="https://developers.hubspot.com/changelog/upcoming-api-key-sunset" target="_blank">change</a> and use the <strong>HubSpot</strong> integration instead.
+</span>
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Key' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiKey',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiKey ?? '',
+    warning: macros.configWarning('apiKey', 'formie'),
+    errors: integration.getErrors('apiKey'),
+}) }}
+
+{% endblock %}
