@@ -1,0 +1,23 @@
+columnSuffix: null
+handle: contentBlocks
+instructions: null
+name: 'Content Blocks'
+searchable: false
+settings:
+  createButtonLabel: 'New block'
+  defaultIndexViewMode: cards
+  entryTypes:
+    - 94cb9947-273b-4b08-994c-6ef6402b164b # Featured Project
+    - 781f432d-abd0-4efa-aa62-831ca28d2d13 # Banner
+    - e0af700b-4828-4cae-ad17-75056547e835 # Banner
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

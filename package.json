@@ -1,0 +1,36 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss:build": "sass scss/main.scss web/assets/css/styles.temp.css && postcss web/assets/css/styles.temp.css -o web/assets/css/styles.css",
+    "scss:watch": "sass --watch scss/main.scss:web/assets/css/styles.temp.css & postcss web/assets/css/styles.temp.css -o web/assets/css/styles.css --watch",
+    "js:build": "webpack --mode production",
+    "js:watch": "webpack --watch --mode development",
+    "build": "npm run js:build && npm run scss:build",
+    "dev": "concurrently \"npm run scss:watch\" \"npm run js:watch\"",
+    "format": "prettier --write \"{templates,js,scss}/**/*.{twig,html,js,ts,css,scss}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "babel-loader": "^9.2.1",
+    "concurrently": "^9.1.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "sass": "^1.81.0",
+    "tailwindcss": "^3.4.15",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "shapefile": "^0.6.6",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  }
+}

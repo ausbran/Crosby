@@ -1,0 +1,84 @@
+{# Universal variables #}
+{% set asset = asset ?? null %}
+{% set assetMobile = assetMobile ?? null %}
+{% set format = format ?? 'webp' %}
+{% set quality = quality ?? 100 %}
+{% set mode = mode ?? 'crop' %}
+{% set overlay = overlay ?? null %}
+{% set class = class ?? null %}
+
+{# Aspect ratio variables #}
+{% set ratio = ratio ?? '16:9' %}
+{% if ratio == '16:9' %}
+	{% set width, height = 2560, 1440 %}
+	{% set tabletWidth, tabletHeight = 1920, 1080 %}
+	{% set mobileWidth, mobileHeight = 1280, 720 %}
+{% elseif ratio == '4:5' %}
+	{% set width, height = 1440, 1800 %}
+	{% set tabletWidth, tabletHeight = 1080, 1350 %}
+	{% set mobileWidth, mobileHeight = 640, 800 %}
+{% elseif ratio == '1:1' %}
+	{% set width, height = 1440, 1440 %}
+	{% set tabletWidth, tabletHeight = 1080, 1080 %}
+	{% set mobileWidth, mobileHeight = 800, 800 %}
+{% endif %}
+
+{# Video variables #}
+{% set loopVideo = loopVideo ?? true %}
+
+{% if asset %}
+	{% if asset.kind == 'video' %}
+		<video {% if class is defined %} class="{{ class }}" {% endif %} autoplay {{ loopVideo ? 'loop' }} muted preload="metadata" playsinline webkit-playsinline">
+			{% if assetMobile %}
+				<source src="{{ assetMobile.url }}" type="{{ assetMobile.mimeType }}" media="(max-width: 767px)">
+			{% endif %}
+			<source src="{{ asset.url }}" type="{{ asset.mimeType }}">
+		</video>
+	{% elseif asset.kind == 'image' %}
+		{# Image rendering logic #}
+		{% set settings = [
+            {
+                asset: asset,
+                transform: {
+                    width: width,
+                    height: height,
+                    mode: mode,
+                    format: format
+                },
+                min: 1024
+            },
+            {
+                asset: asset,
+                transform: {
+                    width: tabletWidth,
+                    height: tabletHeight,
+                    mode: mode,
+                    format: format
+                },
+                max: 1023,
+                min: 768
+            },
+            {
+                asset: asset,
+                transform: {
+                    width: mobileWidth,
+                    height: mobileHeight,
+                    mode: mode,
+                    format: format
+                },
+                max: 767
+            }
+        ] %}
+
+		{% set commonTransformSettings = {
+            quality: quality,
+            class: class
+        } %}
+
+		{{ craft.images.pictureMultiple(settings, commonTransformSettings) }}
+	{% endif %}
+
+	{% if overlay %}
+		<div class="overlay" style="opacity: {{ overlay }};"></div>
+	{% endif %}
+{% endif %}
